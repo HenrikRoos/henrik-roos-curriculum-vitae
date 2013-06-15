@@ -1,3 +1,8 @@
 a.none {
   text-decoration: none;
 }
+
+.column h4,
+.skills-with-ratings h4 {
+  margin: 0;
+}

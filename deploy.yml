@@ -8,4 +8,4 @@
   path: /cv
   local_path: html
   overwrite_if_same_revision: true
-  debug_mode: false
+  passive: true

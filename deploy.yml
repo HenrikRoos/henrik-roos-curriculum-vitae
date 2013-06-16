@@ -5,7 +5,6 @@
   password: 0calle5r
   host: ftp.afternoon.se
   port: 21
-  path: /cv
-  local_path: html
-  overwrite_if_same_revision: true
+  local_path: html/
+  overwrite_if_same_revision: false
   passive: true

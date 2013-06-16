@@ -1,0 +1,11 @@
+'cv':
+  skip: false
+  scheme: ftp
+  user: afternoon.se
+  password: 0calle5r
+  host: ftp.afternoon.se
+  port: 21
+  path: /cv
+  local_path: html
+  overwrite_if_same_revision: true
+  debug_mode: false

@@ -1,5 +1,7 @@
-a.none {
+a.logofloat {
   text-decoration: none;
+  float: right;
+  padding-top: 0.3em;
 }
 
 .column h4,
@@ -9,5 +11,60 @@ a.none {
 
 .column h3,
 .skills-with-ratings h3 {
-  margin-top: 1em;
+  display: inline;
+}
+
+.column-row {
+  margin: 0;
+}
+
+div.column-no-logo {
+  margin-top: 2em;
+}
+
+.column-row div.column:nth-child(2n) {
+  margin-right: 0;
+}
+
+.smaller-text p {
+  text-align: justify;
+}
+
+/*
+  Timeline
+*/
+table.timeline {
+  font-size: smaller;
+  color: #AAA;
+  text-align: center;
+  clear: left;
+  overflow-x: auto;
+  display: block;
+}
+
+table.timeline td {
+  border-right: thin solid #DDD;
+}
+
+table.timeline .noborder {
+  border-right: none;
+}
+
+td.experience:hover {
+  background-color: #F9D423;
+  color: black;
+}
+
+td.education:hover {
+  background-color: #a8e6f5;
+  color: black;
+}
+
+td.offduty:hover {
+  background-color: #8fec99;
+  color: black;
+}
+
+td.before {
+  opacity: 0.5;
 }

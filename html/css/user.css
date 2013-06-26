@@ -46,6 +46,10 @@ table.timeline td {
   border-right: thin solid #DDD;
 }
 
+table.timeline td:last-child {
+  border: none;
+}
+
 table.timeline .noborder {
   border-right: none;
 }
@@ -55,16 +59,31 @@ td.experience:hover {
   color: black;
 }
 
-td.education:hover {
-  background-color: #a8e6f5;
+td.req {
+    border-bottom: thick solid firebrick;
+}
+
+td.dev {
+    border-bottom: thick solid orange;
+}
+
+td.test {
+    border-bottom: thick solid #619EC2;
+}
+
+td.inhouse:hover {
+  background-color: #ff9;
   color: black;
 }
 
 td.offduty:hover {
-  background-color: #8fec99;
   color: black;
 }
 
 td.before {
   opacity: 0.5;
+}
+
+table.timeline a {
+    color: inherit;
 }

@@ -41,6 +41,12 @@ div.column-no-logo {
     color: silver;
 }
 
+#chart_branch {
+    float: left;
+    width: auto;
+}
+
+
 
 /*
   Timeline

@@ -27,6 +27,44 @@
         <!-- modify this file to add any changes. This will make update process much easier -->
         <link rel="stylesheet" href="css/user.css">
 
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages': ['corechart']});
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Bransch');
+                data.addColumn('number', 'Antal månader');
+                data.addRows([
+                    ['Hälsa & Sjukvård', 29],
+                    ['Bank Finans & Försäkring', 26],
+                    ['Reklam', 22],
+                    ['Data It & Telekommunikation', 3]
+                ]);
+
+                // Set chart options
+                var options = {
+                    title: 'Branschfördelning (Antal månader)',
+                    slices: [{color: '#F9D423'}, {color: '#619EC2'}, {color: '#BBB'}, {color: '#888'}],
+                    pieSliceText: 'value'
+                };
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('chart_branch'));
+                chart.draw(data, options);
+            }
+        </script>
+
     </head>
 
     <body>
@@ -100,6 +138,8 @@
             <div class="row">
                 <article>
                     <h2 class="section-title">Utförda uppdrag</h2>
+
+                    <div id="chart_branch"></div>
 
                     <table class="timeline">
                         <tr>
@@ -617,10 +657,10 @@
                                     <li>Databasteknik, fortsättningskurs <span>(NA2090)</span></li>
                                 </ul>
                             </div>
-                            
+
                             <div id="education_chart"></div>
                         </div>
-                        
+
                         <div class="column">
                             <h3>Teknisk Fysik</h3>
                             <a href="http://www.mdh.se" class="logo">

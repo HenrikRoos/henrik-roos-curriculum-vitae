@@ -30,6 +30,18 @@ div.column-no-logo {
     text-align: justify;
 }
 
+.smaller-text ul {
+    line-height: 1.642857143em;
+    font-size: 0.875em;
+    padding-left: 1.3em;
+    list-style-type: circle;
+}
+
+.smaller-text ul span {
+    color: silver;
+}
+
+
 /*
   Timeline
 */

@@ -30,7 +30,8 @@ div.column-no-logo {
     text-align: justify;
 }
 
-.smaller-text ul {
+.smaller-text ul
+{
     line-height: 1.642857143em;
     font-size: 0.875em;
     padding-left: 1.3em;
@@ -41,12 +42,28 @@ div.column-no-logo {
     color: silver;
 }
 
+.skills-group-other ul {
+    list-style-type: circle;
+}
+
+/*
+  Chart
+*/
+
 #chart_branch,
 #chart_education
 {
     float: right;
 }
 
+@media only screen and (max-width: 480px) { /* Most phones */
+
+    #chart_branch,
+    #chart_education
+    {
+        width: 100%;
+    }
+}
 
 
 /*
@@ -57,7 +74,7 @@ table.timeline {
     color: #AAA;
     text-align: center;
     clear: both;
-    overflow-x: auto;
+    overflow: auto;
     display: block;
 }
 

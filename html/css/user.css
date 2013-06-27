@@ -41,9 +41,10 @@ div.column-no-logo {
     color: silver;
 }
 
-#chart_branch {
-    float: left;
-    width: auto;
+#chart_branch,
+#chart_education
+{
+    float: right;
 }
 
 
@@ -55,7 +56,7 @@ table.timeline {
     font-size: smaller;
     color: #AAA;
     text-align: center;
-    clear: left;
+    clear: both;
     overflow-x: auto;
     display: block;
 }

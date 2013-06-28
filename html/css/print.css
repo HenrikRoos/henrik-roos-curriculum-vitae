@@ -1,10 +1,10 @@
 * {
-  box-shadow: none !important;
-  background: transparent !important;
-  color: black !important;
-  text-shadow: none !important;
-  filter:none !important;
-  -ms-filter: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter:none !important;
+    -ms-filter: none !important;
 }
 a, a:visited { text-decoration: none; }
 a[href]:after { content: " (" attr(href) ")"; text-decoration: none; color: #999; }
@@ -19,121 +19,121 @@ p, h2, h3 { orphans: 3; widows: 3; }
 h2, h3 { page-break-after: avoid; }
 
 body {
-  font-size: 13px;
+    font-size: 13px;
 }
 
 .section-title,
 .portfolio h2 {
-  padding: 0 !important;
-  font-weight: bold !important;
-  margin: 0 0 10px;
-  font-size: 16px;
+    padding: 0 !important;
+    font-weight: bold !important;
+    margin: 0 0 10px;
+    font-size: 16px;
 }
 
 .wrap-header article,
 .row article {
-  width: 100%;
-  padding: 1.125em 0;
+    width: 100%;
+    padding: 1.125em 0;
 }
 
 .wrap-header article {
-  padding-top: 0;
+    padding-top: 0;
 }
 
 .row {
-  page-break-inside: avoid;
+    page-break-inside: avoid;
 }
 
 p {
-  margin: 0 0 5px;
+    margin: 0 0 5px;
 }
 
 .column {
-  padding-left: 0;
-  width: 47%;
+    padding-left: 0;
+    width: 47%;
 }
 
 .column-row {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .column .subtitle {
-  margin-bottom: 0.7em;
+    margin-bottom: 0.7em;
 }
 
 .reference {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 
 .portfolio {
-  margin: 0 0 10px 0;
+    margin: 0 0 10px 0;
 }
 
 .portfolio li {
-  border: 0 none;
+    border: 0 none;
 }
 
 .portfolio .border {
-  border: 0 none !important;
+    border: 0 none !important;
 }
 
 .portfolio .mask {
-  display: block;
-  position: static;
-  text-align: left;
-  padding: 10px 0;
+    display: block;
+    position: static;
+    text-align: left;
+    padding: 10px 0;
 }
 
 .portfolio p {
-  padding: 0 !important;
-  margin: 0 !important;
-  line-height: 1em;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1em;
 }
 
 .portfolio * {
-  -moz-transform: none !important;
-  -moz-transition: none !important;
-  opacity: 1 !important;
+    -moz-transform: none !important;
+    -moz-transition: none !important;
+    opacity: 1 !important;
 }
 
 .profile-pic {
-  padding: 0;
-  border: 0 none;
-  width: 200px;
-  margin: 0 20px 0 0;
+    padding: 0;
+    border: 0 none;
+    width: 200px;
+    margin: 0 20px 0 0;
 }
 
 .icons img {
-  display: none;
+    display: none;
 }
 
 .icons a:after {
-  display: block;
+    display: block;
 }
 
 .wrap-footer * {
-  color: #999 !important;
+    color: #999 !important;
 }
 
 .skills {
-  padding: 10px 0 0 0;
-  text-align: left;
-  width: 100%;
+    padding: 10px 0 0 0;
+    text-align: left;
+    width: 100%;
 }
 
 .skills p {
-  padding: 10px 0 10px 0;
-  position: relative;
-  line-height: 1em;
+    padding: 10px 0 10px 0;
+    position: relative;
+    line-height: 1em;
 }
 
 .skills .caption {
-  top: -5px;
-  padding: 0;
-  width: 100% !important;
-  text-align: left;
-  font-weight: bold;
-  border: 0 none !important;
+    top: -5px;
+    padding: 0;
+    width: 100% !important;
+    text-align: left;
+    font-weight: bold;
+    border: 0 none !important;
 }
 
 /*disable unrelevant elements*/
@@ -149,5 +149,5 @@ p {
 .social-services,
 #container:before,
 #container:after {
-  display: none !important;
+    display: none !important;
 }

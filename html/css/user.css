@@ -4,6 +4,10 @@ a.logofloat {
     padding-top: 0.3em;
 }
 
+td.profile-logo {
+    text-align: center;
+}
+
 .column h4,
 .skills-with-ratings h4 {
     margin: 0;

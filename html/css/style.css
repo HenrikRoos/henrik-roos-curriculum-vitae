@@ -559,7 +559,8 @@ textarea:focus,
 /*information table*/
 
 .info {
-    clear: both;
+    clear: left;
+    overflow: auto;
 }
 
 .info th,

@@ -47,15 +47,6 @@ div.column-no-logo {
     color: silver;
 }
 
-.skills-group-other ul {
-    list-style-type: circle;
-}
-
-.rating > span:hover:before {
-    content: "\2605";
-    position: absolute;
-}
-
 /*
   Chart
 */

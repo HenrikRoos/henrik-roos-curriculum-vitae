@@ -102,24 +102,6 @@
         width: 100%;
     }
 
-    .portfolio {
-        margin: 0 0 3.125em 0;
-        width: 100%;
-    }
-
-    .portfolio li {
-        width: 48%;
-        margin: 0 0 3% 0;
-    }
-
-    .portfolio li:nth-child(2n) {
-        float: right;
-    }
-
-    .portfolio li .border {
-        border-width: 5px;
-    }
-
     .wrap-header .social-services {
         clear: both;
         position: static;
@@ -215,17 +197,6 @@
         clear: left;
     }
 
-    .portfolio {
-        margin: 0 0 3.125em 0;
-        width: 100%;
-    }
-
-    .portfolio li {
-        width: 99%;
-        margin: 0 0 10% 0;
-        float: none;
-    }
-
 }
 
 @media only screen and (max-width: 480px) { /* Most phones */
@@ -253,10 +224,6 @@
 
     .wrap-title {
         padding: 40px 0 50px 0;
-    }
-
-    .social-services {
-        display: none;
     }
 
     .ribbon, .ribbon2, .ribbon3 {

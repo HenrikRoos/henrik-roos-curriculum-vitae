@@ -51,6 +51,11 @@ div.column-no-logo {
     list-style-type: circle;
 }
 
+.rating > span:hover:before {
+    content: "\2605";
+    position: absolute;
+}
+
 /*
   Chart
 */
@@ -77,7 +82,8 @@ div.column-no-logo {
 }
 
 @media only screen and (max-width: 480px) {
-    #experience .chart
+    #experience .chart,
+    #chart_education
     {
         width: 100%;
     }

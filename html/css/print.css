@@ -22,8 +22,8 @@ body {
     font-size: 13px;
 }
 
-.section-title,
-.portfolio h2 {
+.section-title
+{
     padding: 0 !important;
     font-weight: bold !important;
     margin: 0 0 10px;
@@ -63,37 +63,6 @@ p {
 
 .reference {
     margin: 10px 0;
-}
-
-.portfolio {
-    margin: 0 0 10px 0;
-}
-
-.portfolio li {
-    border: 0 none;
-}
-
-.portfolio .border {
-    border: 0 none !important;
-}
-
-.portfolio .mask {
-    display: block;
-    position: static;
-    text-align: left;
-    padding: 10px 0;
-}
-
-.portfolio p {
-    padding: 0 !important;
-    margin: 0 !important;
-    line-height: 1em;
-}
-
-.portfolio * {
-    -moz-transform: none !important;
-    -moz-transition: none !important;
-    opacity: 1 !important;
 }
 
 .profile-pic {

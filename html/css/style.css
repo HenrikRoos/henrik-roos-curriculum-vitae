@@ -422,7 +422,7 @@ textarea:focus,
 .column .subtitle {
     font-size: 0.75em;
     color: #666;
-    margin: 0 0 1.166666667em;
+    margin: 0;
 }
 
 .column .subtitle a {

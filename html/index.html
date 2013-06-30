@@ -31,9 +31,22 @@
             // Load the Visualization API and the piechart package.
             google.load('visualization', '1.0', {'packages': ['corechart']});
 
+            // Set chart options
+            var options = {
+                fontName: "'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif",
+                slices: [{color: '#F9D423'}, {color: '#619EC2'}, {color: 'orange'}, {color: 'gray'}, {color: 'darkgray'}],
+                pieSliceText: 'value',
+                chartArea: {top: 0, left: 0, width: "100%", height: "80%"},
+                tooltip: {text: 'value'},
+                legend: {alignment: 'center'}
+            };
+
             // Set a callback to run when the Google Visualization API is loaded.
-            google.setOnLoadCallback(drawChartBranch);
             google.setOnLoadCallback(drawChartEducation);
+            google.setOnLoadCallback(drawChartDiscipline);
+            google.setOnLoadCallback(drawChartBranch);
+            google.setOnLoadCallback(drawChartDevPlatform);
+
 
             // Callback in experience block
             function drawChartBranch() {
@@ -43,25 +56,61 @@
                 data.addColumn('string', 'Bransch');
                 data.addColumn('number', 'Antal månader');
                 data.addRows([
-                    ['Hälsa & Sjukvård (mån)', 29],
-                    ['Bank Finans & Försäkring (mån)', 26],
-                    ['Reklam (mån)', 22],
-                    ['Data It & Telekommunikation (mån)', 3]
+                    ['Hälsa & Sjukvård (mån)', 4+6+8+3+5+3],     //#3 + #7 + #8 + #10 + #11 + #12
+                    ['Bank Finans & Försäkring (mån)', 6+3+8+9], //#2 + #4 + #6 + #9
+                    ['Reklam (mån)', 22],                        //#1
+                    ['Data It & Telekommunikation (mån)', 3]     //#5
                 ]);
 
-                // Set chart options
-                var options = {
-                    fontName: "'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif",
-                    slices: [{color: '#F9D423'}, {color: '#619EC2'}, {color: '#BBB'}, {color: '#888'}, {color: 'orange'}],
-                    pieSliceText: 'value',
-                    chartArea: {top: 0, left: 0, width: "100%", height: "80%"},
-                    tooltip: {text: 'value'},
-                    legend: {alignment: 'center'}
-                };
+                var opt = options;
+                opt['slices'] = [{color: 'DarkTurquoise'}, {color: 'DimGray'}, {color: 'LightPink'}, {color: 'DeepSkyBlue'}];
 
                 // Instantiate and draw our chart, passing in some options.
                 var chart = new google.visualization.PieChart(document.getElementById('chart_branch'));
+                chart.draw(data, opt);
+            }
+
+            // Callback in experience block
+            function drawChartDiscipline() {
+
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Disciplin');
+                data.addColumn('number', 'Antal månader');
+                data.addRows([
+                    ['Utveckling (mån)', 22+4+3+3+8+5],
+                    ['Test (mån)', 6+9+3+3],
+                    ['Krav (mån)', 6+8]
+                ]);
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('chart_discipline'));
                 chart.draw(data, options);
+            }
+
+            // Callback in experience block
+            function drawChartDevPlatform() {
+
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Utvecklings plattform');
+                data.addColumn('number', 'Antal månader');
+                data.addRows([
+                    ['J2EE 1.4 (mån)', 22+6],          //#1 + #2
+                    ['Java EE 5 (mån)', 3],            //#5
+                    ['Java EE 6 (mån)', 6+9+3],        //#7 + #9 + #12
+                    ['.NET Framework 3.0 (mån)', 4+3], //#3 + #4
+                    ['.NET Framework 3.5 (mån)', 8],   //#6
+                    ['.NET Framework 4.5 (mån)', 5],   //#11
+                    ['Plattformsoberoende (mån)', 8+3] //#8 + #10
+                ]);
+
+                var opt = options;
+                opt['slices'] = [{color: '#669999'}, {color: '#75A3A3'}, {color: '#85ADAD'}, {color: '#009999'}, {color: '#19A3A3'}, {color: '#33ADAD'}, {color: 'Gainsboro'}];
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('chart_dev_platform'));
+                chart.draw(data, opt);
             }
 
             // Callback in education block
@@ -78,16 +127,6 @@
                     ['Biologi (hp)', 30],
                     ['Fysik (hp)', 15]
                 ]);
-
-                // Set chart options
-                var options = {
-                    fontName: "'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif",
-                    slices: [{color: '#F9D423'}, {color: '#619EC2'}, {color: '#BBB'}, {color: '#888'}, {color: 'orange'}],
-                    pieSliceText: 'value',
-                    chartArea: {top: 0, left: 0, width: "100%", height: "80%"},
-                    tooltip: {text: 'value'},
-                    legend: {alignment: 'center'}
-                };
 
                 // Instantiate and draw our chart, passing in some options.
                 var chart = new google.visualization.PieChart(document.getElementById('chart_education'));
@@ -165,11 +204,13 @@
 
             <!-- experience block -->
 
-            <div class="row">
+            <div class="row" id="experience">
                 <article>
-                    <h2 class="section-title">Utförda uppdrag</h2>
+                    <h2 class="section-title">Uppdrag</h2>
 
-                    <div id="chart_branch"></div>
+                    <div id="chart_discipline" class="chart"></div>
+                    <div id="chart_branch" class="chart"></div>
+                    <div id="chart_dev_platform" class="chart"></div>
 
                     <table class="timeline">
                         <tr>
@@ -325,8 +366,9 @@
                         <div class="column column-no-logo">
                             <h3 id="12">#12 Tekniks Testledare</h3>
                             <a href="http://www.mawell.se" title="Mawell AB" class="logofloat">
-                                <img src="./img/logo_mawell.png" alt="Mawell AB" width="70"/>
+                                <img src="./img/logo_mawell.png" alt="Mawell AB" width="90"/>
                             </a>
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.mawell.se" title="Anställd vid">Mawell</a>
                                 &mdash;
@@ -356,9 +398,9 @@
                         <div class="column column-no-logo">
                             <h3 id="11">#11 Arkitekt</h3>
                             <a href="http://www.mawell.se" title="Mawell AB" class="logofloat">
-                                <img src="./img/logo_mawell.png" alt="Mawell AB" width="70"/>
+                                <img src="./img/logo_mawell.png" alt="Mawell AB" width="90"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.mawell.se" title="Anställd vid">Mawell</a>
                                 &mdash;
@@ -389,9 +431,9 @@
                         <div class="column column-no-logo">
                             <h3 id="10">#10 Testanalytiker</h3>
                             <a href="http://www.mawell.se" target="_blank" title="Mawell AB" class="logofloat">
-                                <img src="./img/logo_mawell.png" alt="Mawell AB" width="70"/>
+                                <img src="./img/logo_mawell.png" alt="Mawell AB" width="90"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.mawell.se" title="Anställd vid">Mawell</a>
                                 &mdash;
@@ -419,7 +461,7 @@
                             <a href="http://www.objektfabriken.se" title="Objektfabriken" class="logofloat">
                                 <img src="./img/logo_objektfabriken.png" alt="Objektfabriken" width="120"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.objektfabriken.se" title="Anställd vid">TPG Objektfabriken <i>(nuvarande Objektfabriken)</i></a>
                                 &mdash;
@@ -449,7 +491,7 @@
                             <a href="http://www.softronic.se" title="Softronic" class="logofloat">
                                 <img src="./img/logo_softronic.png" alt="Softronic" width="120"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
                                 &mdash;
@@ -480,7 +522,7 @@
                             <a href="http://www.softronic.se" title="Softronic" class="logofloat">
                                 <img src="./img/logo_softronic.png" alt="Softronic" width="120"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
                                 &mdash;
@@ -509,7 +551,7 @@
                             <a href="http://www.softronic.se" title="Softronic" class="logofloat">
                                 <img src="./img/logo_softronic.png" alt="Softronic" width="120"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
                                 &mdash;
@@ -537,7 +579,7 @@
                             <a href="http://www.softronic.se" title="Softronic" class="logofloat">
                                 <img src="./img/logo_softronic.png" alt="Softronic" width="120"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
                                 &mdash;
@@ -561,7 +603,7 @@
                             <a href="http://www.softronic.se" title="Softronic" class="logofloat">
                                 <img src="./img/logo_softronic.png" alt="Softronic" width="120"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
                                 &mdash;
@@ -585,7 +627,7 @@
                             <a href="http://www.softronic.se" title="Softronic" class="logofloat">
                                 <img src="./img/logo_softronic.png" alt="Softronic" width="120"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
                                 &mdash;
@@ -614,7 +656,7 @@
                             <a href="http://www.softronic.se" title="Softronic" class="logofloat">
                                 <img src="./img/logo_softronic.png" alt="Softronic" width="120"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
                                 &mdash;
@@ -637,7 +679,7 @@
                             <a href="http://www.softronic.se" title="Fimare" class="logofloat">
                                 <img src="./img/logo_fimare.png" alt="Fimare" width="120"/>
                             </a>
-
+                            <br />
                             <p class="subtitle">
                                 Fimare <i>(Enskild firma)</i>
                                 &mdash;
@@ -662,6 +704,65 @@
                 </article>
             </div>
 
+            <!-- other experience block -->
+
+            <div class="row">
+                <article>
+                    <h2 class="section-title">Övriga projekt</h2>
+
+                    <div class="column-row">
+
+                        <div class="column column-no-logo">
+                            <h3>WordPress Plugin utveckling</h3>
+                            <a href="http://wordpress.org/plugins/imdb-markup-syntax/" title="WordPress" class="logofloat">
+                                <img src="./img/icons/social_wordpress.png" alt="WordPress" width="55"/>
+                            </a>
+                            <br />
+                            <p class="subtitle">
+                                Privat, (öppen källkod <a href="http://opensource.org/licenses/gpl-3.0.html">GPL-3.0</a>)
+                                &mdash;
+                                <a href="http://wordpress.org" title="Utvecklat för">WordPress</a><br />
+                                2013-02 &mdash; nu
+                            </p>
+                            <div class="smaller-text">
+                                <p>
+                                    Med en enkelt syntax t ex <i>[imdb:title]</i> ersätts taggarna med data från IMDb Mobile Applications (ett publik RESTful API som exponera IMDb:s databas).
+                                    Koden är väl dokumenterad, testad och innehåller inga checkstyle errors.
+                                    Code coverage ligger på 100%.
+                                    Testmiljön som drivs av Jenkins är helautomatiserad och testar pluginets kodförändringar i 14 olika WordPress releaser.
+                                </p>
+                            </div>
+                            <div class="reference">
+                                <h4>Tekniker/Metoder</h4>
+                                WordPress API, PHP 5, PHPUnit, Jenkins, Checkstyle, PHP Depend 
+                            </div>
+                        </div>
+
+                        <div class="column column-no-logo">
+                            <h3>Volontär i Afrika</h3>
+                            <a href="http://www.ziff.or.tz" title="Zanzibar International Film Festival" class="logofloat">
+                                <img src="./img/logo_ziff.jpg" alt="Zanzibar International Film Festival" width="180"/>
+                            </a>
+                            <br />
+                            <p class="subtitle">
+                                IT Support
+                                &mdash;
+                                <a href="http://www.ziff.or.tz" title="Zanzibar International Film Festival">ZIFF</a><br />
+                                2 månader, 2006-06 &mdash; 2006-07
+                            </p>
+                            <div class="smaller-text">
+                                <p>
+                                    Henrik hjälpte till med praktiskt IT jobb på östafrikas största filmfestival i Tanzania.
+                                    Bland annat byggde de ett ackrediteringssystem för alla gäster. Tog hand om ljud och ljus vid ett antal events.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </article>
+            </div>
+
             <!-- education block -->
 
             <div class="row">
@@ -669,7 +770,7 @@
 
                     <h2 class="section-title">Utbildning</h2>
 
-                    <div id="chart_education"></div>
+                    <div id="chart_education" class="chart"></div>
 
                     <div class="column-row">
 
@@ -849,6 +950,8 @@
                 </article>
             </div>
 
+            <!-- contacts block -->
+
             <div class="row row-profile row-inversed">
                 <article>
 
@@ -884,13 +987,15 @@
                 </article>
             </div>
 
+            <!-- social block -->
+
             <div class="row row-icon row-inversed">
                 <article>
 
                     <ul class="icons">
                         <li>
                             <a href="http://wordpress.org/plugins/imdb-markup-syntax/">
-                                <img src="./img/icons/social_wordpress.png" alt="LinkedIn" width="48"/>
+                                <img src="./img/icons/social_wordpress.png" alt="WordPress" width="48"/>
                                 WordPress
                             </a>
                         </li>

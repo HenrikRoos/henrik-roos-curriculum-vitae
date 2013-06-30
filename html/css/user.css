@@ -14,8 +14,9 @@ td.profile-logo {
 }
 
 .column h3,
-.skills-with-ratings h3 {
-    display: inline;
+.skills-with-ratings h3,
+.subtitle {
+    display: inline-block;
 }
 
 .column-row {
@@ -54,21 +55,33 @@ div.column-no-logo {
   Chart
 */
 
-#chart_branch,
-#chart_education
+#experience .chart
 {
+    float: left;
+    width: 33%;
+}
+
+#experience div.chart:first-of-type {
+    clear: left;
+}
+
+#chart_education {
     float: right;
 }
 
-@media only screen and (max-width: 480px) { /* Most phones */
+@media only screen and (max-width: 768px) {
+    #experience .chart
+    {
+        width: 50%;
+    }
+}
 
-    #chart_branch,
-    #chart_education
+@media only screen and (max-width: 480px) {
+    #experience .chart
     {
         width: 100%;
     }
 }
-
 
 /*
   Timeline
@@ -95,11 +108,11 @@ table.timeline .noborder {
 }
 
 table.timeline td.req {
-    border-bottom: thick solid firebrick;
+    border-bottom: thick solid orange;
 }
 
 table.timeline td.dev {
-    border-bottom: thick solid orange;
+    border-bottom: thick solid #F9D423;
 }
 
 table.timeline td.test {
@@ -113,13 +126,10 @@ table.timeline td.offduty
     border-bottom: thick solid transparent;
 }
 
-table.timeline td.experience:hover {
-    background-color: #F9D423;
-    color: black;
-}
-
-table.timeline td.inhouse:hover {
-    background-color: #ff9;
+table.timeline td.experience:hover,
+table.timeline td.inhouse:hover
+{
+    background-color: #FCEC9C;
     color: black;
 }
 

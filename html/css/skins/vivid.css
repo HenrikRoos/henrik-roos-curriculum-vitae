@@ -16,14 +16,11 @@ body {
     background: url(../../img/patterns/diagonal-noise.png) repeat;
 }
 
-.ribbon3 em,
-.ribbon2 em,
 .ribbon em {
     font-weight: 700;
     line-height: 17px;
 }
 
-.portfolio h2,
 .section-title,
 .row-inversed {
     background: #F9D423;  /* Primary Color */
@@ -42,12 +39,12 @@ body {
 }
 
 .wrap-header p {
-    font-size: 13px;
+    font-size: 13pt;
     font-weight: 400;
     color: #aaa;
 }
 
-.section-title, .portfolio h2 {
+.section-title {
     letter-spacing: 0.03em;
 }
 

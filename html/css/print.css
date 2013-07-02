@@ -14,7 +14,7 @@ pre, blockquote { border: 0 none !important; page-break-inside: avoid; margin: 5
 thead { display: table-header-group; }
 tr, img { page-break-inside: avoid; }
 img { max-width: 100% !important; }
-@page { margin: 0.5cm; }
+@page { margin: 10%; }
 p, h2, h3 { orphans: 3; widows: 3; }
 h2, h3 { page-break-after: avoid; }
 
@@ -103,20 +103,4 @@ p {
     text-align: left;
     font-weight: bold;
     border: 0 none !important;
-}
-
-/*disable unrelevant elements*/
-
-.logo,
-.row-portfolio,
-.row-icon,
-.skills br,
-#contact_row,
-.logo:after,
-.wrap-links,
-.wrap-ribbons,
-.social-services,
-#container:before,
-#container:after {
-    display: none !important;
 }

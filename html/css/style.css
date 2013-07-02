@@ -2,14 +2,10 @@
     RESET
 -----------------------------------------------------------------------------*/
 
-html { overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { overflow-y: scroll; }
 body { margin: 0;}
-
-img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
-svg:not(:root) { overflow: hidden; }
-
+img { border: 0; vertical-align: middle; }
 table { border-collapse: collapse; border-spacing: 0; }
-
 
 /*-----------------------------------------------------------------------------
     LAYOUT
@@ -28,9 +24,7 @@ table { border-collapse: collapse; border-spacing: 0; }
     width: 90%;
     margin: 0 auto;
     overflow: hidden;
-    position: relative;
     padding: 3.1em 0;
-    zoom: 1;
 }
 
 .row article > :last-child {
@@ -46,7 +40,6 @@ table { border-collapse: collapse; border-spacing: 0; }
     margin-bottom: 2.2em;
     background: none;
     overflow: hidden;
-    zoom: 1;
     letter-spacing: 0.04em;
 }
 
@@ -87,7 +80,6 @@ div.column-logo {
     clear: both;
     margin: 0;
     overflow: hidden;
-    zoom: 1;
 }
 
 .skills-with-ratings .skills-group:nth-child(2n),
@@ -255,7 +247,6 @@ div.column-logo {
 .markup blockquote {
     margin: 1em 0;
     padding: 0.75em 45px;
-    position: relative;
     font-style: italic;
 }
 
@@ -270,11 +261,9 @@ div.column-logo {
 
 .markup blockquote:before {
     content:'“';
-    font: bold 30px/100% georgia;
+    font: bold 30pt/100% georgia;
     color: #dcdcdc;
-    position: absolute;
-    margin-left: -20px;
-    margin-top: -5px;
+    margin-left: -0.6em;
 }
 
 .row-portfolio p,
@@ -351,7 +340,6 @@ div.column-logo {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    zoom: 1;
 }
 
 .icons li {
@@ -386,51 +374,13 @@ div.column-logo {
 /* effects */
 
 #container {
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-    -o-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-    -ms-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-    position: relative
-}
-
-#container:after, #container:before {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    left: 4px;
-    top: 4px;
-    width: 100%;
-    max-width: 400px;
-    height: 500px;
-    -webkit-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
-    -ms-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
-    -o-box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
-    -webkit-transform: skew(2deg) rotate(1deg);
-    -moz-transform: skew(2deg) rotate(1deg);
-    -o-transform: skew(2deg) rotate(1deg);
-    -ms-transform: skew(2deg) rotate(1deg);
-    transform: skew(2deg) rotate(1deg)
-}
-
-#container:after {
-    left: auto;
-    right: 4px;
-    -webkit-transform: skew(-2deg) rotate(-1deg);
-    -moz-transform: skew(-2deg) rotate(-1deg);
-    -o-transform: skew(-2deg) rotate(-1deg);
-    -ms-transform: skew(-2deg) rotate(-1deg);
-    transform: skew(-2deg) rotate(-1deg)
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.08) inset;
 }
 
 /* ==|== non-semantic helper classes ======================================== */
 .fl { float: left; }
 .fr { float: right; }
 .wrap-header article:before, .wrap-header article:after { content: ""; display: table; }
-.wrap-header article:after,
-.wrap-header article { zoom: 1; }
 
 
 .skills-with-ratings {

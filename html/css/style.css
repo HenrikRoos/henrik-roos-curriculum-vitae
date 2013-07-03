@@ -1,11 +1,21 @@
-/*-----------------------------------------------------------------------------
-    RESET
------------------------------------------------------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-html { overflow-y: scroll; }
-body { margin: 0;}
+body { 
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+    background: url(../img/patterns/diagonal-noise.png) repeat;
+    margin: 0;
+}
+
 img { border: 0; vertical-align: middle; }
+
 table { border-collapse: collapse; border-spacing: 0; }
+
+a { color: #1B66CC; }
+
+a:hover {
+    color: #177aff !important;
+    text-decoration: none;
+}
 
 /*-----------------------------------------------------------------------------
     LAYOUT
@@ -17,6 +27,10 @@ table { border-collapse: collapse; border-spacing: 0; }
     width: 960px;
     margin: 25px auto;
     background: #fff;
+}
+
+.row {
+    border-top: 1px dashed #eaeaea;
 }
 
 .wrap-header article,
@@ -40,6 +54,7 @@ table { border-collapse: collapse; border-spacing: 0; }
     background: none;
     overflow: hidden;
     letter-spacing: 0.04em;
+    color: #999;
 }
 
 .wrap-footer .fl {
@@ -58,7 +73,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .skills-group,
 .column {
-    width: 37%;
     margin: 0 3% 0 0;
     float: left;
 }
@@ -101,9 +115,12 @@ div.column-logo {
 -----------------------------------------------------------------------------*/
 
 .wrap-header h1 {
-    font-weight: normal;
     font-size: 1.2em;
+    font-weight: 700;
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: #333840
 }
 
 .wrap-header h1 span {
@@ -113,6 +130,9 @@ div.column-logo {
 
 .wrap-header p {
     margin: 0;
+    font-size: 13pt;
+    font-weight: 400;
+    color: #aaa;
 }
 
 .wrap-title {
@@ -150,6 +170,7 @@ div.column-logo {
 }
 
 .ribbon em {
+    font-weight: 700;
     font-size: 19px;
     font-style: inherit;
     display: block;
@@ -166,12 +187,34 @@ div.column-logo {
 
 .section-title {
     margin: 0 0 2.2em;
-    padding: 9px 18px 8px;
+    padding: 0.5em 1em;
     font-family: arial, sans-serif;
     text-transform: uppercase;
     float: left;
     font-weight: normal;
     font-size: 0.9em;
+    letter-spacing: 0.03em;
+}
+
+.section-title,
+.row-inversed {
+    background: #F9D423;  /* Primary Color */
+    color: #111
+}
+
+
+.row-inversed .section-title {
+    background: #fff;
+}
+
+.row-inversed .info td a,
+.row-inversed .info td {
+    color: #333 !important;
+}
+
+.row-icon a:hover,
+.row-inversed .info td a:hover {
+    color: #111 !important;
 }
 
 .smaller-text p {
@@ -194,18 +237,18 @@ div.column-logo {
 }
 
 
-.reference {
+.tools {
     font-size: 0.75em;
 }
 
-.reference a {
+.tools a {
     font-size: 1.2em;
     color: inherit;
 }
 
 .column h3,
-.skills-with-ratings h3,
-.skills-group-other h3 {
+.skills-with-ratings h3
+{
     font-size: 1.3em;
     font-weight: normal;
     color: #222;
@@ -324,7 +367,22 @@ div.column-logo {
     color: #999;
 }
 
+.row-profile {
+    border-top: 0 none;
+}
+
+.row-inversed .profile-pic {
+    border: thin dashed rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.4);
+}
+
 /* social icons */
+
+.row-icon {
+    color: #666;
+    border-top: 1px dashed #fff;
+    background: rgb(250,220,77);
+}
 
 .row-icon article {
     padding: 2em 0 0;
@@ -361,6 +419,7 @@ div.column-logo {
     left: 0;
     top: 0;
 }
+
 
 /* chart */
 

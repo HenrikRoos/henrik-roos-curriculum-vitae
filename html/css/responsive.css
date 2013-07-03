@@ -159,9 +159,14 @@
     .profile-pic img {
         width: 100%;
     }
-    
+
     .info {
         width: 100%;
+    }
+
+    #experience .chart
+    {
+        width: 50%;
     }
 
 }
@@ -188,6 +193,12 @@
 
     .markup blockquote {
         padding-right: 0;
+    }
+
+    #experience .chart,
+    #chart_education
+    {
+        width: 100%;
     }
 
 }
@@ -230,6 +241,6 @@
     .wrap-ribbons {
         margin-top: -30px;
     }
-    
+
 
 }

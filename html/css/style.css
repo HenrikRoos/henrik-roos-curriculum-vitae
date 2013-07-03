@@ -34,7 +34,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 .wrap-footer {
     font-size: 11pt;
     line-height: 1.4em;
-    color: #999;
     padding: 0 0 1em 0;
     margin-top: 2em;
     margin-bottom: 2.2em;
@@ -114,8 +113,6 @@ div.column-logo {
 
 .wrap-header p {
     margin: 0;
-    font-size: 1em;
-    color: #666;
 }
 
 .wrap-title {
@@ -283,9 +280,7 @@ div.column-logo {
 .profile-pic {
     width: 40%;
     float: right;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background: #fff;
+    padding: 1em;
     margin: -3.1em 0 0 0;
 }
 
@@ -366,6 +361,83 @@ div.column-logo {
     left: 0;
     top: 0;
 }
+
+/*
+  Chart
+*/
+
+#experience .chart
+{
+    float: left;
+    width: 33%;
+}
+
+#experience div.chart:first-of-type {
+    clear: left;
+}
+
+#chart_education {
+    float: right;
+}
+
+/*
+  Timeline
+*/
+table.timeline {
+    font-size: smaller;
+    color: #AAA;
+    text-align: center;
+    clear: both;
+    overflow: auto;
+    display: block;
+}
+
+table.timeline td {
+    border-right: thin solid #DDD;
+}
+
+table.timeline td:last-child {
+    border: none;
+}
+
+table.timeline td.req {
+    border-bottom: thick solid orange;
+}
+
+table.timeline td.dev {
+    border-bottom: thick solid #F9D423;
+}
+
+table.timeline td.test {
+    border-bottom: thick solid #619EC2;
+}
+
+table.timeline td.before,
+table.timeline td.inhouse,
+table.timeline td.offduty
+{
+    border-bottom: thick solid transparent;
+}
+
+table.timeline td.experience:hover,
+table.timeline td.inhouse:hover
+{
+    background-color: #FCEC9C;
+    color: black;
+}
+
+table.timeline td.offduty:hover {
+    color: black;
+}
+
+table.timeline td.before {
+    opacity: 0.5;
+}
+
+table.timeline a {
+    color: inherit;
+}
+
 
 /*-----------------------------------------------------------------------------
     MISCELLANEOUS

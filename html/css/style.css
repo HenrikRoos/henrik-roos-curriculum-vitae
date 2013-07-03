@@ -362,9 +362,7 @@ div.column-logo {
     top: 0;
 }
 
-/*
-  Chart
-*/
+/* chart */
 
 #experience .chart
 {
@@ -380,9 +378,8 @@ div.column-logo {
     float: right;
 }
 
-/*
-  Timeline
-*/
+/* timeline */
+
 table.timeline {
     font-size: smaller;
     color: #AAA;

@@ -20,28 +20,15 @@
         padding: 0;
     }
 
-    .skills {
-        width: auto;
-        text-align: left;
-    }
 
     #container:before,
-    #container:after,
-    .skills br {
+    #container:after
+    {
         display: none;
     }
 
-    .skills p {
-        padding: 20px 0 10px 0;
-        position: relative;
-        text-align: left;
-    }
-
-    .skills .caption {
-        top: -10px;
-        padding: 0;
-        width: 100% !important;
-        text-align: left;
+    .profile-pic {
+        width: 40%;
     }
 
 }
@@ -98,28 +85,10 @@
         clear: left;
     }
 
-    .skills {
-        width: auto;
-        text-align: left;
-    }
-
     #container:before,
-    #container:after,
-    .skills br {
+    #container:after
+    {
         display: none;
-    }
-
-    .skills p {
-        padding: 20px 0 10px 0;
-        position: relative;
-        text-align: left;
-    }
-
-    .skills .caption {
-        top: -10px;
-        padding: 0;
-        width: 100% !important;
-        text-align: left;
     }
 
     .icons {
@@ -152,12 +121,6 @@
     .profile-pic {
         clear: both;
         float: left;
-        width: auto;
-        margin: 3.125em 0 0 0;
-    }
-
-    .profile-pic img {
-        width: 100%;
     }
 
     .info {

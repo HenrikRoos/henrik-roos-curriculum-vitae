@@ -23,9 +23,9 @@ a:hover {
 
 .wrap-footer,
 #container {
-    min-width: 960px;
-    width: 960px;
-    margin: 25px auto;
+    width: 90%;
+    max-width: 2000px;
+    margin: 2em auto;
     background: #fff;
 }
 
@@ -46,14 +46,10 @@ a:hover {
 }
 
 .wrap-footer {
-    font-size: 11pt;
-    line-height: 1.4em;
-    padding: 0 0 1em 0;
-    margin-top: 2em;
-    margin-bottom: 2.2em;
+    font-size: smaller;
+    margin-top: 1em;
     background: none;
     overflow: hidden;
-    letter-spacing: 0.04em;
     color: #999;
 }
 
@@ -104,8 +100,7 @@ div.column-logo {
 
 .fixed-layout #container,
 .fixed-layout .wrap-footer {
-    min-width: 960px;
-    width: 960px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -319,16 +314,13 @@ div.column-logo {
     margin-bottom: 0;
 }
 
-
 .profile-pic {
-    width: 40%;
     float: right;
     padding: 1em;
-    margin: -3.1em 0 0 0;
 }
 
 .profile-pic img {
-    max-width: 25em;
+    max-width: 22em;
     height: auto;
     width: 100%;
 }
@@ -337,11 +329,21 @@ div.column-logo {
     float: left;
 }
 
+.row-profile {
+    border-top: 0 none;
+}
+
+.row-inversed .profile-pic {
+    border: thin dashed rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.4);
+}
+
 /*information table*/
 
 .info {
     clear: left;
     overflow: auto;
+    margin-bottom: 1em;
 }
 
 .info th,
@@ -365,15 +367,6 @@ div.column-logo {
 
 .info td a {
     color: #999;
-}
-
-.row-profile {
-    border-top: 0 none;
-}
-
-.row-inversed .profile-pic {
-    border: thin dashed rgba(255, 255, 255, 0.7);
-    background: rgba(255, 255, 255, 0.4);
 }
 
 /* social icons */
@@ -439,58 +432,62 @@ div.column-logo {
 
 /* timeline */
 
-table.timeline {
+.timeline
+{
     font-size: smaller;
     color: #AAA;
-    text-align: center;
     clear: both;
     overflow: auto;
-    display: block;
 }
 
-table.timeline td {
+.timeline table {
+    width: 100%;
+    text-align: center;
+}
+
+.timeline td {
     border-right: thin solid #DDD;
 }
 
-table.timeline td:last-child {
+.timeline td:last-child {
     border: none;
 }
 
-table.timeline td.req {
+.timeline td.req {
     border-bottom: thick solid orange;
 }
 
-table.timeline td.dev {
+.timeline td.dev {
     border-bottom: thick solid #F9D423;
 }
 
-table.timeline td.test {
+.timeline td.test {
     border-bottom: thick solid #619EC2;
 }
 
-table.timeline td.before,
-table.timeline td.inhouse,
-table.timeline td.offduty
+.timeline td.before,
+.timeline td.inhouse,
+.timeline td.offduty
 {
     border-bottom: thick solid transparent;
 }
 
-table.timeline td.experience:hover,
-table.timeline td.inhouse:hover
+.timeline td.experience:hover,
+.timeline td.inhouse:hover
 {
     background-color: #FCEC9C;
     color: black;
 }
 
-table.timeline td.offduty:hover {
+.timeline td.offduty:hover {
     color: black;
 }
 
-table.timeline td.before {
+.timeline td.before {
     opacity: 0.5;
 }
 
-table.timeline a {
+.timeline a {
     color: inherit;
 }
 

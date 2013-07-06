@@ -114,6 +114,10 @@
     body {
         font-size: 85%;
     }
+    
+    .logo img {
+        max-width: 6em;
+    }
 
     .wrap-ribbons {
         float: left;

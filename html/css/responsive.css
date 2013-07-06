@@ -45,6 +45,10 @@
         margin-bottom: 0;
     }
 
+    .smaller-text p {
+        text-align: left;
+    }
+
     .skills-group,
     .column-logo {
         padding: 0;
@@ -107,6 +111,10 @@
 
 @media only screen and (max-width: 680px) {
 
+    body {
+        font-size: 85%;
+    }
+
     .wrap-ribbons {
         float: left;
         padding-left: 0;
@@ -116,13 +124,15 @@
         clear: left;
     }
 
+    .wrap-header article,
+    .row article {
+        width: 85%;
+    }
+
 }
 
 @media only screen and (max-width: 480px) { /* Most phones */
-    
-    body {
-        font-size: 80%;
-    }
+
 
     .skills-group,
     .column {

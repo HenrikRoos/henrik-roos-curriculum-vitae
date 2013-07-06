@@ -4,36 +4,7 @@
 
 */
 
-@media only screen and (max-width: 960px) { /* Smaller than desktop */
-
-    .wrap-footer, #container {
-        min-width: 94%;
-        width: 94%;
-        margin: 2.4% auto;
-    }
-
-    .column {
-        padding: 0 0 0 11%;
-    }
-
-    .column-logo {
-        padding: 0;
-    }
-
-
-    #container:before,
-    #container:after
-    {
-        display: none;
-    }
-
-    .profile-pic {
-        width: 40%;
-    }
-
-}
-
-@media only screen and (max-width: 768px) { /* iPad size */
+@media only screen and (max-width: 900px) { /* Smaller than desktop */
 
     .wrap-footer, #container {
         min-width: 94%;
@@ -56,7 +27,7 @@
 
     .wrap-header article,
     .row article {
-        width: 80%;
+        width: 90%;
     }
 
     .skills-group,

@@ -139,12 +139,10 @@ div.column-logo {
 .wrap-ribbons {
     float: right;
     margin: -3.1em 0 0 0;
-    padding: 0 0 10px 30px;
 }
 
-.wrap-ribbons > * {
-    float: right;
-    margin: -3px 4px 0 0;
+.wrap-ribbons a {
+    margin-top: -3px;
 }
 
 /* ribbon styles */
@@ -277,6 +275,45 @@ div.column-logo {
     padding-top: 0.3em;
 }
 
+/* Images size */
+
+img[alt='mawell'] {
+    height: 1.5em;
+}
+
+img[alt='objektfabriken'],
+img[alt='softronic']
+{
+    height: 1.9em;
+}
+
+img[alt='fimare']
+{
+    height: 2em;
+}
+
+img[alt='wordpress'],
+img[alt='ziff']
+{
+    height: 3.5em;
+}
+
+img[alt='su']
+{
+    height: 5em;
+}
+
+img[alt='mdh']
+{
+    height: 4.5em;
+}
+
+img[alt='biolit']
+{
+    width: 8em;
+}
+
+
 /* style basic html elements */
 
 .markup blockquote {
@@ -289,7 +326,7 @@ div.column-logo {
     font-style: italic;
     font-size: 0.8em;
     opacity: 0.8;
-    margin: 3px 0 0 0;
+    margin-top: 0.3em;
     color: #777;
     font-style: normal;
 }
@@ -378,39 +415,24 @@ div.column-logo {
 }
 
 .row-icon article {
-    padding: 2em 0 0;
-}
-
-.icons {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    padding: 2em 0;
 }
 
 .icons li {
-    display: block;
+    list-style-type: none;
     float: left;
-    margin: 0;
-    padding: 0 0 2em;
-    width: 19.5%;
-    height: 48px;
+    width: 25%;
 }
 
 .icons a {
-    display: block;
     text-decoration: none;
     color: #666;
-    font-size: 0.75em;
-    position: relative;
-    padding: 17px 0 0 51px;
-    border: 0 none;
+    font-size: smaller;
 }
 
 .icons a img {
-    position: absolute;
-    left: 0;
-    top: 0;
+    width: 4em;
+    padding-right: 0.5em;
 }
 
 

@@ -119,6 +119,10 @@
 }
 
 @media only screen and (max-width: 480px) { /* Most phones */
+    
+    body {
+        font-size: 80%;
+    }
 
     .skills-group,
     .column {

@@ -74,6 +74,10 @@
         width: 100%;
     }
 
+    .icons span {
+        display: none;
+    }
+
 }
 
 @media only screen and (max-width: 320px) { /* iPhone in portrait orientation */

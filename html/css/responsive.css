@@ -6,91 +6,12 @@
 
 @media only screen and (max-width: 900px) { /* Smaller than desktop */
 
-    .wrap-footer, #container {
-        min-width: 94%;
-        width: 94%;
-        margin: 2.4% auto;
-    }
-
-    .wrap-footer .fl,
-    .wrap-footer .fr {
-        float: none;
-        display: block;
-        text-align: left;
-        padding: 0 3px;
-        margin: 0;
-    }
-
-    .wrap-footer .fl {
-        padding-bottom: 5px;
-    }
-
-    .wrap-header article,
-    .row article {
-        width: 90%;
-    }
-
-    .skills-group,
-    .column {
-        width: 90%;
-        padding: 0 0 3.1em 60px;
-        float: none;
-    }
-
-    .column:last-child {
-        padding-bottom: 0;
-    }
-
-    .column-row .column:last-child {
-        margin-bottom: 0;
-    }
-
     .smaller-text p {
         text-align: left;
     }
 
-    .skills-group,
-    .column-logo {
-        padding: 0;
-        margin: 0 0 3.1em 0;
-        width: 100%;
-    }
-
     .wrap-header article p {
         clear: left;
-    }
-
-    #container:before,
-    #container:after
-    {
-        display: none;
-    }
-
-    .icons {
-        margin: 0;
-    }
-
-    .icons li {
-        width: 20%;
-        padding: 1em 0 0 0;
-    }
-
-    .icons a {
-        padding: 0;
-        text-indent: -9999px;
-    }
-
-    .icons a img {
-        left: 50%;
-        margin: 0 0 0 -24px;
-    }
-
-    .row-icon article {
-        padding: 0 0 1em;
-    }
-
-    .markup p {
-        line-height: 1.5625em;
     }
 
     .profile-pic {
@@ -98,13 +19,14 @@
         float: left;
     }
 
-    .info {
-        width: 100%;
-    }
-
     #experience .chart
     {
         width: 50%;
+    }
+
+    .icons span {
+        display: block;
+        margin-top: 0.3em;
     }
 
 }
@@ -114,14 +36,9 @@
     body {
         font-size: 85%;
     }
-    
-    .logo img {
-        max-width: 6em;
-    }
 
     .wrap-ribbons {
         float: left;
-        padding-left: 0;
     }
 
     .wrap-title {
@@ -131,6 +48,10 @@
     .wrap-header article,
     .row article {
         width: 85%;
+    }
+
+    .skills-group, .column-logo {
+        width: 100%;
     }
 
 }
@@ -156,10 +77,6 @@
 }
 
 @media only screen and (max-width: 320px) { /* iPhone in portrait orientation */
-
-    .wrap-footer, #container {
-        margin: 2.7% auto !important;
-    }
 
     .wrap-title {
         padding: 40px 0 50px 0;

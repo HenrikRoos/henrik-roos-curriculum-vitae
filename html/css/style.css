@@ -41,9 +41,6 @@ a:hover {
     padding: 3.1em 0;
 }
 
-.row article > :last-child {
-    margin-bottom: 0;
-}
 
 .wrap-footer {
     font-size: smaller;
@@ -96,13 +93,6 @@ div.column-logo {
 .column-row div.column:nth-child(2n)
 {
     margin-right: 0;
-}
-
-.fixed-layout #container,
-.fixed-layout .wrap-footer {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /*-----------------------------------------------------------------------------
@@ -418,9 +408,15 @@ img[alt='biolit']
     padding: 2em 0;
 }
 
+.icons {
+    padding: 0;
+    margin: 0;
+}
+
 .icons li {
     list-style-type: none;
     float: left;
+    text-align: center;
     width: 25%;
 }
 

@@ -58,8 +58,7 @@ a:hover {
     margin-right: 0.2em;
 }
 
-.wrap-header article p,
-.row p {
+.markup p {
     clear: both;
 }
 
@@ -91,7 +90,6 @@ a:hover {
     font-weight: 700;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: -0.04em;
     color: #333840
 }
 
@@ -102,8 +100,6 @@ a:hover {
 
 .wrap-header p {
     margin: 0;
-    font-size: 13pt;
-    font-weight: 400;
     color: #aaa;
 }
 
@@ -215,8 +211,7 @@ a:hover {
     color: inherit;
 }
 
-.column h3,
-.skills-with-ratings h3
+.column h3
 {
     font-size: 1.3em;
     font-weight: normal;
@@ -224,13 +219,11 @@ a:hover {
     margin: 0;
 }
 
-.column h4,
-.skills-with-ratings h4 {
+.column h4 {
     margin: 0;
 }
 
 .column h3,
-.skills-with-ratings h3,
 .subtitle {
     display: inline-block;
 }
@@ -250,6 +243,42 @@ a:hover {
     float: right;
     padding-top: 0.3em;
 }
+
+/* Skills */
+
+.skills-group h4
+{
+    color: #888;
+    font-weight: normal;
+    display: inline-block;
+    padding-bottom: 0.5em;
+}
+
+.skills-group div {
+    margin-top: 1.6em;
+}
+
+.skills-group p {
+    font-size: smaller;
+    line-height: 1.7em;
+    min-height: 5em;
+    margin-top: 0;
+    border-top: thin dotted #888;
+}
+
+.skills-group-other ul {
+    list-style-type: circle;
+    font-size: 0.9em;
+    margin-top: 1.7em;
+    padding-left: 2em;
+}
+
+.skills-with-ratings span {
+    float: right;    
+    font-size: larger;
+    color: #6B4724;
+}
+
 
 /* Images size */
 
@@ -319,17 +348,12 @@ img[alt='biolit']
     line-height: 1.7em;
 }
 
-.markup h1, .markup h2, .markup h3, .markup h4, .markup h5, .markup h6 {
-    font-weight: normal;
-}
-
-.markup :last-child {
-    margin-bottom: 0;
-}
-
 .profile-pic {
     float: right;
     padding: 1em;
+    border: thin dashed rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.4);
+
 }
 
 .profile-pic img {
@@ -342,14 +366,6 @@ img[alt='biolit']
     float: left;
 }
 
-.row-profile {
-    border-top: 0 none;
-}
-
-.row-inversed .profile-pic {
-    border: thin dashed rgba(255, 255, 255, 0.7);
-    background: rgba(255, 255, 255, 0.4);
-}
 
 /*information table*/
 
@@ -500,59 +516,9 @@ img[alt='biolit']
     MISCELLANEOUS
 -----------------------------------------------------------------------------*/
 
-/* effects */
-
 #container {
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.4), 0 0 3em rgba(0, 0, 0, 0.08) inset;
 }
 
-/* ==|== non-semantic helper classes ======================================== */
 .fl { float: left; }
 .fr { float: right; }
-.wrap-header article:before, .wrap-header article:after { content: ""; display: table; }
-
-
-.skills-with-ratings {
-    clear: both;
-}
-
-.skills-group h4
-{
-    color: #888;
-    font-weight: normal;
-    display: inline-block;
-}
-
-.skills-group div {
-    margin-top: 1.6em;
-}
-
-.skills-group p {
-    font-size: smaller;
-    line-height: 1.7em;
-    min-height: 5em;
-    margin-top: 0;
-}
-
-.skills-group-other ul {
-    list-style-type: circle;
-    font-size: 0.9em;
-    margin-top: 1.7em;
-    padding-left: 2em;
-}
-
-.skills-group p
-{
-    border-top: thin dotted #888;
-}
-
-.skills-group-other {
-    clear: both;
-}
-
-.skills-with-ratings span {
-    float: right;    
-    font-size: larger;
-    color: #6B4724;
-}
-

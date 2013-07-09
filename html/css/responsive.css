@@ -4,15 +4,33 @@
 
 */
 
-@media only screen and (max-width: 900px) { /* Smaller than desktop */
+@media only screen and (min-width: 1600px) { /* Large screens */
 
-    .smaller-text p {
-        text-align: left;
+    .column {
+        width: 31%;
     }
 
-    .wrap-header article p {
+    .column:nth-child(n) {
+        margin-right: 0;
+        margin-left: 0;
+        clear: none;
+    }
+
+    .column:nth-child(3n+2) {
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+    }
+
+    .column:nth-child(3n+1) {
         clear: left;
     }
+
+
+}
+
+
+@media only screen and (max-width: 900px) { /* Smaller than desktop */
+
 
     .profile-pic {
         clear: both;
@@ -37,36 +55,18 @@
         font-size: 85%;
     }
 
-    .wrap-ribbons {
-        float: left;
-    }
-
-    .wrap-title {
-        clear: left;
-    }
-
-    .wrap-header article,
-    .row article {
-        width: 85%;
-    }
-
-    .skills-group, .column-logo {
+    .column {
         width: 100%;
+    }
+
+    .column:nth-child(n) {
+        margin-left: 0;
+        margin-right: 0;
     }
 
 }
 
 @media only screen and (max-width: 480px) { /* Most phones */
-
-
-    .skills-group,
-    .column {
-        padding-left: 0;
-    }
-
-    .markup blockquote {
-        padding-right: 0;
-    }
 
     #experience .chart,
     #chart_education
@@ -77,43 +77,5 @@
     .icons span {
         display: none;
     }
-
-}
-
-@media only screen and (max-width: 320px) { /* iPhone in portrait orientation */
-
-    .wrap-title {
-        padding: 40px 0 50px 0;
-    }
-
-    .ribbon {
-        background: #0893B3;
-        height: auto;
-        padding: 2px 4px 2px;
-        clear: right;
-        margin: 0 0 4px;
-    }
-
-    .ribbon em {
-        font-size: 1em;
-        font-family: inherit;
-        display: inline;
-    }
-
-    .wrap-header article,
-    .row article {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-    .row-icon article {
-        padding-top: 10px;
-        padding-bottom: 30px;
-    }
-
-    .wrap-ribbons {
-        margin-top: -30px;
-    }
-
 
 }

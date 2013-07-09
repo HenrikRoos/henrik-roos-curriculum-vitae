@@ -24,13 +24,12 @@ a:hover {
 .wrap-footer,
 #container {
     width: 90%;
-    max-width: 2000px;
     margin: 2em auto;
     background: #fff;
 }
 
 .row {
-    border-top: 1px dashed #eaeaea;
+    border-top: thin dashed #EAE;
 }
 
 .wrap-header article,
@@ -51,12 +50,12 @@ a:hover {
 }
 
 .wrap-footer .fl {
-    margin-left: 2px;
+    margin-left: 0.2em;
 }
 
 .wrap-footer .fr {
     text-align: right;
-    margin-right: 2px;
+    margin-right: 0.2em;
 }
 
 .wrap-header article p,
@@ -64,35 +63,23 @@ a:hover {
     clear: both;
 }
 
-.skills-group,
+.column-row {
+    clear: both;
+}
+
 .column {
-    margin: 0 3% 0 0;
+    width: 48%;
     float: left;
-}
-
-.skills-group,
-.column-logo {
-    padding-left: 0;
-    width: 47%;
-    margin-right: 6%;
-}
-
-div.column-logo {
     margin-top: 2em;
 }
 
-
-.column-row {
-    clear: both;
-    margin: 0;
-    overflow: hidden;
+.column:nth-child(odd) {
+    margin-right: 2%;
+    clear: left;
 }
 
-.skills-with-ratings .skills-group:nth-child(2n),
-.column-row .column:last-child,
-.column-row div.column:nth-child(2n)
-{
-    margin-right: 0;
+.column:nth-child(even) {
+    margin-left: 2%;
 }
 
 /*-----------------------------------------------------------------------------
@@ -200,14 +187,14 @@ div.column-logo {
     color: #111 !important;
 }
 
-.smaller-text p {
+.description {
     line-height: 1.6em;
     font-size: 0.9em;
     text-align: justify;
 }
 
 
-.smaller-text ul
+.description ul
 {
     line-height: 1.6em;
     font-size: 0.9em;
@@ -215,10 +202,9 @@ div.column-logo {
     list-style-type: circle;
 }
 
-.smaller-text ul span {
+.description ul span {
     color: silver;
 }
-
 
 .tools {
     font-size: 0.75em;
@@ -308,7 +294,7 @@ img[alt='biolit']
 
 .markup blockquote {
     margin: 1em 0;
-    padding: 0.75em 45px;
+    padding: 0.75em 3em;
     font-style: italic;
 }
 
@@ -400,7 +386,7 @@ img[alt='biolit']
 
 .row-icon {
     color: #666;
-    border-top: 1px dashed #fff;
+    border-top: thin dashed #fff;
     background: rgb(250,220,77);
 }
 
@@ -517,7 +503,7 @@ img[alt='biolit']
 /* effects */
 
 #container {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.08) inset;
+    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.4), 0 0 3em rgba(0, 0, 0, 0.08) inset;
 }
 
 /* ==|== non-semantic helper classes ======================================== */

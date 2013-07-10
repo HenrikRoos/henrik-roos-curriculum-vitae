@@ -1,14 +1,18 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-body { 
-    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+body {
     background: url(../img/patterns/diagonal-noise.png) repeat;
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+    font-size: 85%;
+    line-height: 1.5em;
     margin: 0;
 }
 
-img { border: 0; vertical-align: middle; }
+img { border: 0; }
 
 table { border-collapse: collapse; border-spacing: 0; }
+
+h4 { margin: 0; }
 
 a { color: #1B66CC; }
 
@@ -39,7 +43,6 @@ a:hover {
     overflow: hidden;
     padding: 3em 0;
 }
-
 
 .wrap-footer {
     font-size: smaller;
@@ -86,15 +89,14 @@ a:hover {
 -----------------------------------------------------------------------------*/
 
 .wrap-header h1 {
-    font-size: 1.2em;
-    font-weight: 700;
+    font-size: 120%;
     margin: 0;
     text-transform: uppercase;
-    color: #333840
+    color: #333840;
 }
 
 .wrap-header h1 span {
-    font-size: 1.6em;
+    font-size: x-large;
     padding-right: 0.3em;
 }
 
@@ -114,12 +116,12 @@ a:hover {
     float: right;
     width: 8em;
     height: 9em;
-    margin-top: -5em;
+    margin-top: -4em;
     padding-top: 2em;
     background: url(../img/ribbon.png) no-repeat;
     background-size: 8em 9em;
     color: #fff;
-    font-size: x-small;
+    font-size: small;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
     text-decoration: none;
@@ -140,22 +142,21 @@ a:hover {
 -----------------------------------------------------------------------------*/
 
 .section-title {
-    margin: 0 0 2.2em;
+    margin: 0 0 2em;
     padding: 0.5em 1em;
     font-family: arial, sans-serif;
     text-transform: uppercase;
     float: left;
-    font-weight: normal;
-    font-size: 0.9em;
-    letter-spacing: 0.03em;
+    font-weight: inherit;
+    font-size: inherit;
+    letter-spacing: 0.1em;
 }
 
 .section-title,
 .row-inversed {
     background: #F9D423;  /* Primary Color */
-    color: #111
+    color: #111;
 }
-
 
 .row-inversed .section-title {
     background: #fff;
@@ -171,15 +172,6 @@ a:hover {
     color: #111;
 }
 
-.description,
-.description ul,
-.skills-group p,
-.skills-group-other ul
-{
-    line-height: 1.6em;
-    font-size: 0.9em;
-}
-
 .description ul
 {
     padding-left: 2em;
@@ -191,24 +183,16 @@ a:hover {
 }
 
 .tools {
-    font-size: 0.75em;
-}
-
-.tools a {
-    font-size: 1.2em;
-    color: inherit;
+    font-size: smaller;
 }
 
 .column h3
 {
     font-size: 1.3em;
     font-weight: normal;
-    color: #222;
-    margin: 0;
-}
-
-.column h4 {
-    margin: 0;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0.5em;
 }
 
 .column h3,
@@ -217,7 +201,7 @@ a:hover {
 }
 
 .column .subtitle {
-    font-size: 0.75em;
+    font-size: smaller;
     color: #666;
     margin: 0;
 }
@@ -229,7 +213,6 @@ a:hover {
 .column a.logo {
     text-decoration: none;
     float: right;
-    padding-top: 0.3em;
 }
 
 /* Skills */
@@ -246,6 +229,10 @@ a:hover {
     margin-top: 1.6em;
 }
 
+.skills-group div:first-of-type {
+    margin-top: 1em;
+}
+
 .skills-group p {
     min-height: 5em;
     margin-top: 0;
@@ -254,16 +241,14 @@ a:hover {
 
 .skills-group-other ul {
     list-style-type: circle;
-    margin-top: 1.7em;
     padding-left: 2em;
 }
 
 .skills-with-ratings span {
-    float: right;    
+    float: right;
     font-size: larger;
     color: #6B4724;
 }
-
 
 /* Images size */
 
@@ -272,14 +257,10 @@ img[alt='mawell'] {
 }
 
 img[alt='objektfabriken'],
-img[alt='softronic']
-{
-    height: 1.9em;
-}
-
+img[alt='softronic'],
 img[alt='fimare']
 {
-    height: 2em;
+    height: 1.8em;
 }
 
 img[alt='wordpress'],
@@ -313,9 +294,6 @@ img[alt='biolit']
 }
 
 .markup blockquote footer {
-    font-style: italic;
-    font-size: 0.8em;
-    opacity: 0.8;
     margin-top: 0.3em;
     color: #777;
     font-style: normal;
@@ -323,14 +301,9 @@ img[alt='biolit']
 
 .markup blockquote:before {
     content:'“';
-    font: bold 30pt/100% georgia;
+    font: bold xx-large georgia;
     color: #dcdcdc;
     margin-left: -0.6em;
-}
-
-.row-portfolio p,
-.markup p {
-    line-height: 1.7em;
 }
 
 .profile-pic {
@@ -369,12 +342,10 @@ img[alt='biolit']
 .info th {
     font-weight: normal;
     color: #666;
-    font-size: 0.9em;
     text-align: right;
 }
 
 .info td {
-    font-size: 0.9em;
     text-align: left;
     color: #999;
 }
@@ -410,12 +381,12 @@ img[alt='biolit']
 .icons a {
     text-decoration: none;
     color: #666;
-    font-size: smaller;
 }
 
 .icons a img {
     width: 4em;
     padding-right: 0.5em;
+    vertical-align: middle;
 }
 
 

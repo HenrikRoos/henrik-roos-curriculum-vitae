@@ -171,17 +171,17 @@ a:hover {
     color: #111;
 }
 
-.description {
-    line-height: 1.6em;
-    font-size: 0.9em;
-    text-align: justify;
-}
-
-
-.description ul
+.description,
+.description ul,
+.skills-group p,
+.skills-group-other ul
 {
     line-height: 1.6em;
     font-size: 0.9em;
+}
+
+.description ul
+{
     padding-left: 2em;
     list-style-type: circle;
 }
@@ -247,8 +247,6 @@ a:hover {
 }
 
 .skills-group p {
-    font-size: smaller;
-    line-height: 1.7em;
     min-height: 5em;
     margin-top: 0;
     border-top: thin dotted #888;
@@ -256,7 +254,6 @@ a:hover {
 
 .skills-group-other ul {
     list-style-type: circle;
-    font-size: 0.9em;
     margin-top: 1.7em;
     padding-left: 2em;
 }

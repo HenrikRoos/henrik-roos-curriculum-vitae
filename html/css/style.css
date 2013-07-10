@@ -13,7 +13,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 a { color: #1B66CC; }
 
 a:hover {
-    color: #177aff !important;
+    color: #177aff;
     text-decoration: none;
 }
 
@@ -37,7 +37,7 @@ a:hover {
     width: 90%;
     margin: 0 auto;
     overflow: hidden;
-    padding: 3.1em 0;
+    padding: 3em 0;
 }
 
 
@@ -107,43 +107,31 @@ a:hover {
     float: left;
 }
 
-/* sharing tools & ribbons */
-
-.wrap-ribbons {
-    float: right;
-    margin: -3.1em 0 0 0;
-}
-
-.wrap-ribbons a {
-    margin-top: -3px;
-}
-
 /* ribbon styles */
 
 .ribbon {
     display: block;
-    width: 79px;
-    height: 75px;
-    padding: 17px 0 0 0;
+    float: right;
+    width: 8em;
+    height: 9em;
+    margin-top: -5em;
+    padding-top: 2em;
     background: url(../img/ribbon.png) no-repeat;
-    overflow: hidden;
+    background-size: 8em 9em;
     color: #fff;
-    font-size: 11px;
-    border: 0 none;
+    font-size: x-small;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
     text-decoration: none;
 }
 
-.ribbon em {
-    font-weight: 700;
-    font-size: 19px;
-    font-style: inherit;
+.ribbon b {
     display: block;
+    font-size: large;
 }
 
 .ribbon:hover {
-    color: #a8e6f5 !important;
+    color: #a8e6f5;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
 }
 
@@ -175,12 +163,12 @@ a:hover {
 
 .row-inversed .info td a,
 .row-inversed .info td {
-    color: #333 !important;
+    color: #333;
 }
 
 .row-icon a:hover,
 .row-inversed .info td a:hover {
-    color: #111 !important;
+    color: #111;
 }
 
 .description {

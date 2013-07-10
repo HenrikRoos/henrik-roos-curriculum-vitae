@@ -4,7 +4,7 @@ body {
     background: url(../img/patterns/diagonal-noise.png) repeat;
     font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
     font-size: 85%;
-    line-height: 1.5em;
+    line-height: 1.6em;
     margin: 0;
 }
 
@@ -29,6 +29,7 @@ a:hover {
     width: 90%;
     margin: 2em auto;
     background: #fff;
+    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.4), 0 0 3em rgba(0, 0, 0, 0.08) inset;
 }
 
 footer {
@@ -103,15 +104,19 @@ header p {
     color: #aaa;
 }
 
+header div {
+    float: left;
+}
+
 header a {
     display: block;
     float: right;
-    width: 8em;
+    width: 7em;
     height: 9em;
     margin-top: -4em;
     padding-top: 2em;
     background: url(../img/ribbon.png) no-repeat;
-    background-size: 8em 9em;
+    background-size: 7em 9em;
     color: #fff;
     font-size: small;
     text-align: center;
@@ -176,6 +181,7 @@ header b {
 
 .tools {
     font-size: smaller;
+    line-height: 1.4em;
 }
 
 .column h3
@@ -458,15 +464,3 @@ img[alt='biolit']
 .timeline a {
     color: inherit;
 }
-
-
-/*-----------------------------------------------------------------------------
-    MISCELLANEOUS
------------------------------------------------------------------------------*/
-
-#container {
-    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.4), 0 0 3em rgba(0, 0, 0, 0.08) inset;
-}
-
-.fl { float: left; }
-.fr { float: right; }

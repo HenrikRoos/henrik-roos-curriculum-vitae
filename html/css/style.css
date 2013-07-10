@@ -25,40 +25,38 @@ a:hover {
     LAYOUT
 -----------------------------------------------------------------------------*/
 
-.wrap-footer,
 #container {
     width: 90%;
     margin: 2em auto;
     background: #fff;
 }
 
-.row {
-    border-top: thin dashed #EAE;
+footer {
+    width: 90%;
+    margin: 0 auto 1em auto;
+    padding-bottom: 1em;
+    font-size: smaller;
+    background: none;
+    color: #999;
 }
 
-.wrap-header article,
-.row article {
-    width: 90%;
-    margin: 0 auto;
+footer div:first-of-type {
+    float: left;
+}
+
+footer div:last-of-type {
+    float: right;
+    text-align: right;
+}
+
+article {
+    margin: 0 3em;
     overflow: hidden;
     padding: 3em 0;
 }
 
-.wrap-footer {
-    font-size: smaller;
-    margin-top: 1em;
-    background: none;
-    overflow: hidden;
-    color: #999;
-}
-
-.wrap-footer .fl {
-    margin-left: 0.2em;
-}
-
-.wrap-footer .fr {
-    text-align: right;
-    margin-right: 0.2em;
+.row {
+    border-top: thin dashed #EAE;
 }
 
 .markup p {
@@ -88,30 +86,24 @@ a:hover {
     HEADER
 -----------------------------------------------------------------------------*/
 
-.wrap-header h1 {
+header h1 {
     font-size: 120%;
     margin: 0;
     text-transform: uppercase;
     color: #333840;
 }
 
-.wrap-header h1 span {
+header h1 span {
     font-size: x-large;
     padding-right: 0.3em;
 }
 
-.wrap-header p {
+header p {
     margin: 0;
     color: #aaa;
 }
 
-.wrap-title {
-    float: left;
-}
-
-/* ribbon styles */
-
-.ribbon {
+header a {
     display: block;
     float: right;
     width: 8em;
@@ -127,14 +119,14 @@ a:hover {
     text-decoration: none;
 }
 
-.ribbon b {
-    display: block;
-    font-size: large;
-}
-
-.ribbon:hover {
+header a:hover {
     color: #a8e6f5;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
+}
+
+header b {
+    display: block;
+    font-size: large;
 }
 
 /*-----------------------------------------------------------------------------

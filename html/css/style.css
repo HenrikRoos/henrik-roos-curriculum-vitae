@@ -51,7 +51,7 @@ footer div:last-of-type {
 }
 
 article {
-    margin: 0 3em;
+    margin: 0 5%;
     overflow: hidden;
     padding: 3em 0;
 }
@@ -287,7 +287,7 @@ img[alt='biolit']
 
 .markup blockquote {
     margin: 1em 0;
-    padding: 0.75em 3em;
+    padding: 0.75em 2em;
     font-style: italic;
 }
 

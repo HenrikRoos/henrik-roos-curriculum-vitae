@@ -63,7 +63,7 @@
         margin-left: 0;
         margin-right: 0;
     }
-    
+
     .info {
         width: 100%;
     }
@@ -79,6 +79,15 @@
 
     .icons span {
         display: none;
+    }
+
+    .markup blockquote,
+    .markup blockquote footer {
+        padding-right: 0;
+    }
+
+    .icons a img {
+        width: 3em;
     }
 
 }

@@ -32,7 +32,7 @@ a:hover {
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.4), 0 0 3em rgba(0, 0, 0, 0.08) inset;
 }
 
-footer {
+#container + footer {
     width: 90%;
     margin: 0 auto 1em auto;
     padding-bottom: 1em;
@@ -41,11 +41,11 @@ footer {
     color: #999;
 }
 
-footer div:first-of-type {
+#container + footer div:first-of-type {
     float: left;
 }
 
-footer div:last-of-type {
+#container + footer div:last-of-type {
     float: right;
     text-align: right;
 }
@@ -58,10 +58,6 @@ article {
 
 .row {
     border-top: thin dashed #EAE;
-}
-
-.markup p {
-    clear: both;
 }
 
 .column-row {
@@ -153,6 +149,10 @@ header b {
 .row-inversed {
     background: #F9D423;  /* Primary Color */
     color: #111;
+}
+
+.section-title + * {
+    clear: both;
 }
 
 .row-inversed .section-title {

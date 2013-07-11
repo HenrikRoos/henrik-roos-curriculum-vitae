@@ -1,24 +1,24 @@
-* {
-    box-shadow: none;
-    background: transparent;
-    color: black;
-    text-shadow: none;
-}
-
 body {
+    color: black;
     font-size: 9pt;
-    border: none;
+    background: none;
 }
 
-#container, footer {
+#container {
     width: 100%;
     margin: 0;
+    box-shadow: none;
+}
+
+footer {
+    width: 100%;
 }
 
 article {
     margin: 0;
     overflow: visible;
-    padding: 0;
+    width: 100%;
+    padding: 1em 0;
 }
 
 #container, .row {
@@ -27,17 +27,25 @@ article {
 
 .section-title
 {
-    padding: 0;
+    padding: 3em 0 0 0;
     font-weight: bold;
-    margin: 0 0 10px;
-    font-size: 16px;
+    font-size: large;
+    float: none;
+    background: none;
+    clear: both;
 }
 
-article {
-    width: 100%;
-    padding: 1em 0;
+.row-inversed {
+    background: none;
 }
 
-.row {
-    page-break-inside: avoid;
+.row-icon,
+header a,
+#container + footer
+{
+    display: none;
+}
+
+.timeline {
+    overflow: visible;
 }

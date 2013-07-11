@@ -1,6 +1,5 @@
 body {
     color: black;
-    font-size: 9pt;
     background: none;
 }
 
@@ -21,6 +20,13 @@ article {
     padding: 1em 0;
 }
 
+.markup p,
+.markup blockquote
+{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 #container, .row {
     border: none;
 }
@@ -33,11 +39,7 @@ article {
     float: none;
     background: none;
     clear: both;
-    page-break-before: always;
-}
-
-.markup .section-title {
-    page-break-before: avoid;
+    page-break-before: auto;
 }
 
 .row-inversed {

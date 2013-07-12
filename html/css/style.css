@@ -247,6 +247,7 @@ header b {
 .skills-with-ratings span {
     float: right;
     font-size: larger;
+    color: #666;
 }
 
 /* Images size */

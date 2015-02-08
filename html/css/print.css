@@ -21,8 +21,7 @@ article {
 }
 
 .markup p,
-.markup blockquote
-{
+.markup blockquote {
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -31,8 +30,7 @@ article {
     border: none;
 }
 
-.section-title
-{
+.section-title {
     padding: 3em 0 0 0;
     font-weight: bold;
     font-size: large;
@@ -48,8 +46,7 @@ article {
 
 .row-icon,
 header a,
-#container + footer
-{
+#container + footer {
     display: none;
 }
 

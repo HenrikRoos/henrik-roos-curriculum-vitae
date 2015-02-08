@@ -4,8 +4,8 @@
 
 */
 
-@media only screen and (min-width: 1600px) { /* Large screens */
-
+@media only screen and (min-width: 1600px) {
+    /* Large screens */
     .column {
         width: 31%;
     }
@@ -25,20 +25,16 @@
         clear: left;
     }
 
-
 }
 
-
-@media only screen and (max-width: 900px) { /* Smaller than desktop */
-
-
+@media only screen and (max-width: 900px) {
+    /* Smaller than desktop */
     .profile-pic {
         clear: both;
         float: left;
     }
 
-    #experience .chart
-    {
+    #experience .chart {
         width: 50%;
     }
 
@@ -49,8 +45,8 @@
 
 }
 
-@media only screen and (max-width: 768px) { /* iPads (portrait) */
-
+@media only screen and (max-width: 768px) {
+    /* iPads (portrait) */
     body {
         font-size: 85%;
     }
@@ -69,11 +65,10 @@
     }
 }
 
-@media only screen and (max-width: 480px) { /* Most phones */
-
+@media only screen and (max-width: 480px) {
+    /* Most phones */
     #experience .chart,
-    #chart_education
-    {
+    #chart_education {
         width: 100%;
     }
 

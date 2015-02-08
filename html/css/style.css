@@ -353,7 +353,9 @@ img[alt='biolit']
     background: rgb(250,220,77);
 }
 
-.row-icon article {
+.row-icon ul {
+    margin: 0 5%;
+    overflow: hidden;
     padding: 2em 0;
 }
 

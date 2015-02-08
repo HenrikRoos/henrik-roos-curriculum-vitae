@@ -10,13 +10,22 @@ body {
     margin: 0;
 }
 
-img { border: 0; }
+img {
+    border: 0;
+}
 
-table { border-collapse: collapse; border-spacing: 0; }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
-h4 { margin: 0; }
+h4 {
+    margin: 0;
+}
 
-a { color: #1B66CC; }
+a {
+    color: #1B66CC;
+}
 
 a:hover {
     color: #177aff;
@@ -141,7 +150,7 @@ header b {
 
 .section-title,
 .row-inversed {
-    background: #F9D423;  /* Primary Color */
+    background: #F9D423; /* Primary Color */
     color: #111;
 }
 
@@ -163,8 +172,7 @@ header b {
     color: #111;
 }
 
-.description ul
-{
+.description ul {
     padding-left: 2em;
     list-style-type: circle;
 }
@@ -178,8 +186,7 @@ header b {
     line-height: 1.4em;
 }
 
-.column h3
-{
+.column h3 {
     font-size: 1.3em;
     font-weight: normal;
     color: black;
@@ -209,8 +216,7 @@ header b {
 
 /* Skills */
 
-.skills-group h4
-{
+.skills-group h4 {
     color: #888;
     font-weight: normal;
     display: inline-block;
@@ -250,32 +256,26 @@ img[alt='mawell'] {
 
 img[alt='objektfabriken'],
 img[alt='softronic'],
-img[alt='fimare']
-{
+img[alt='fimare'] {
     height: 1.8em;
 }
 
 img[alt='wordpress'],
-img[alt='ziff']
-{
+img[alt='ziff'] {
     height: 3.5em;
 }
 
-img[alt='su']
-{
+img[alt='su'] {
     height: 5em;
 }
 
-img[alt='mdh']
-{
+img[alt='mdh'] {
     height: 4.5em;
 }
 
-img[alt='biolit']
-{
+img[alt='biolit'] {
     width: 8em;
 }
-
 
 /* style basic html elements */
 
@@ -292,7 +292,7 @@ img[alt='biolit']
 }
 
 .markup blockquote:before {
-    content:'“';
+    content: '“';
     font: bold xx-large georgia;
     color: #dcdcdc;
     margin-left: -0.6em;
@@ -315,7 +315,6 @@ img[alt='biolit']
 .row-profile .info {
     float: left;
 }
-
 
 /*information table*/
 
@@ -351,7 +350,7 @@ img[alt='biolit']
 .row-icon {
     color: #666;
     border-top: thin dashed #fff;
-    background: rgb(250,220,77);
+    background: rgb(250, 220, 77);
 }
 
 .row-icon ul {
@@ -383,11 +382,9 @@ img[alt='biolit']
     vertical-align: middle;
 }
 
-
 /* chart */
 
-#experience .chart
-{
+#experience .chart {
     float: left;
     width: 33%;
 }
@@ -402,9 +399,8 @@ img[alt='biolit']
 
 /* timeline */
 
-.timeline
-{
-    font-family: 'Share Tech Mono', monospace ;
+.timeline {
+    font-family: 'Share Tech Mono', monospace;
     font-size: smaller;
     color: #AAA;
     clear: both;
@@ -438,14 +434,12 @@ img[alt='biolit']
 
 .timeline td.before,
 .timeline td.inhouse,
-.timeline td.offduty
-{
+.timeline td.offduty {
     border-bottom: thick solid transparent;
 }
 
 .timeline td.experience:hover,
-.timeline td.inhouse:hover
-{
+.timeline td.inhouse:hover {
     background-color: #FCEC9C;
     color: black;
 }

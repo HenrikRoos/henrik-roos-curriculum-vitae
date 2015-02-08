@@ -1,1039 +1,1095 @@
 <!doctype html>
 <html lang="sv">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <title>Henrik Roos Curriculum Vitae</title>
-        <meta name="description" content="CV (Curriculum Vitae) / Résumé for Henrik Roos">
-        <meta name="author" content="Henrik Roos">
+    <title>Henrik Roos Curriculum Vitae</title>
+    <meta name="description" content="CV (Curriculum Vitae) / Résumé for Henrik Roos">
+    <meta name="author" content="Henrik Roos">
 
-        <!-- main css file -->
-        <link rel="stylesheet" href="css/style.css">
+    <!-- main css file -->
+    <link rel="stylesheet" href="css/style.css">
 
-        <!-- responsive design -->
-        <link rel="stylesheet" media="screen" href="css/responsive.css" />
-        
-        <!-- print -->
-        <link rel="stylesheet" media="print" href="css/print.css" />
+    <!-- responsive design -->
+    <link rel="stylesheet" media="screen" href="css/responsive.css"/>
 
-        <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <!-- print -->
+    <link rel="stylesheet" media="print" href="css/print.css"/>
 
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript">
+    <link rel="icon" type="image/png" href="./img/favicon.png"/>
 
-            // Load the Visualization API and the piechart package.
-            google.load('visualization', '1.0', {'packages': ['corechart']});
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
 
-            // Set chart options
-            var options = {
-                fontName: "'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif",
-                slices: [{color: '#F9D423'}, {color: '#619EC2'}, {color: 'orange'}, {color: 'gray'}, {color: 'darkgray'}],
-                pieSliceText: 'value',
-                chartArea: {top: 0, left: 0, width: "100%", height: "80%"},
-                tooltip: {text: 'value'},
-                legend: {alignment: 'center'}
-            };
+        // Load the Visualization API and the piechart package.
+        google.load('visualization', '1.0', {'packages': ['corechart']});
 
-            // Set a callback to run when the Google Visualization API is loaded.
-            google.setOnLoadCallback(drawChartEducation);
-            google.setOnLoadCallback(drawChartDiscipline);
-            google.setOnLoadCallback(drawChartBranch);
-            google.setOnLoadCallback(drawChartDevPlatform);
+        // Set chart options
+        var options = {
+            fontName: "'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif",
+            slices: [{color: '#F9D423'}, {color: '#619EC2'}, {color: 'orange'}, {color: 'gray'}, {color: 'darkgray'}],
+            pieSliceText: 'value',
+            chartArea: {top: 0, left: 0, width: "100%", height: "80%"},
+            tooltip: {text: 'value'},
+            legend: {alignment: 'center'}
+        };
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.setOnLoadCallback(drawChartEducation);
+        google.setOnLoadCallback(drawChartDiscipline);
+        google.setOnLoadCallback(drawChartBranch);
+        google.setOnLoadCallback(drawChartDevPlatform);
 
 
-            // Callback in experience block
-            function drawChartBranch() {
+        // Callback in experience block
+        function drawChartBranch() {
 
-                // Create the data table.
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Bransch');
-                data.addColumn('number', 'Antal månader');
-                data.addRows([
-                    ['Hälsa & Sjukvård (mån)', 4 + 6 + 8 + 3 + 5 + 3], //#3 + #7 + #8 + #10 + #11 + #12
-                    ['Bank Finans & Försäkring (mån)', 6 + 3 + 8 + 9], //#2 + #4 + #6 + #9
-                    ['Reklam (mån)', 22], //#1
-                    ['Data It & Telekom. (mån)', 3]     //#5
-                ]);
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Bransch');
+            data.addColumn('number', 'Antal månader');
+            data.addRows([
+                ['Hälsa & Sjukvård (mån)', 4 + 6 + 8 + 3 + 5 + 3], //#3 + #7 + #8 + #10 + #11 + #12
+                ['Bank Finans & Försäkring (mån)', 6 + 3 + 8 + 9], //#2 + #4 + #6 + #9
+                ['Reklam (mån)', 22], //#1
+                ['Data It & Telekom. (mån)', 3]     //#5
+            ]);
 
-                var opt = options;
-                opt['slices'] = [{color: 'DarkTurquoise'}, {color: 'DimGray'}, {color: 'LightPink'}, {color: 'DeepSkyBlue'}];
+            var opt = options;
+            opt['slices'] = [{color: 'DarkTurquoise'}, {color: 'DimGray'}, {color: 'LightPink'}, {color: 'DeepSkyBlue'}];
 
-                // Instantiate and draw our chart, passing in some options.
-                var chart = new google.visualization.PieChart(document.getElementById('chart_branch'));
-                chart.draw(data, opt);
-            }
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_branch'));
+            chart.draw(data, opt);
+        }
 
-            // Callback in experience block
-            function drawChartDiscipline() {
+        // Callback in experience block
+        function drawChartDiscipline() {
 
-                // Create the data table.
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Disciplin');
-                data.addColumn('number', 'Antal månader');
-                data.addRows([
-                    ['Utveckling (mån)', 22 + 4 + 3 + 3 + 8 + 5],
-                    ['Test (mån)', 6 + 9 + 3 + 3],
-                    ['Krav (mån)', 6 + 8]
-                ]);
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Disciplin');
+            data.addColumn('number', 'Antal månader');
+            data.addRows([
+                ['Utveckling (mån)', 22 + 4 + 3 + 3 + 8 + 5],
+                ['Test (mån)', 6 + 9 + 3 + 3],
+                ['Krav (mån)', 6 + 8]
+            ]);
 
-                // Instantiate and draw our chart, passing in some options.
-                var chart = new google.visualization.PieChart(document.getElementById('chart_discipline'));
-                chart.draw(data, options);
-            }
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_discipline'));
+            chart.draw(data, options);
+        }
 
-            // Callback in experience block
-            function drawChartDevPlatform() {
+        // Callback in experience block
+        function drawChartDevPlatform() {
 
-                // Create the data table.
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Utvecklings plattform');
-                data.addColumn('number', 'Antal månader');
-                data.addRows([
-                    ['J2EE 1.4 (mån)', 22 + 6], //#1 + #2
-                    ['Java EE 5 (mån)', 3], //#5
-                    ['Java EE 6 (mån)', 6 + 9 + 3], //#7 + #9 + #12
-                    ['.NET 3.0 (mån)', 4 + 3], //#3 + #4
-                    ['.NET 3.5 (mån)', 8], //#6
-                    ['.NET 4.5 (mån)', 5], //#11
-                    ['Oberoende (mån)', 8 + 3] //#8 + #10
-                ]);
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Utvecklings plattform');
+            data.addColumn('number', 'Antal månader');
+            data.addRows([
+                ['J2EE 1.4 (mån)', 22 + 6], //#1 + #2
+                ['Java EE 5 (mån)', 3], //#5
+                ['Java EE 6 (mån)', 6 + 9 + 3], //#7 + #9 + #12
+                ['.NET 3.0 (mån)', 4 + 3], //#3 + #4
+                ['.NET 3.5 (mån)', 8], //#6
+                ['.NET 4.5 (mån)', 5], //#11
+                ['Oberoende (mån)', 8 + 3] //#8 + #10
+            ]);
 
-                var opt = options;
-                opt['slices'] = [{color: '#669999'}, {color: '#75A3A3'}, {color: '#85ADAD'}, {color: '#009999'}, {color: '#19A3A3'}, {color: '#33ADAD'}, {color: 'Gainsboro'}];
+            var opt = options;
+            opt['slices'] = [{color: '#669999'}, {color: '#75A3A3'}, {color: '#85ADAD'}, {color: '#009999'}, {color: '#19A3A3'}, {color: '#33ADAD'}, {color: 'Gainsboro'}];
 
-                // Instantiate and draw our chart, passing in some options.
-                var chart = new google.visualization.PieChart(document.getElementById('chart_dev_platform'));
-                chart.draw(data, opt);
-            }
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_dev_platform'));
+            chart.draw(data, opt);
+        }
 
-            // Callback in education block
-            function drawChartEducation() {
+        // Callback in education block
+        function drawChartEducation() {
 
-                // Create the data table.
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Ämne');
-                data.addColumn('number', 'Poäng');
-                data.addRows([
-                    ['Data (hp)', 63],
-                    ['Mattematik (hp)', 60],
-                    ['Kemi (hp)', 30],
-                    ['Biologi (hp)', 30],
-                    ['Fysik (hp)', 15]
-                ]);
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Ämne');
+            data.addColumn('number', 'Poäng');
+            data.addRows([
+                ['Data (hp)', 63],
+                ['Mattematik (hp)', 60],
+                ['Kemi (hp)', 30],
+                ['Biologi (hp)', 30],
+                ['Fysik (hp)', 15]
+            ]);
 
-                // Instantiate and draw our chart, passing in some options.
-                var chart = new google.visualization.PieChart(document.getElementById('chart_education'));
-                chart.draw(data, options);
-            }
-        </script>
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_education'));
+            chart.draw(data, options);
+        }
+    </script>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <div id="container">
+<div id="container">
 
-            <!-- header block -->
+    <!-- header block -->
 
-            <header>
-                <article>
+    <header>
+        <article>
 
-                    <a href="biolit-henrik-roos.docx">Ladda ner<b>CV</b></a>
+            <a href="biolit-henrik-roos.docx">Ladda ner<b>CV</b></a>
+
+            <div>
+                <h1>CV för <span>Henrik Roos</span></h1>
+
+                <p>Utvecklare med stort intresse för test</p>
+            </div>
+
+        </article>
+    </header>
+
+    <!-- information block -->
+
+    <div class="row">
+        <article class="markup">
+
+            <h2 class="section-title">Om Henrik</h2>
+
+            <p>
+                Henrik är en driven testanalytiker med bakgrund som systemutvecklare i flertal olika språk, med tiden har han i allt större utsträckning rört sig mot avancerad testdisciplin. Henriks
+                inriktning är SOA ett område som han behärskar mycket väl.
+            </p>
+
+            <p>
+                Henriks utvecklarperspektiv är att designa och skapa <strong>välskrivna automatiserade tester</strong>, att ta fram riktlinjer hur bygg- och testprocessen skall bli bättre, utföra
+                integrationstester och optimering av prestandakrävande metoder. I flera uppdrag har han förankrat testplaner som följer testdriven utveckling (TDD) med Continuous Integration (CI) som
+                processer.
+            </p>
+
+            <p>
+                Som person är Henrik en engagerad medspelare, glad, lyhörd och ansvarsfull. Andra kännetecknande egenskaper är att han har en hög analytisk förmåga samt att han ständigt utforskar nya
+                tekniker.
+            </p>
+
+            <p>
+                Innan 2005 var han i huvudsak student och studerade matematik men parallellt drev han eget företag inom web och print. Flertal hemsidor, broschyrer, reklamblad, visitkort har han själv
+                tagit fram och sålt. Adobe Creative Suite med främst InDesign, Illustrator och Photoshop hantera han väl.
+            </p>
+
+            <blockquote>
+                Henrik is a qualified test manager with good coordination skills and understanding of different perspectives. He has easy to understand the activities amd good negotiation skills. He
+                is diplomatic and has ability to get many people to interact. Overall he has bility to maintain focus - sustainable but diplomatic.
+                <footer>
+                    &mdash; Daniel Andersson, Commercial Director at CompuGroup Medical Sweden AB
+                </footer>
+            </blockquote>
+
+            <blockquote>
+                Henrik vill man ha med i sitt team! Han bidrar med bred teknisk kompetens, är genuint intresserad och är inte rädd för att ta tag i de svårare frågorna. Henrik angriper problemen
+                strukturerat, är noggrann, söker en konstruktiv väg och jobbar alltid för en bra lösning och en god stämning! Jag ger mina varmaste rekommendationer!
+                <footer>
+                    &mdash; Anders Ferrari, Ansvarig Tjänstedomänen Nationell tidbokning
+                </footer>
+            </blockquote>
+
+        </article>
+    </div>
+
+    <!-- experience block -->
+
+    <div class="row" id="experience">
+        <article>
+            <h2 class="section-title">Uppdrag</h2>
+
+            <div id="chart_discipline" class="chart"></div>
+            <div id="chart_branch" class="chart"></div>
+            <div id="chart_dev_platform" class="chart"></div>
+
+            <div class="timeline">
+                <table>
+                    <tr>
+                        <td class="before" colspan="3" title="Utbildning (Biomatematiklinjen)">utb</td>
+                        <td class="experience dev" colspan="22" title="#1 Egen konsult (Lidh Reklam)"><a href="#1">utv.</a></td>
+                        <td class="experience req" colspan="6" title="#2 Kravanalytiker (NASDAQ OMX)"><a href="#2">krav</a></td>
+                        <td class="experience dev" colspan="4" title="#3 Systemutvecklare (Karolinska)"><a href="#3">utv.</a></td>
+                        <td class="experience dev" colspan="3" title="#4 Systemutvecklare (Handelsbanken)"><a href="#4">utv.</a></td>
+                        <td class="offduty" colspan="5" title="Pappaledig för Zelda i 5 mån">zelda</td>
+                        <td class="experience dev" colspan="3" title="#5 Systemutvecklare (Bredbandsbolaget)"><a href="#5">utv.</a></td>
+                        <td class="experience dev" colspan="8" title="#6 Systemutvecklare (PTK)"><a href="#6">utv.</a></td>
+                        <td class="offduty" colspan="8" title="Pappaledig för Zimon i 8 mån">zimon</td>
+                        <td class="inhouse" title="Interna projekt">i</td>
+                        <td class="experience test" colspan="6" title="#7 Testare (SLL)"><a href="#7">test</a></td>
+                        <td class="experience req" colspan="8" title="#8 Kravanalytiker (SLL)"><a href="#8">krav</a></td>
+                        <td class="experience test" colspan="9" title="#9 Testanalytiker (SEB)"><a href="#9">test</a></td>
+                        <td class="experience test" colspan="3" title="#10 Testanalytiker (Region Sjælland)"><a href="#10">test</a></td>
+                        <td class="experience dev" colspan="5" title="#11 Arkitekt (SKL)"><a href="#11">utv.</a></td>
+                        <td class="experience test" colspan="3" title="#12 Tekniks Testledare (SLL)"><a href="#12">test</a></td>
+                        <td class="offduty" colspan="8" title="Pappaledig för Zid i 8 mån">zid</td>
+                    </tr>
+                    <tr>
+                        <!-- 2005 -->
+                        <td class="before">1</td>
+                        <td class="before">2</td>
+                        <td class="before">3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <!-- 2006 -->
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <!-- 2007 -->
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <!-- 2008 -->
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <!-- 2009 -->
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <!-- 2010 -->
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <!-- 2011 -->
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <!-- 2012 -->
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <!-- 2013 -->
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td colspan="12">2005</td>
+                        <td colspan="12">2006</td>
+                        <td colspan="12">2007</td>
+                        <td colspan="12">2008</td>
+                        <td colspan="12">2009</td>
+                        <td colspan="12">2010</td>
+                        <td colspan="12">2011</td>
+                        <td colspan="12">2012</td>
+                        <td colspan="9">2013</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="column-row">
+
+                <div class="column">
+                    <h3 id="12">#12 Tekniks Testledare</h3>
+                    <a href="http://www.mawell.se" title="Mawell AB" class="logo">
+                        <img src="./img/logo_mawell.png" alt="mawell"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.mawell.se" title="Anställd vid">Mawell</a>
+                        &mdash;
+                        <a href="http://www.sll.se" title="Uppdrag för">Stockholms läns landsting</a><br/>
+                        3 månader, 2012-11 &mdash; 2013-01
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Samma projekt som Henrik lämnade för ett par års sedan men nu i nytt omtag. [<a href="#8">se uppdrag #8</a>]
+                        </p>
+
+                        <p>
+                            Samma kund, samma mål att ersätta en befintlig mycket dyr lagringslösning med open-source lösning. Henrik kunde återvända de krav som ursprungligen han tog fram innan,
+                            vilket blev en stabil accepts krav-platta. För att hjälpa utvecklingsteamet så dammade Henrik av en gammal testmotor som använts i projekts början, skriven helt i egen
+                            Java.
+                        </p>
+
+                        <p>
+                            Henrik såg till att den gick att köra i testmiljön och gav tydliga testresultat i Jenkins Continuous Integration motor. Den motorn blev en helautomatisk systemtestmiljö som
+                            testade alla positiva och några alternativ flöden i den nya och gamla lagringslösningen. Projektet avslutades denna gång med framgång och den helautomatisk systemtestmiljö
+                            som togs fram i projektet ligger idag som ett bra stöd för förvaltningen.
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        Teststrategi, Testautomatisering, Continuous Integration, Jenkins, Java, jUnit
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="11">#11 Arkitekt</h3>
+                    <a href="http://www.mawell.se" title="Mawell AB" class="logo">
+                        <img src="./img/logo_mawell.png" alt="mawell"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.mawell.se" title="Anställd vid">Mawell</a>
+                        &mdash;
+                        <a href="http://www.skl.se" title="Uppdrag för">Sveriges Kommuner och Landsting</a><br/>
+                        5 månader, 2012-06 &mdash; 2012-10
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Efter införandet av den nya patientsäkerhetslagen som trädde i kraft har det ställts högre krav på att öka säkerheten i vården. En av de metoder som ökar säkerheten är
+                            strukturerad journalgranskning som är framtagen av SKL. Strukturerad journalgranskning är en etablerad metod för att identifiera skador som oftast inte uppmärksammats på
+                            annat sätt. Metoden går ut på att strukturerat granska journaler från redan avslutade slutenvårdstillfällen.
+                        </p>
+
+                        <p>
+                            Henrik tog fram ett verktyg för att kunna arbetat systematiskt med strukturerad journalgranskning kring skada. Hans roll i projektet var många då det bara var kunden,
+                            säljaren och Henrik som var i teamet. Han tog fram projektbeskrivning, tidsestimat, kravspecifikation, design av den tekniska lösningen, han skrev helt själv första skarpa
+                            versionen.
+                        </p>
+
+                        <p>
+                            Datat använde SKL i sitt arbete med strukturerad journalgranskning kring skada som utföll i en rapport som uppmärksammades i SVT:s ABC nyheter
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        C#, ASP.NET 4.0, Web API, Asynkron kommunikation, Knockout JavaScript, SoapUI, Visual Studio
+                        2012, SQL Server 2012, Team Foundation Server Cloud, Microsofts Application Lifecycle Management
+                        (ALM) process, Model View ViewModel pattern, TDD
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="10">#10 Testanalytiker</h3>
+                    <a href="http://www.mawell.se" target="_blank" title="Mawell AB" class="logo">
+                        <img src="./img/logo_mawell.png" alt="mawell"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.mawell.se" title="Anställd vid">Mawell</a>
+                        &mdash;
+                        <a href="http://www.regionsjaelland.dk" title="Uppdrag för">Region Sjælland</a><br/>
+                        3 månader, 2012-03 &mdash; 2012-05
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Traditionell manuell högnivå testning för en komplex röntgenprodukts-integration i de befintliga journalsystemen på sjukhusen som tillhör Danska Region Sjælland. Det var
+                            många olika produktleverantörer som hade ansvar och de övergripande kraven var högt skrivna anpassade på avtalsnivå. Hela projektteamet fick tillsammans initialt lappa ihop
+                            gapet mellan kraven, leverantörerna, kunden och produkten med empiriskt verifierbara data och krav som de kunde utgå ifrån i testerna.
+                        </p>
+
+                        <p>
+                            Under den tiden som Henrik var med i projektet tog de fram teststrategi, utförde datainsamling med hjälp av workshops, intervjuade nyckelpersoner och skrev de första
+                            manuella testspecifikationer.
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        Workshops, manuell högnivå testning, datainsamling
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="9">#9 Testanalytiker</h3>
+                    <a href="http://www.objektfabriken.se" title="Objektfabriken" class="logo">
+                        <img src="./img/logo_objektfabriken.png" alt="objektfabriken"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.objektfabriken.se" title="Anställd vid">TPG Objektfabriken <i>(nuvarande Objektfabriken)</i></a>
+                        &mdash;
+                        <a href="http://www.seb.se" title="Uppdrag för">SEB IT</a><br/>
+                        9 månader, 2011-06 &mdash; 2012-02
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Henrik satt i det stora One IT Roadmap projektet som SEB inte avslutade. Mycket intressant projekt på många sätt. Bra projektstyrning, alla visste vad de skulle göra,
+                            extremt fina krav, nedbrutna till specifikationer som utveckling och test kunde följa slaviskt. Om det var otydligt i specifikationen så fanns det en öronmärkt designperson
+                            på plats att fråga.
+                        </p>
+
+                        <p>
+                            Henrik satt i testcore-temaet för SOA tjänsterna. Gruppen bestående av 5-8 personer testade av ca 60 tjänster i varje sprint (2 veckor).
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        SoupUI, Jenkins, QC, Java
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="8">#8 Kravanalytiker</h3>
+                    <a href="http://www.softronic.se" title="Softronic" class="logo">
+                        <img src="./img/logo_softronic.png" alt="softronic"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
+                        &mdash;
+                        <a href="http://www.sll.se" title="Uppdrag för">Stockholms läns landsting</a><br/>
+                        8 månader, 2010-10 &mdash; 2011-05
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            I Stockholm sparas det i genomsnitt 25 000 st. labbsvar per dag mot en central lagringstjänst på SLL. Dagens lagringstjänst använder Oracles produkt HTB. Projektets
+                            beskrivning är att byta ut HTB lösningen till en egenutvecklad lösning med öppen källkods komponenter utan att nyttjarna behöver ändra något i sin anslutning mot tjänsten.
+                            Syftet var att spara pengar på licenskostnader.
+                        </p>
+
+                        <p>
+                            Henriks roll var att ta fram tydligt underlag till utvecklingen och att leda testarbetet. I början av projektet utförde Henrik empirisk studie med intervjuer och
+                            eftersökande av dokument som mynnade ut till en gedigen kravspecifikation med användningsfall.
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        Empirisk kravinsamling, ReQtest, Systemarkitekturdokument (SAD)
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="7">#7 Testare</h3>
+                    <a href="http://www.softronic.se" title="Softronic" class="logo">
+                        <img src="./img/logo_softronic.png" alt="softronic"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
+                        &mdash;
+                        <a href="http://www.sll.se" title="Uppdrag för">Stockholms läns landsting</a><br/>
+                        6 månader, 2010-04 &mdash; 2010-09
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Tjänsten Nationell Patientöversikt (NPÖ) gör det möjligt för behörig vård- och omsorgspersonal att med patientens samtycke ta del av journalinformation som registrerats hos
+                            andra vårdgivare. Samordning av vårdinsatser underlättas och en helhetsbild av patienten ger ett bättre beslutsunderlag för diagnos, behandling och uppföljning.
+                        </p>
+
+                        <p>
+                            Uppdraget var att flytta en del av journalinformation ifrån Stockholm till tjänsten NPÖ via en integrationspunkt (JBoss ESB). Henriks roll var att testa hela flödet och att
+                            vara ett stöd i utveckling och i informatiksarbetet för att tydliggöra kraven mot den givna 13606/RIV standard. Han byggde upp en automatiserad testprocess med hjälp av
+                            jUnit, XPath, Maven och Google spreadsheet.
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        Testautomatisering, jUnit, XPath, Maven, Google spreadsheet
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="6">#6 Systemutvecklare</h3>
+                    <a href="http://www.softronic.se" title="Softronic" class="logo">
+                        <img src="./img/logo_softronic.png" alt="softronic"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
+                        &mdash;
+                        <a href="http://www.ptk.se" title="Uppdrag för">PTK</a><br/>
+                        8 månader, 2008-11 &mdash; 2009-06
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            En webbaserad rådgivningstjänst för individuell rådgivning inom försäkring och pensionssparande riktad mot alla personer i Sverige som omfattas av ITP. Rådgivningstjänsten
+                            ger de försäkrade en samlad bild av deras sjuk-, efterlevande- och pensionsförsäkringar enligt lag, avtal och individuella försäkringarna.
+                        </p>
+
+                        <p>
+                            Henriks roll var att utveckla den optimeringskomponent som tar fram hur användarnas premier ska placeras bäst i olika bolag och fonder. Förutom avancerad implementation
+                            ställdes det stora krav på enhetstest och framtagande av testdata för belastnings- och regressionstest.
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        .NET, LINQ XML, Microsoft Visual Studio 2008, Microsoft SQL Server 2005, EpiServer/CMS 5 och
+                        Microsoft Team Foundation Server.
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="5">#5 Systemutvecklare</h3>
+                    <a href="http://www.softronic.se" title="Softronic" class="logo">
+                        <img src="./img/logo_softronic.png" alt="softronic"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
+                        &mdash;
+                        <a href="http://www.bredbandsbolaget.se" title="Uppdrag för">Bredbandsbolaget</a><br/>
+                        3 månader, 2008-08 &mdash; 2008-10
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Ett projekt som syftade till att förkorta Bredbandsbolagets ledtid för att få ut ny information på den externa webben samt att förenkla för redaktörer att påverka layout
+                            och innehåll på sidor. Henriks roll var att strukturera information, testa och utveckla komponenter i IBM Lotus Workplace Web Content Management.
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        Java, IBM Lotus Workplace Web Content Management, IBM Websphere Portal
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="4">#4 Systemutvecklare</h3>
+                    <a href="http://www.softronic.se" title="Softronic" class="logo">
+                        <img src="./img/logo_softronic.png" alt="softronic"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
+                        &mdash;
+                        <a href="http://www.handelsbanken.se" title="Uppdrag för">Handelsbanken</a><br/>
+                        3 månader, 2007-12 &mdash; 2008-02
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Nyutveckling och förvaltning av webbtjänst för publikt tillhandahållande av en placeringsguide för handelsbankens privatkunder. Utvecklingen skedde i .NET och bestod av
+                            alla delar i kedjan från databas till gränssnitt.
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        Microsoft Visual Studio 2005, Microsoft SQL Server 2005 och Microsoft Team Foundation Server (TFS)
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="3">#3 Systemutvecklare</h3>
+                    <a href="http://www.softronic.se" title="Softronic" class="logo">
+                        <img src="./img/logo_softronic.png" alt="softronic"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
+                        &mdash;
+                        <a href="http://www.karolinska.se" title="Uppdrag för">Karolinska Universitetssjukhuset</a><br/>
+                        4 månader, 2007-08 &mdash; 2007-11
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Ett datastöd för administrativ hantering av provtagning för att upptäcka tarmcancer på ett tidigt stadium. Alla äldre personer som bor i Stockholm blir erbjudna att bli
+                            testade gratis. Detta system hanterar just denna process, från utskick till utfall av provtagningen.
+                        </p>
+
+                        <p>
+                            Systemet var ett webbaserat system med många funktioner där plattformen var .NET. Henriks arbetsuppgifter var att utveckla och testa de gränssnitt och urvalsfunktioner som
+                            hanterar utskick till personer som erbjuds att bli testade samt eventuella återbesök.
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        Microsoft Visual Studio 2005, Visual Studio Team System Test Edition 2005, Microsoft SQL Server 2005 och Microsoft Team Foundation Server (TFS)
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="2">#2 Kravanalytiker</h3>
+                    <a href="http://www.softronic.se" title="Softronic" class="logo">
+                        <img src="./img/logo_softronic.png" alt="softronic"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
+                        &mdash;
+                        <a href="http://www.nasdaqomxnordic.com" title="Uppdrag för">NASDAQ OMX | Nordic</a><br/>
+                        6 månader, 2007-02 &mdash; 2007-07
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Förstudien omfattade framtagande av krav och tidsestimering för en webbtjänst som bestod av ett arbetsflöde i InfoGlue (Content Management System).
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        Kravinsamling, InfoGlue CMS
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 id="1">#1 Egen konsult</h3>
+                    <a href="http://www.softronic.se" title="Fimare" class="logo">
+                        <img src="./img/logo_fimare.png" alt="fimare"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        Fimare <i>(Enskild firma)</i>
+                        &mdash;
+                        <a href="http://www.lidhreklam.se" title="Uppdrag för">Lidh Reklam</a><br/>
+                        1 år 10 månader, 2005-04 &mdash; 2007-01
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Ett helhetsåtagande av ett nytt affärssystem för Lidh Reklam med arv från det befintliga systemet skrivet i COBALT. Det var Henriks första riktigt stora uppdrag. Han skrev
+                            ett avtal med en tunn kravspecifikation med icke empiriskt verifierbara krav. I slutändan resulterade det i att projektet inte kom till avslut vilket han drog stor lärdom
+                            av och också är den största anledningen till varför han har specialiserat sig inom krav och test.
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        Java, J2EE, PostgreSQL
+                    </div>
+                </div>
+
+            </div>
+
+        </article>
+    </div>
+
+    <!-- other experience block -->
+
+    <div class="row">
+        <article>
+            <h2 class="section-title">Övriga projekt</h2>
+
+            <div class="column-row">
+
+                <div class="column">
+                    <h3>WordPress Plugin utveckling</h3>
+                    <a href="http://wordpress.org/plugins/imdb-markup-syntax/" title="WordPress" class="logo">
+                        <img src="./img/icons/social_wordpress.png" alt="wordpress"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        Privat, (öppen källkod <a href="http://opensource.org/licenses/gpl-3.0.html">GPL-3.0</a>)
+                        &mdash;
+                        <a href="http://wordpress.org" title="Utvecklat för">WordPress</a><br/>
+                        2013-02 &mdash; nu
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Med en enkelt syntax t ex <i>[imdb:title]</i> ersätts taggarna med data från IMDb Mobile Applications (ett publik RESTful API som exponera IMDb:s databas). Koden är väl
+                            dokumenterad, testad och innehåller inga checkstyle errors. Code coverage ligger på 100%. Testmiljön som drivs av Jenkins är helautomatiserad och testar pluginets
+                            kodförändringar i 14 olika WordPress releaser.
+                        </p>
+                    </div>
+                    <div class="tools">
+                        <h4>Tekniker/Metoder</h4>
+                        WordPress API, PHP 5, PHPUnit, Jenkins, Checkstyle, PHP Depend
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3>Volontär i Afrika</h3>
+                    <a href="http://www.ziff.or.tz" title="Zanzibar International Film Festival" class="logo">
+                        <img src="./img/logo_ziff.jpg" alt="ziff"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        IT Support
+                        &mdash;
+                        <a href="http://www.ziff.or.tz" title="Zanzibar International Film Festival">ZIFF</a><br/>
+                        2 månader, 2006-06 &mdash; 2006-07
+                    </p>
+
+                    <div class="description">
+                        <p>
+                            Henrik hjälpte till med praktiskt IT jobb på östafrikas största filmfestival i Tanzania. Bland annat byggde de ett ackrediteringssystem för alla gäster. Tog hand om ljud
+                            och ljus vid ett antal events.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </article>
+    </div>
+
+    <!-- education block -->
+
+    <div class="row">
+        <article>
+
+            <h2 class="section-title">Utbildning</h2>
+
+            <div id="chart_education" class="chart"></div>
+
+            <div class="column-row">
+
+                <div class="column">
+                    <h3>Biomatematiklinjen</h3>
+                    <a href="http://www.su.se" class="logo">
+                        <img src="./img/logo_su.png" alt="su"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.su.se">Stockholms universitet</a>, Stockholm<br/>
+                        2003 &mdash; 2005
+                    </p>
+
+                    <div class="description">
+                        <ul>
+                            <li>Linjär algebra 2, fortsättningskurs <span>(MA2070)</span></li>
+                            <li>Algebra och kombinatorik, fortsättningskurs <span>(MA2230)</span></li>
+                            <li>Datalogi, grundkurs I <span>(NA1030)</span></li>
+                            <li>Datalogi, grundkurs II <span>(NA2030)</span></li>
+                            <li>Databasteknik, fortsättningskurs <span>(NA2090)</span></li>
+                        </ul>
+                    </div>
+
+                    <div id="education_chart"></div>
+                </div>
+
+                <div class="column">
+                    <h3>Teknisk Fysik</h3>
+                    <a href="http://www.mdh.se" class="logo">
+                        <img src="./img/logo_mdh.png" alt="mdh"/>
+                    </a>
+                    <br/>
+
+                    <p class="subtitle">
+                        <a href="http://www.mdh.se">Mälardalens högskola</a>, Västerås och Eskilstuna<br/>
+                        1998 &mdash; 2003
+                    </p>
+
+                    <div class="description">
+                        <ul>
+                            <li>Grundläggande algebra <span>(MM1130)</span></li>
+                            <li>Matematisk analys I <span>(MM1250)</span></li>
+                            <li>Matematisk analys II <span>(MM1260)</span></li>
+                            <li>Numeriska metoder <span>(MT1090)</span></li>
+                            <li>Mekanik <span>(KK5160)</span></li>
+                            <li>Programmeringsteknik för ingenjörer <span>(CD5300)</span></li>
+                            <li>Algebra, avancerad nivå <span>(MM1010)</span></li>
+                            <li>Diskret matematik <span>(MM1510)</span></li>
+                            <li>Systemutveckling <span>(EI0170)</span></li>
+                            <li>Mineral- och vattenkemi <span>(GK2040)</span></li>
+                            <li>Allmän Kemi <span>(GK1030)</span></li>
+                            <li>Organisk kemi I <span>(GK2010)</span></li>
+                            <li>Biologi på molekylär nivå <span>(GB2070)</span></li>
+                            <li>Mikrobiologi <span>(GB1000)</span></li>
+                            <li>Cellbiologi <span>(GB1010)</span></li>
+                            <li>Genetik <span>(GB1020)</span></li>
+                            <li>Datastrukturer och algoritmer <span>(CD5070)</span></li>
+                            <li>Modern fysik gk II <span>(MF1150)</span></li>
+                            <li>Linjär algebra <span>(MM1690)</span></li>
+                            <li>Webbproduktion <span>(KI1530)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </article>
+    </div>
+
+    <!-- skills block -->
+
+    <div class="row">
+        <article>
+
+            <h2 class="section-title">Färdigheter</h2>
+
+            <div class="skills-with-ratings">
+
+                <div class="column skills-group">
+                    <h3>Test</h3>
+
                     <div>
-                        <h1>CV för <span>Henrik Roos</span></h1>
-                        <p>Utvecklare med stort intresse för test</p>
+                        <h4>Automatiserade tester</h4>
+                        <span>★★★★★</span>
+
+                        <p>
+                            Designa, skriva och köra enkla enhetstester till mer övergripande intergrationstester i någon form av motor. Sätta upp alternativt utveckla en motor. Automatiserad testning
+                            av webb-tjänster med SoapUI.
+                        </p>
                     </div>
+                    <div>
+                        <h4>Planera tester</h4>
+                        <span>★★★★★</span>
 
-                </article>
-            </header>
-
-            <!-- information block -->
-
-            <div class="row">
-                <article class="markup">
-
-                    <h2 class="section-title">Om Henrik</h2>
-                    <p>
-                        Henrik är en driven testanalytiker med bakgrund som systemutvecklare i flertal olika språk, med tiden har han i allt större utsträckning rört sig mot avancerad testdisciplin.
-                        Henriks inriktning är SOA ett område som han behärskar mycket väl.
-                    </p>
-                    <p>
-                        Henriks utvecklarperspektiv är att designa och skapa <strong>välskrivna automatiserade tester</strong>, att ta fram riktlinjer hur bygg- och testprocessen skall bli bättre, utföra integrationstester och optimering av prestandakrävande metoder.
-                        I flera uppdrag har han förankrat testplaner som följer testdriven utveckling (TDD) med Continuous Integration (CI) som processer.
-                    </p>
-                    <p>
-                        Som person är Henrik en engagerad medspelare, glad, lyhörd och ansvarsfull.
-                        Andra kännetecknande egenskaper är att han har en hög analytisk förmåga samt att han ständigt utforskar nya tekniker.
-                    </p>
-                    <p>
-                        Innan 2005 var han i huvudsak student och studerade matematik men parallellt drev han eget företag inom web och print.
-                        Flertal hemsidor, broschyrer, reklamblad, visitkort har han själv tagit fram och sålt. Adobe Creative Suite med främst InDesign, Illustrator och Photoshop hantera han väl.
-                    </p>
-
-                    <blockquote>
-                        Henrik is a qualified test manager with good coordination skills and understanding of different perspectives.
-                        He has easy to understand the activities amd good negotiation skills.
-                        He is diplomatic and has ability to get many people to interact.
-                        Overall he has bility to maintain focus - sustainable but diplomatic.
-                        <footer>
-                            &mdash; Daniel Andersson, Commercial Director at CompuGroup Medical Sweden AB
-                        </footer>
-                    </blockquote>
-
-                    <blockquote>
-                        Henrik vill man ha med i sitt team! Han bidrar med bred teknisk kompetens, är genuint intresserad och är inte rädd för att ta tag i de svårare frågorna.
-                        Henrik angriper problemen strukturerat, är noggrann, söker en konstruktiv väg och jobbar alltid för en bra lösning och en god stämning!
-                        Jag ger mina varmaste rekommendationer!
-                        <footer>
-                            &mdash; Anders Ferrari, Ansvarig Tjänstedomänen Nationell tidbokning
-                        </footer>
-                    </blockquote>
-
-                </article>
-            </div>
-
-            <!-- experience block -->
-
-            <div class="row" id="experience">
-                <article>
-                    <h2 class="section-title">Uppdrag</h2>
-
-                    <div id="chart_discipline" class="chart"></div>
-                    <div id="chart_branch" class="chart"></div>
-                    <div id="chart_dev_platform" class="chart"></div>
-
-                    <div class="timeline">
-                        <table>
-                            <tr>
-                                <td class="before" colspan="3" title="Utbildning (Biomatematiklinjen)">utb</td>
-                                <td class="experience dev" colspan="22" title="#1 Egen konsult (Lidh Reklam)"><a href="#1">utv.</a></td>
-                                <td class="experience req" colspan="6" title="#2 Kravanalytiker (NASDAQ OMX)"><a href="#2">krav</a></td>
-                                <td class="experience dev" colspan="4" title="#3 Systemutvecklare (Karolinska)"><a href="#3">utv.</a></td>
-                                <td class="experience dev" colspan="3" title="#4 Systemutvecklare (Handelsbanken)"><a href="#4">utv.</a></td>
-                                <td class="offduty" colspan="5" title="Pappaledig för Zelda i 5 mån">zelda</td>
-                                <td class="experience dev" colspan="3" title="#5 Systemutvecklare (Bredbandsbolaget)"><a href="#5">utv.</a></td>
-                                <td class="experience dev" colspan="8" title="#6 Systemutvecklare (PTK)"><a href="#6">utv.</a></td>
-                                <td class="offduty" colspan="8" title="Pappaledig för Zimon i 8 mån">zimon</td>
-                                <td class="inhouse" title="Interna projekt">i</td>
-                                <td class="experience test" colspan="6" title="#7 Testare (SLL)"><a href="#7">test</a></td>
-                                <td class="experience req" colspan="8" title="#8 Kravanalytiker (SLL)"><a href="#8">krav</a></td>
-                                <td class="experience test" colspan="9" title="#9 Testanalytiker (SEB)"><a href="#9">test</a></td>
-                                <td class="experience test" colspan="3" title="#10 Testanalytiker (Region Sjælland)"><a href="#10">test</a></td>
-                                <td class="experience dev" colspan="5" title="#11 Arkitekt (SKL)"><a href="#11">utv.</a></td>
-                                <td class="experience test" colspan="3" title="#12 Tekniks Testledare (SLL)"><a href="#12">test</a></td>
-                                <td class="offduty" colspan="8" title="Pappaledig för Zid i 8 mån">zid</td>
-                            </tr>
-                            <tr>
-                                <!-- 2005 -->
-                                <td class="before">1</td>
-                                <td class="before">2</td>
-                                <td class="before">3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                                <!-- 2006 -->
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                                <!-- 2007 -->
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                                <!-- 2008 -->
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                                <!-- 2009 -->
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                                <!-- 2010 -->
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                                <!-- 2011 -->
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                                <!-- 2012 -->
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                                <!-- 2013 -->
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                            </tr>
-                            <tr>
-                                <td colspan="12">2005</td>
-                                <td colspan="12">2006</td>
-                                <td colspan="12">2007</td>
-                                <td colspan="12">2008</td>
-                                <td colspan="12">2009</td>
-                                <td colspan="12">2010</td>
-                                <td colspan="12">2011</td>
-                                <td colspan="12">2012</td>
-                                <td colspan="9">2013</td>
-                            </tr>
-                        </table>
+                        <p>
+                            Ta fram teststrategi, testplan eller liknande styrande handling för test.
+                        </p>
                     </div>
+                    <div>
+                        <h4>Prestandatester</h4>
+                        <span>★★★☆☆</span>
 
-                    <div class="column-row">
-
-                        <div class="column">
-                            <h3 id="12">#12 Tekniks Testledare</h3>
-                            <a href="http://www.mawell.se" title="Mawell AB" class="logo">
-                                <img src="./img/logo_mawell.png" alt="mawell"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.mawell.se" title="Anställd vid">Mawell</a>
-                                &mdash;
-                                <a href="http://www.sll.se" title="Uppdrag för">Stockholms läns landsting</a><br />
-                                3 månader, 2012-11 &mdash; 2013-01
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Samma projekt som Henrik lämnade för ett par års sedan men nu i nytt omtag. [<a href="#8">se uppdrag #8</a>]
-                                </p>
-                                <p>
-                                    Samma kund, samma mål att ersätta en befintlig mycket dyr lagringslösning med open-source lösning.
-                                    Henrik kunde återvända de krav som ursprungligen han tog fram innan, vilket blev en stabil accepts krav-platta.
-                                    För att hjälpa utvecklingsteamet så dammade Henrik av en gammal testmotor som använts i projekts början, skriven helt i egen Java.
-                                <p>
-                                    Henrik såg till att den gick att köra i testmiljön och gav tydliga testresultat i Jenkins Continuous Integration motor.
-                                    Den motorn blev en helautomatisk systemtestmiljö som testade alla positiva och några alternativ flöden i den nya och gamla lagringslösningen.
-                                    Projektet avslutades denna gång med framgång och den helautomatisk systemtestmiljö som togs fram i projektet ligger idag som ett bra stöd för förvaltningen.
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                Teststrategi, Testautomatisering, Continuous Integration, Jenkins, Java, jUnit
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="11">#11 Arkitekt</h3>
-                            <a href="http://www.mawell.se" title="Mawell AB" class="logo">
-                                <img src="./img/logo_mawell.png" alt="mawell"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.mawell.se" title="Anställd vid">Mawell</a>
-                                &mdash;
-                                <a href="http://www.skl.se" title="Uppdrag för">Sveriges Kommuner och Landsting</a><br />
-                                5 månader, 2012-06 &mdash; 2012-10
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Efter införandet av den nya patientsäkerhetslagen som trädde i kraft har det ställts högre krav på att öka säkerheten i vården.
-                                    En av de metoder som ökar säkerheten är strukturerad journalgranskning som är framtagen av SKL.
-                                    Strukturerad journalgranskning är en etablerad metod för att identifiera skador som oftast inte uppmärksammats på annat sätt.
-                                    Metoden går ut på att strukturerat granska journaler från redan avslutade slutenvårdstillfällen.
-                                </p>
-                                <p>
-                                    Henrik tog fram ett verktyg för att kunna arbetat systematiskt med strukturerad journalgranskning kring skada.
-                                    Hans roll i projektet var många då det bara var kunden, säljaren och Henrik som var i teamet.
-                                    Han tog fram projektbeskrivning, tidsestimat, kravspecifikation, design av den tekniska lösningen, han skrev helt själv första skarpa versionen.
-                                <p>
-                                    Datat använde SKL i sitt arbete med strukturerad journalgranskning kring skada som utföll i en rapport som uppmärksammades i SVT:s ABC nyheter
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                C#, ASP.NET 4.0, Web API, Asynkron kommunikation, Knockout JavaScript, SoapUI, Visual Studio 2012, SQL Server 2012, Team Foundation Server Cloud, Microsofts Application Lifecycle Management (ALM) process, Model View ViewModel pattern, TDD
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="10">#10 Testanalytiker</h3>
-                            <a href="http://www.mawell.se" target="_blank" title="Mawell AB" class="logo">
-                                <img src="./img/logo_mawell.png" alt="mawell"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.mawell.se" title="Anställd vid">Mawell</a>
-                                &mdash;
-                                <a href="http://www.regionsjaelland.dk" title="Uppdrag för">Region Sjælland</a><br />
-                                3 månader, 2012-03 &mdash; 2012-05
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Traditionell manuell högnivå testning för en komplex röntgenprodukts-integration i de befintliga journalsystemen på sjukhusen som tillhör Danska Region Sjælland.
-                                    Det var många olika produktleverantörer som hade ansvar och de övergripande kraven var högt skrivna anpassade på avtalsnivå.
-                                    Hela projektteamet fick tillsammans initialt lappa ihop gapet mellan kraven, leverantörerna, kunden och produkten med empiriskt verifierbara data och krav som de kunde utgå ifrån i testerna.
-                                </p>
-                                <p>
-                                    Under den tiden som Henrik var med i projektet tog de fram teststrategi, utförde datainsamling med hjälp av workshops, intervjuade nyckelpersoner och skrev de första manuella testspecifikationer.
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                Workshops, manuell högnivå testning, datainsamling
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="9">#9 Testanalytiker</h3>
-                            <a href="http://www.objektfabriken.se" title="Objektfabriken" class="logo">
-                                <img src="./img/logo_objektfabriken.png" alt="objektfabriken"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.objektfabriken.se" title="Anställd vid">TPG Objektfabriken <i>(nuvarande Objektfabriken)</i></a>
-                                &mdash;
-                                <a href="http://www.seb.se" title="Uppdrag för">SEB IT</a><br />
-                                9 månader, 2011-06 &mdash; 2012-02
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Henrik satt i det stora One IT Roadmap projektet som SEB inte avslutade.
-                                    Mycket intressant projekt på många sätt.
-                                    Bra projektstyrning, alla visste vad de skulle göra, extremt fina krav, nedbrutna till specifikationer som utveckling och test kunde följa slaviskt.
-                                    Om det var otydligt i specifikationen så fanns det en öronmärkt designperson på plats att fråga.
-                                </p>
-                                <p>
-                                    Henrik satt i testcore-temaet för SOA tjänsterna.
-                                    Gruppen bestående av 5-8 personer testade av ca 60 tjänster i varje sprint (2 veckor).
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                SoupUI, Jenkins, QC, Java
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="8">#8 Kravanalytiker</h3>
-                            <a href="http://www.softronic.se" title="Softronic" class="logo">
-                                <img src="./img/logo_softronic.png" alt="softronic"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
-                                &mdash;
-                                <a href="http://www.sll.se" title="Uppdrag för">Stockholms läns landsting</a><br />
-                                8 månader, 2010-10 &mdash; 2011-05
-                            </p>
-                            <div class="description">
-                                <p>
-                                    I Stockholm sparas det i genomsnitt 25 000 st.
-                                    labbsvar per dag mot en central lagringstjänst på SLL.
-                                    Dagens lagringstjänst använder Oracles produkt HTB.
-                                    Projektets beskrivning är att byta ut HTB lösningen till en egenutvecklad lösning med öppen källkods komponenter utan att nyttjarna behöver ändra något i sin anslutning mot tjänsten.
-                                    Syftet var att spara pengar på licenskostnader.
-                                </p>
-                                <p>
-                                    Henriks roll var att ta fram tydligt underlag till utvecklingen och att leda testarbetet.
-                                    I början av projektet utförde Henrik empirisk studie med intervjuer och eftersökande av dokument som mynnade ut till en gedigen kravspecifikation med användningsfall.
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                Empirisk kravinsamling, ReQtest, Systemarkitekturdokument (SAD)
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="7">#7 Testare</h3>
-                            <a href="http://www.softronic.se" title="Softronic" class="logo">
-                                <img src="./img/logo_softronic.png" alt="softronic"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
-                                &mdash;
-                                <a href="http://www.sll.se" title="Uppdrag för">Stockholms läns landsting</a><br />
-                                6 månader, 2010-04 &mdash; 2010-09
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Tjänsten Nationell Patientöversikt (NPÖ) gör det möjligt för behörig vård- och omsorgspersonal att med patientens samtycke ta del av journalinformation som registrerats hos andra vårdgivare.
-                                    Samordning av vårdinsatser underlättas och en helhetsbild av patienten ger ett bättre beslutsunderlag för diagnos, behandling och uppföljning.
-                                </p>
-                                <p>
-                                    Uppdraget var att flytta en del av journalinformation ifrån Stockholm till tjänsten NPÖ via en integrationspunkt (JBoss ESB).
-                                    Henriks roll var att testa hela flödet och att vara ett stöd i utveckling och i informatiksarbetet för att tydliggöra kraven mot den givna 13606/RIV standard.
-                                    Han byggde upp en automatiserad testprocess med hjälp av jUnit, XPath, Maven och Google spreadsheet.
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                Testautomatisering, jUnit, XPath, Maven, Google spreadsheet
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="6">#6 Systemutvecklare</h3>
-                            <a href="http://www.softronic.se" title="Softronic" class="logo">
-                                <img src="./img/logo_softronic.png" alt="softronic"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
-                                &mdash;
-                                <a href="http://www.ptk.se" title="Uppdrag för">PTK</a><br />
-                                8 månader, 2008-11 &mdash; 2009-06
-                            </p>
-                            <div class="description">
-                                <p>
-                                    En webbaserad rådgivningstjänst för individuell rådgivning inom försäkring och pensionssparande riktad mot alla personer i Sverige som omfattas av ITP.
-                                    Rådgivningstjänsten ger de försäkrade en samlad bild av deras sjuk-, efterlevande- och pensionsförsäkringar enligt lag, avtal och individuella försäkringarna.
-                                </p>
-                                <p>
-                                    Henriks roll var att utveckla den optimeringskomponent som tar fram hur användarnas premier ska placeras bäst i olika bolag och fonder.
-                                    Förutom avancerad implementation ställdes det stora krav på enhetstest och framtagande av testdata för belastnings- och regressionstest.
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                .NET, LINQ XML, Microsoft Visual Studio 2008, Microsoft SQL Server 2005, EpiServer/CMS 5 och Microsoft Team Foundation Server.
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="5">#5 Systemutvecklare</h3>
-                            <a href="http://www.softronic.se" title="Softronic" class="logo">
-                                <img src="./img/logo_softronic.png" alt="softronic"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
-                                &mdash;
-                                <a href="http://www.bredbandsbolaget.se" title="Uppdrag för">Bredbandsbolaget</a><br />
-                                3 månader, 2008-08 &mdash; 2008-10
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Ett projekt som syftade till att förkorta Bredbandsbolagets ledtid för att få ut ny information på den externa webben samt att förenkla för redaktörer att påverka layout och innehåll på sidor.
-                                    Henriks roll var att strukturera information, testa och utveckla komponenter i IBM Lotus Workplace Web Content Management.
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                Java, IBM Lotus Workplace Web Content Management, IBM Websphere Portal
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="4">#4 Systemutvecklare</h3>
-                            <a href="http://www.softronic.se" title="Softronic" class="logo">
-                                <img src="./img/logo_softronic.png" alt="softronic"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
-                                &mdash;
-                                <a href="http://www.handelsbanken.se" title="Uppdrag för">Handelsbanken</a><br />
-                                3 månader, 2007-12 &mdash; 2008-02
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Nyutveckling och förvaltning av webbtjänst för publikt tillhandahållande av en placeringsguide för handelsbankens privatkunder.
-                                    Utvecklingen skedde i .NET och bestod av alla delar i kedjan från databas till gränssnitt.
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                Microsoft Visual Studio 2005, Microsoft SQL Server 2005 och Microsoft Team Foundation Server (TFS)
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="3">#3 Systemutvecklare</h3>
-                            <a href="http://www.softronic.se" title="Softronic" class="logo">
-                                <img src="./img/logo_softronic.png" alt="softronic"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
-                                &mdash;
-                                <a href="http://www.karolinska.se" title="Uppdrag för">Karolinska Universitetssjukhuset</a><br />
-                                4 månader, 2007-08 &mdash; 2007-11
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Ett datastöd för administrativ hantering av provtagning för att upptäcka tarmcancer på ett tidigt stadium.
-                                    Alla äldre personer som bor i Stockholm blir erbjudna att bli testade gratis.
-                                    Detta system hanterar just denna process, från utskick till utfall av provtagningen.
-                                </p>
-                                <p>
-                                    Systemet var ett webbaserat system med många funktioner där plattformen var .NET.
-                                    Henriks arbetsuppgifter var att utveckla och testa de gränssnitt och urvalsfunktioner som hanterar utskick till personer som erbjuds att bli testade samt eventuella återbesök. 
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                Microsoft Visual Studio 2005, Visual Studio Team System Test Edition 2005, Microsoft SQL Server 2005 och Microsoft Team Foundation Server (TFS)
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="2">#2 Kravanalytiker</h3>
-                            <a href="http://www.softronic.se" title="Softronic" class="logo">
-                                <img src="./img/logo_softronic.png" alt="softronic"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.softronic.se" title="Anställd vid">Modul 1 <i>(nuvarande Softronic)</i></a>
-                                &mdash;
-                                <a href="http://www.nasdaqomxnordic.com" title="Uppdrag för">NASDAQ OMX | Nordic</a><br />
-                                6 månader, 2007-02 &mdash; 2007-07
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Förstudien omfattade framtagande av krav och tidsestimering för en webbtjänst som bestod av ett arbetsflöde i InfoGlue (Content Management System).
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                Kravinsamling, InfoGlue CMS
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3 id="1">#1 Egen konsult</h3>
-                            <a href="http://www.softronic.se" title="Fimare" class="logo">
-                                <img src="./img/logo_fimare.png" alt="fimare"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                Fimare <i>(Enskild firma)</i>
-                                &mdash;
-                                <a href="http://www.lidhreklam.se" title="Uppdrag för">Lidh Reklam</a><br />
-                                1 år 10 månader, 2005-04 &mdash; 2007-01
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Ett helhetsåtagande av ett nytt affärssystem för Lidh Reklam med arv från det befintliga systemet skrivet i COBALT.
-                                    Det var Henriks första riktigt stora uppdrag. Han skrev ett avtal med en tunn kravspecifikation med icke empiriskt verifierbara krav.
-                                    I slutändan resulterade det i att projektet inte kom till avslut vilket han drog stor lärdom av och också är den största anledningen till varför han har specialiserat sig inom krav och test.
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                Java, J2EE, PostgreSQL
-                            </div>
-                        </div>
-
+                        <p>
+                            Enklare mätningar i en SOA miljö, för att få en indikation på prestandaförluster.
+                        </p>
                     </div>
+                    <div>
+                        <h4>Utforskade tester</h4>
+                        <span>★★★★☆</span>
 
-                </article>
-            </div>
-
-            <!-- other experience block -->
-
-            <div class="row">
-                <article>
-                    <h2 class="section-title">Övriga projekt</h2>
-
-                    <div class="column-row">
-
-                        <div class="column">
-                            <h3>WordPress Plugin utveckling</h3>
-                            <a href="http://wordpress.org/plugins/imdb-markup-syntax/" title="WordPress" class="logo">
-                                <img src="./img/icons/social_wordpress.png" alt="wordpress"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                Privat, (öppen källkod <a href="http://opensource.org/licenses/gpl-3.0.html">GPL-3.0</a>)
-                                &mdash;
-                                <a href="http://wordpress.org" title="Utvecklat för">WordPress</a><br />
-                                2013-02 &mdash; nu
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Med en enkelt syntax t ex <i>[imdb:title]</i> ersätts taggarna med data från IMDb Mobile Applications (ett publik RESTful API som exponera IMDb:s databas).
-                                    Koden är väl dokumenterad, testad och innehåller inga checkstyle errors.
-                                    Code coverage ligger på 100%.
-                                    Testmiljön som drivs av Jenkins är helautomatiserad och testar pluginets kodförändringar i 14 olika WordPress releaser.
-                                </p>
-                            </div>
-                            <div class="tools">
-                                <h4>Tekniker/Metoder</h4>
-                                WordPress API, PHP 5, PHPUnit, Jenkins, Checkstyle, PHP Depend 
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <h3>Volontär i Afrika</h3>
-                            <a href="http://www.ziff.or.tz" title="Zanzibar International Film Festival" class="logo">
-                                <img src="./img/logo_ziff.jpg" alt="ziff"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                IT Support
-                                &mdash;
-                                <a href="http://www.ziff.or.tz" title="Zanzibar International Film Festival">ZIFF</a><br />
-                                2 månader, 2006-06 &mdash; 2006-07
-                            </p>
-                            <div class="description">
-                                <p>
-                                    Henrik hjälpte till med praktiskt IT jobb på östafrikas största filmfestival i Tanzania.
-                                    Bland annat byggde de ett ackrediteringssystem för alla gäster. Tog hand om ljud och ljus vid ett antal events.
-                                </p>
-                            </div>
-                        </div>
-
+                        <p>
+                            Verifiera de funktionella kraven i en känd miljö. Underlag till acceptanstester.
+                        </p>
                     </div>
+                    <div>
+                        <h4>Icke funktionella tester</h4>
+                        <span>★★★★☆</span>
 
-                </article>
-            </div>
-
-            <!-- education block -->
-
-            <div class="row">
-                <article>
-
-                    <h2 class="section-title">Utbildning</h2>
-
-                    <div id="chart_education" class="chart"></div>
-
-                    <div class="column-row">
-
-                        <div class="column">
-                            <h3>Biomatematiklinjen</h3>
-                            <a href="http://www.su.se" class="logo">
-                                <img src="./img/logo_su.png" alt="su"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.su.se">Stockholms universitet</a>, Stockholm<br />
-                                2003 &mdash; 2005
-                            </p>
-                            <div class="description">
-                                <ul>
-                                    <li>Linjär algebra 2, fortsättningskurs <span>(MA2070)</span></li>
-                                    <li>Algebra och kombinatorik, fortsättningskurs <span>(MA2230)</span></li>
-                                    <li>Datalogi, grundkurs I <span>(NA1030)</span></li>
-                                    <li>Datalogi, grundkurs II <span>(NA2030)</span></li>
-                                    <li>Databasteknik, fortsättningskurs <span>(NA2090)</span></li>
-                                </ul>
-                            </div>
-
-                            <div id="education_chart"></div>
-                        </div>
-
-                        <div class="column">
-                            <h3>Teknisk Fysik</h3>
-                            <a href="http://www.mdh.se" class="logo">
-                                <img src="./img/logo_mdh.png" alt="mdh"/>
-                            </a>
-                            <br />
-                            <p class="subtitle">
-                                <a href="http://www.mdh.se">Mälardalens högskola</a>, Västerås och Eskilstuna<br />
-                                1998 &mdash; 2003
-                            </p>
-                            <div class="description">
-                                <ul>
-                                    <li>Grundläggande algebra <span>(MM1130)</span></li>
-                                    <li>Matematisk analys I <span>(MM1250)</span></li>
-                                    <li>Matematisk analys II <span>(MM1260)</span></li>
-                                    <li>Numeriska metoder <span>(MT1090)</span></li>
-                                    <li>Mekanik <span>(KK5160)</span></li>
-                                    <li>Programmeringsteknik för ingenjörer <span>(CD5300)</span></li>
-                                    <li>Algebra, avancerad nivå <span>(MM1010)</span></li>
-                                    <li>Diskret matematik <span>(MM1510)</span></li>
-                                    <li>Systemutveckling <span>(EI0170)</span></li>
-                                    <li>Mineral- och vattenkemi <span>(GK2040)</span></li>
-                                    <li>Allmän Kemi <span>(GK1030)</span></li>
-                                    <li>Organisk kemi I <span>(GK2010)</span></li>
-                                    <li>Biologi på molekylär nivå <span>(GB2070)</span></li>
-                                    <li>Mikrobiologi <span>(GB1000)</span></li>
-                                    <li>Cellbiologi <span>(GB1010)</span></li>
-                                    <li>Genetik <span>(GB1020)</span></li>
-                                    <li>Datastrukturer och algoritmer <span>(CD5070)</span></li>
-                                    <li>Modern fysik gk II <span>(MF1150)</span></li>
-                                    <li>Linjär algebra <span>(MM1690)</span></li>
-                                    <li>Webbproduktion <span>(KI1530)</span></li>
-                                </ul>
-                            </div>
-                        </div>
-
+                        <p>
+                            Responsive design på mobila enheter. Enhetlig dokumentation i kod, wiki eller word-dokument. Kodgranskning.
+                        </p>
                     </div>
+                    <div>
+                        <h4>Ad hoc testning</h4>
+                        <span>★★☆☆☆</span>
 
-                </article>
-            </div>
-
-            <!-- skills block -->
-
-            <div class="row">
-                <article>
-
-                    <h2 class="section-title">Färdigheter</h2>
-
-                    <div class="skills-with-ratings">
-
-                        <div class="column skills-group">
-                            <h3>Test</h3>
-                            <div>
-                                <h4>Automatiserade tester</h4>
-                                <span>★★★★★</span>
-                                <p>
-                                    Designa, skriva och köra enkla enhetstester till mer övergripande intergrationstester i någon form av motor.
-                                    Sätta upp alternativt utveckla en motor. Automatiserad testning av webb-tjänster med SoapUI.
-                                </p>
-                            </div>
-                            <div>
-                                <h4>Planera tester</h4>
-                                <span>★★★★★</span>
-                                <p>
-                                    Ta fram teststrategi, testplan eller liknande styrande handling för test. 
-                                </p>
-                            </div>
-                            <div>
-                                <h4>Prestandatester</h4>
-                                <span>★★★☆☆</span>
-                                <p>
-                                    Enklare mätningar i en SOA miljö, för att få en indikation på prestandaförluster.
-                                </p>
-                            </div>
-                            <div>
-                                <h4>Utforskade tester</h4>
-                                <span>★★★★☆</span>
-                                <p>
-                                    Verifiera de funktionella kraven i en känd miljö. Underlag till acceptanstester.
-                                </p>
-                            </div>
-                            <div>
-                                <h4>Icke funktionella tester</h4>
-                                <span>★★★★☆</span>
-                                <p>
-                                    Responsive design på mobila enheter.
-                                    Enhetlig dokumentation i kod, wiki eller word-dokument.
-                                    Kodgranskning.
-                                </p>
-                            </div>
-                            <div>
-                                <h4>Ad hoc testning</h4>
-                                <span>★★☆☆☆</span>
-                                <p>
-                                    Vid absoluta nödfall. Endast testkörningen dokumenteras.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="column skills-group">
-                            <h3>Utveckling</h3>
-
-                            <div>
-                                <h4>Front end utveckling (web)</h4>
-                                <span>★★★★☆</span>
-                                <p>
-                                    Ren HTML5, CSS3, JavaScript ramverk (jQUery, knockout) med json eller xml som databärare.
-                                    Alternativt komponentbaserad arketur (Web Forms ASP.NET, JavaServer Faces) eller PHP 5.
-                                </p>
-                            </div>
-                            <div>
-                                <h4>Back end utveckling</h4>
-                                <span>★★★★☆</span>
-                                <p>
-                                    Soap eller RESTful tjänser som håller kontakten med datalagret alternativt direkt mot databasen.
-                                    ADO.NET med Entity Framework eller Enterprise JavaBeans™ med Java Persistence API för O/R mappig.
-                                </p>
-                            </div>
-                            <div>
-                                <h4>Databas</h4>
-                                <span>★★★★☆</span>
-                                <p>
-                                    SQL som frågespråk, PostgreSQL eller SQL Server som relationsdatabas. Stored procedure eller PL/pgSQL med snygg felhantering.
-                                    Administration av databasen, behörighet, uppsättning etc.
-                                </p>
-                            </div>
-                            <div>
-                                <h4>NoSQL</h4>
-                                <span>★★★☆☆</span>
-                                <p>
-                                    LINQ och XQuery som frågespråk istället för SQL, förändring av XML data. Har använt mycket LINQ i uppdraget <a href="#6">#6</a>.
-                                </p>
-                            </div>
-                            <div>
-                                <h4>Event-driven utveckling</h4>
-                                <span>★★☆☆☆</span>
-                                <p>
-                                    Främst i JavaScript, experimenterat en del i Adobe ActionScript. Asynkron kommunikation i .NET miljö i uppdraget <a href="#11">#11</a>.
-                                </p>
-                            </div>
-                            <div>
-                                <h4>Shell script</h4>
-                                <span>★★★☆☆</span>
-                                <p>
-                                    Utvecklingn av Unix bash script, Groovy script, och till en viss del PowerShell.
-                                    Henrik är erfaren Mac användare som använder terminalen dagligen.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="column skills-group-other">
-                            <h3>Övriga färdigheter</h3>
-                            <ul>
-                                <li>Framtagande av mockups (klickbara skisser)</li>
-                                <li>Kravinsamling</li>
-                                <li>Framtagande av kravspecifikation</li>
-                                <li>Scrum</li>
-                                <li>Planning poker</li>
-                            </ul>
-                        </div>
-
+                        <p>
+                            Vid absoluta nödfall. Endast testkörningen dokumenteras.
+                        </p>
                     </div>
+                </div>
 
-                </article>
-            </div>
+                <div class="column skills-group">
+                    <h3>Utveckling</h3>
 
-            <!-- contacts block -->
+                    <div>
+                        <h4>Front end utveckling (web)</h4>
+                        <span>★★★★☆</span>
 
-            <div class="row row-profile row-inversed">
-                <article>
-
-                    <h2 class="section-title">Kontakta Henrik</h2>
-                    <div class="info">
-                        <table>
-                            <tr>
-                                <th>
-                                    <a href="http://www.biolit.se" title="Biolit - when competence is crucial">
-                                        <img src="./img/logo_biolit.png" alt="biolit"/>
-                                    </a>
-                                </th>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>Kontaktperson</th>
-                                <td>Hans Markebrant</td>
-                            </tr>
-                            <tr>
-                                <th>Mobil</th>
-                                <td>070-91 05 182</td>
-                            </tr>
-                            <tr>
-                                <th>E-Mail</th>
-                                <td><a href="mailto:hans.markebrant@biolit.se">hans.markebrant@biolit.se</a></td>
-                            </tr>
-                        </table>
+                        <p>
+                            Ren HTML5, CSS3, JavaScript ramverk (jQUery, knockout) med json eller xml som databärare. Alternativt komponentbaserad arketur (Web Forms ASP.NET, JavaServer Faces) eller
+                            PHP 5.
+                        </p>
                     </div>
-                    <div class="profile-pic">
-                        <img src="./img/profile.jpg" alt="Henrik Roos" />
+                    <div>
+                        <h4>Back end utveckling</h4>
+                        <span>★★★★☆</span>
+
+                        <p>
+                            Soap eller RESTful tjänser som håller kontakten med datalagret alternativt direkt mot databasen. ADO.NET med Entity Framework eller Enterprise JavaBeans™ med Java
+                            Persistence API för O/R mappig.
+                        </p>
                     </div>
+                    <div>
+                        <h4>Databas</h4>
+                        <span>★★★★☆</span>
 
-                </article>
-            </div>
+                        <p>
+                            SQL som frågespråk, PostgreSQL eller SQL Server som relationsdatabas. Stored procedure eller PL/pgSQL med snygg felhantering. Administration av databasen, behörighet,
+                            uppsättning etc.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>NoSQL</h4>
+                        <span>★★★☆☆</span>
 
-            <!-- social block -->
+                        <p>
+                            LINQ och XQuery som frågespråk istället för SQL, förändring av XML data. Har använt mycket LINQ i uppdraget <a href="#6">#6</a>.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Event-driven utveckling</h4>
+                        <span>★★☆☆☆</span>
 
-            <div class="row row-icon row-inversed">
-                <article>
+                        <p>
+                            Främst i JavaScript, experimenterat en del i Adobe ActionScript. Asynkron kommunikation i .NET miljö i uppdraget <a href="#11">#11</a>.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Shell script</h4>
+                        <span>★★★☆☆</span>
 
-                    <ul class="icons">
-                        <li>
-                            <a href="http://wordpress.org/plugins/imdb-markup-syntax/">
-                                <img src="./img/icons/social_wordpress.png" alt="WordPress"/>
-                                <span>WordPress</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://se.linkedin.com/in/henrikroos/">
-                                <img src="./img/icons/social_linkedin.png" alt="LinkedIn"/>
-                                <span>LinkedIn</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/HenrikRoos">
-                                <img src="./img/icons/social_github.png" alt="GitHub"/>
-                                <span>GitHub</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/HenrikAfternoon">
-                                <img src="./img/icons/social_twitter.png" alt="twitter"/>
-                                <span>@HenrikRoos</span>
-                            </a>
-                        </li>
+                        <p>
+                            Utvecklingn av Unix bash script, Groovy script, och till en viss del PowerShell. Henrik är erfaren Mac användare som använder terminalen dagligen.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="column skills-group-other">
+                    <h3>Övriga färdigheter</h3>
+                    <ul>
+                        <li>Framtagande av mockups (klickbara skisser)</li>
+                        <li>Kravinsamling</li>
+                        <li>Framtagande av kravspecifikation</li>
+                        <li>Scrum</li>
+                        <li>Planning poker</li>
                     </ul>
+                </div>
 
-                </article>
             </div>
 
-        </div>
+        </article>
+    </div>
 
-        <footer>
-            <span>&copy; Henrik Roos, 2013.</span>
-            <span><!-- Right align --></span>
-        </footer>
+    <!-- contacts block -->
 
-    </body>
+    <div class="row row-profile row-inversed">
+        <article>
+
+            <h2 class="section-title">Kontakta Henrik</h2>
+
+            <div class="info">
+                <table>
+                    <tr>
+                        <th>
+                            <a href="http://www.biolit.se" title="Biolit - when competence is crucial">
+                                <img src="./img/logo_biolit.png" alt="biolit"/>
+                            </a>
+                        </th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Kontaktperson</th>
+                        <td>Hans Markebrant</td>
+                    </tr>
+                    <tr>
+                        <th>Mobil</th>
+                        <td>070-91 05 182</td>
+                    </tr>
+                    <tr>
+                        <th>E-Mail</th>
+                        <td><a href="mailto:hans.markebrant@biolit.se">hans.markebrant@biolit.se</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="profile-pic">
+                <img src="./img/profile.jpg" alt="Henrik Roos"/>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- social block -->
+
+    <div class="row row-icon row-inversed">
+        <article>
+
+            <ul class="icons">
+                <li>
+                    <a href="http://wordpress.org/plugins/imdb-markup-syntax/">
+                        <img src="./img/icons/social_wordpress.png" alt="WordPress"/>
+                        <span>WordPress</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://se.linkedin.com/in/henrikroos/">
+                        <img src="./img/icons/social_linkedin.png" alt="LinkedIn"/>
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/HenrikRoos">
+                        <img src="./img/icons/social_github.png" alt="GitHub"/>
+                        <span>GitHub</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/HenrikAfternoon">
+                        <img src="./img/icons/social_twitter.png" alt="twitter"/>
+                        <span>@HenrikRoos</span>
+                    </a>
+                </li>
+            </ul>
+
+        </article>
+    </div>
+
+</div>
+
+<footer>
+    <span>&copy; Henrik Roos, 2013.</span>
+    <span><!-- Right align --></span>
+</footer>
+
+</body>
 </html>

@@ -42,15 +42,6 @@ a:hover {
     color: #999;
 }
 
-#container + footer div:first-of-type {
-    float: left;
-}
-
-#container + footer div:last-of-type {
-    float: right;
-    text-align: right;
-}
-
 article {
     margin: 0 5%;
     overflow: hidden;

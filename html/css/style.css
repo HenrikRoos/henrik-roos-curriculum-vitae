@@ -201,7 +201,7 @@ header b {
     color: #666;
 }
 
-.column a.logo {
+.column .logo {
     text-decoration: none;
     float: right;
 }

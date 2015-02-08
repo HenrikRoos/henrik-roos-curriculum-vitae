@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import url(http://fonts.googleapis.com/css?family=Expletus+Sans:600);
+@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
 
 body {
     background: url(../img/patterns/diagonal-noise.png) repeat;
@@ -403,6 +404,7 @@ img[alt='biolit']
 
 .timeline
 {
+    font-family: 'Share Tech Mono', monospace ;
     font-size: smaller;
     color: #AAA;
     clear: both;

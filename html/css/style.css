@@ -353,6 +353,7 @@ header b {
 
 .row-profile .info {
     float:left;
+    padding-left: 1em;
 }
 
 #profile-pic {

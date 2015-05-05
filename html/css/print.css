@@ -1,59 +1,57 @@
 body {
-    color: black;
-    background: none;
+    color:black;
+    background:none;
 }
 
 #container {
-    width: 100%;
-    margin: 0;
-    box-shadow: none;
+    width:100%;
+    margin:0;
+    box-shadow:none;
 }
 
 footer {
-    width: 100%;
+    width:100%;
 }
 
 article {
-    margin: 0;
-    overflow: visible;
-    width: 100%;
-    padding: 1em 0;
+    margin:0;
+    overflow:visible;
+    width:100%;
+    padding:1em 0;
 }
 
 .markup p,
 .markup blockquote {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left:5%;
+    margin-right:5%;
 }
 
-#container, .row {
-    border: none;
+#container,
+.row {
+    border:none;
 }
 
 .section-title {
-    padding: 3em 0 0 0;
-    font-weight: bold;
-    font-size: large;
-    float: none;
-    background: none;
-    clear: both;
-    page-break-before: auto;
+    padding:3em 0 0 0;
+    font-weight:bold;
+    font-size:large;
+    float:none;
+    background:none;
+    clear:both;
+    page-break-before:auto;
 }
 
 .row-inversed {
-    background: none;
+    background:none;
 }
 
 .row-icon,
 header a,
 #container + footer {
-    display: none;
+    display:none;
 }
 
 .timeline {
-    overflow: visible;
+    overflow:visible;
 }
 
-.profile-pic {
-    float: none;
-}

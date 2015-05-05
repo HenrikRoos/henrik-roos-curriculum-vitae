@@ -27,22 +27,44 @@
 
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 950px) {
     /* Smaller than desktop */
     .profile-pic {
-        clear: both;
-        float: left;
-    }
-
-    #experience .chart {
-        width: 50%;
+        width:30%;
+        padding:0.6em;
     }
 
     .icons span {
         display: block;
         margin-top: 0.3em;
     }
-
+    
+    .pie {
+    	width: 50%;
+    }
+    
+    a.logo img, img[alt='biolit'] {
+    	height:4em;
+    }
+    
+    img[alt='seb'],
+    img[alt='ptk'],
+    img[alt='nasdaq'],
+    img[alt='fimare'] {
+    	height:2em !important;
+    }
+    
+    img[alt='comhem'] {
+    	height:3em !important;
+    }
+    
+    img[alt='handelsbanken'] {
+    	height:1em !important;
+    }
+    
+    img[alt='ki'] {
+    	height:6em !important;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -59,19 +81,19 @@
         margin-left: 0;
         margin-right: 0;
     }
-
-    .info {
-        width: 100%;
-    }
 }
 
 @media only screen and (max-width: 480px) {
     /* Most phones */
-    #experience .chart,
-    #chart_education {
-        width: 100%;
+    
+    a.logo img, img[alt='biolit'] {
+    	height:3em;
     }
-
+    
+    #profile-pic {
+    	width: 90%;
+    }
+    
     .icons span {
         display: none;
     }
@@ -79,6 +101,11 @@
     .markup blockquote,
     .markup blockquote footer {
         padding-right: 0;
+    }
+    
+    #subject_distribution {
+    	clear:both;
+    	width: 100%;
     }
 
     .icons a img {

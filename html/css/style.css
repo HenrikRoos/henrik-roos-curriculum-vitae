@@ -152,35 +152,12 @@ header p {
     color:#aaa;
 }
 
-header div {
-    float:left;
-}
-
-header a {
-    font-family:'Expletus Sans', cursive;
-    display:block;
+header img {
+    width:25%;
+    border:solid 8px rgb(255, 255, 255);
     float:right;
-    width:7em;
-    height:9em;
-    margin-top:-4em;
-    padding-top:2em;
-    background:url(../img/ribbon.png) no-repeat;
-    background-size:7em 9em;
-    color:#fff;
-    font-size:small;
-    text-align:center;
-    text-shadow:0 1px 0 rgba(0, 0, 0, 0.4);
-    text-decoration:none;
-}
-
-header a:hover {
-    color:#a8e6f5;
-    text-shadow:0 -1px 0 rgba(0, 0, 0, 0.6);
-}
-
-header b {
-    display:block;
-    font-size:large;
+    box-shadow:1px 1px 3px 0 rgba(0, 0, 0, 0.80);
+    border-radius:2px;
 }
 
 /*-----------------------------------------------------------------------------
@@ -204,6 +181,10 @@ header b {
 
 .section-title + * {
     clear:both;
+}
+
+#contact {
+    color:#333840;
 }
 
 .pie {
@@ -353,13 +334,7 @@ header b {
 
 .row-profile .info {
     float:left;
-    padding-left: 1em;
-}
-
-#profile-pic {
-    width:30%;
-    border:solid 10px rgba(255, 255, 255, 0.60);
-    float:right;
+    padding-left:1em;
 }
 
 /*information table*/

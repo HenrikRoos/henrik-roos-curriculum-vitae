@@ -81,6 +81,12 @@
         margin-left: 0;
         margin-right: 0;
     }
+    
+    header img {
+	    width:30%;
+	    border:solid 6px rgb(255, 255, 255);
+	}
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -111,5 +117,10 @@
     .icons a img {
         width: 3em;
     }
-
+    
+    header img {
+    	width:50%;
+    	border:solid 4px rgb(255, 255, 255);
+    	border-radius:0px;
+    }
 }

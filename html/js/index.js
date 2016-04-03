@@ -36,19 +36,19 @@ function generateChart(id, title, data) {
 
 var discipline = [
     {
-        value: 22 + 4 + 3 + 3 + 8 + 5,
+        value: 22 + 4 + 3 + 3 + 8 + 5, //#1 #3 #4 #5 #6 #11
         color:"#F9D423",
 	    highlight: "#FEF2B9",
         label: "Utveckling"
     },
     {
-        value: 6 + 9 + 3 + 3,
+        value: 6 + 9 + 3 + 3 + 17 + 9, //#7 #9 #10 #12 #13 #14
         color: "#619EC2",
         highlight: "#D0E2EC",
         label: "Test"
     },
     {
-        value: 6 + 8,
+        value: 6 + 8, //#2 #8
         color: "orange",
         highlight: "#FFD1B3",
         label: "Krav"
@@ -57,13 +57,13 @@ var discipline = [
 
 var branch = [
     {
-        value: 4 + 6 + 8 + 3 + 5 + 3, //#3 + #7 + #8 + #10 + #11 + #12
+        value: 4 + 6 + 8 + 3 + 5 + 3, //#3 #7 #8 #10 #11 #12
         color:"DarkTurquoise",
 	    highlight: "#52FCFF",
         label: "Hälsa & Sjukvård"
     },
     {
-        value: 6 + 3 + 8 + 9, //#2 + #4 + #6 + #9
+        value: 6 + 3 + 8 + 9, //#2 #4 #6 #9
         color: "DimGray",
         highlight: "#B5B5B5",
         label: "Bank & Finans"
@@ -75,55 +75,31 @@ var branch = [
         label: "Reklam"
     },
     {
-        value: 3, //#5
+        value: 3 + 17, //#5 #13
         color: "DeepSkyBlue",
         highlight: "#99E6FF",
         label: "Data It & Telekom."
+    },
+    {
+        value: 9, //#14
+        color: "#FF9834",
+        highlight: "#FFBF80",
+        label: "Försäkring"
     }
 ];
 
 var dev_platform = [
     {
-        value: 17, //#13
+        value: 22 + 3 + 3 + 6 + 9 + 3 + 17, //#1 #2 #5 #7 #9 #12 #13
         color:"#0099CC",
 	    highlight: "#66D9FF",
-        label: "Java Spring"
+        label: "Java"
     },
     {
-        value: 6 + 9 + 3, //#7 + #9 + #12
-        color: "#007399",
-        highlight: "#33CCFF",
-        label: "Java EE 6"
-    },
-    {
-        value: 3, //#5
-        color: "#3D8299",
-        highlight: "#CCF2FF",
-        label: "Java EE 5"
-    },
-    {
-        value: 22 + 6, //#1 + #2
-        color: "#66D9FF",
-        highlight: "#99C7D6",
-        label: "J2EE 1.4"
-    },
-    {
-        value: 5, //#11
+        value: 4 + 3 + 8 + 5 + 9, //#3 #4 #6 #11 #14
         color: "#FF9D00",
         highlight: "#FFCE80",
-        label: ".NET 4.5"
-    },
-    {
-        value: 8, //#6
-        color: "#FFB53D",
-        highlight: "#FFEFD6",
-        label: ".NET 3.5"
-    },
-    {
-        value: 4 + 3, //#3 + #4
-        color: "#FFCC7A",
-        highlight: "#FFE6BD",
-        label: ".NET 3.0"
+        label: ".NET"
     },
     {
         value: 8 + 3, //#8 + #10

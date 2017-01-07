@@ -36,13 +36,13 @@ function generateChart(id, title, data) {
 
 var discipline = [
     {
-        value: 22 + 4 + 3 + 3 + 8 + 5, //#1 #3 #4 #5 #6 #11
+        value: 22 + 4 + 3 + 3 + 8 + 5 + 16, //#1 #3 #4 #5 #6 #11 #14
         color:"#F9D423",
 	    highlight: "#FEF2B9",
         label: "Utveckling"
     },
     {
-        value: 6 + 9 + 3 + 3 + 17 + 9, //#7 #9 #10 #12 #13 #14
+        value: 6 + 9 + 3 + 3 + 17, //#7 #9 #10 #12 #13
         color: "#619EC2",
         highlight: "#D0E2EC",
         label: "Test"
@@ -81,7 +81,7 @@ var branch = [
         label: "Data It & Telekom."
     },
     {
-        value: 9, //#14
+        value: 16, //#14
         color: "#FF9834",
         highlight: "#FFBF80",
         label: "Försäkring"
@@ -96,7 +96,7 @@ var dev_platform = [
         label: "Java"
     },
     {
-        value: 4 + 3 + 8 + 5 + 9, //#3 #4 #6 #11 #14
+        value: 4 + 3 + 8 + 5 + 16, //#3 #4 #6 #11 #14
         color: "#FF9D00",
         highlight: "#FFCE80",
         label: ".NET"

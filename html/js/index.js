@@ -36,7 +36,7 @@ function generateChart(id, title, data) {
 
 var discipline = [
     {
-        value: 22 + 4 + 3 + 3 + 8 + 5 + 16, //#1 #3 #4 #5 #6 #11 #14
+        value: 22 + 4 + 3 + 3 + 8 + 5 + 18, //#1 #3 #4 #5 #6 #11 #14
         color:"#F9D423",
 	    highlight: "#FEF2B9",
         label: "Utveckling"
@@ -96,7 +96,7 @@ var dev_platform = [
         label: "Java"
     },
     {
-        value: 4 + 3 + 8 + 5 + 16, //#3 #4 #6 #11 #14
+        value: 4 + 3 + 8 + 5 + 18, //#3 #4 #6 #11 #14
         color: "#FF9D00",
         highlight: "#FFCE80",
         label: ".NET"

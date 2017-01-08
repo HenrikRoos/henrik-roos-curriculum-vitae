@@ -8,47 +8,61 @@ Chart.defaults.global.tooltipFontFamily = "'Open Sans', 'Helvetica Neue', helvet
 Chart.defaults.global.tooltipFontSize = 13;
 
 function generateChart(id, title, data) {
-	var placeholder = document.getElementById(id);
-	placeholder.innerHTML = "";
-	
-	var h3 = document.createElement("h3");
-	placeholder.appendChild(h3);
-	h3.innerHTML = title;
-	
-	var div = document.createElement("div");
-	placeholder.appendChild(div);
-	placeholder = div;
-	
-	var pie = document.createElement("canvas");
-	pie.setAttribute("height",placeholder.clientWidth);
-	pie.setAttribute("width",placeholder.clientWidth);
-	placeholder.appendChild(pie);
-	
-	var pie_chart = new Chart(pie.getContext("2d")).Pie(data,
-		{
-			legendTemplate : "<% for (var i=0; i<segments.length; i++){%><li><span style=\"color:<%=segments[i].fillColor%>\">✪</span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%>"
-		});
-	
-	var legend = document.createElement("ul");
-	legend.innerHTML = pie_chart.generateLegend();
-	placeholder.parentElement.appendChild(legend);
+    var placeholder = document.getElementById(id);
+    placeholder.innerHTML = "";
+
+    var h3 = document.createElement("h3");
+    placeholder.appendChild(h3);
+    h3.innerHTML = title;
+
+    var div = document.createElement("div");
+    placeholder.appendChild(div);
+    placeholder = div;
+
+    var pie = document.createElement("canvas");
+    pie.setAttribute("height", placeholder.clientWidth);
+    pie.setAttribute("width", placeholder.clientWidth);
+    placeholder.appendChild(pie);
+
+    var pie_chart = new Chart(pie.getContext("2d")).Pie(data,
+        {
+            legendTemplate: "<% for (var i=0; i<segments.length; i++){%><li><span style=\"color:<%=segments[i].fillColor%>\">✪</span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%>"
+        });
+
+    var legend = document.createElement("ul");
+    legend.innerHTML = pie_chart.generateLegend();
+    placeholder.parentElement.appendChild(legend);
+}
+
+function experienceLength(id) {
+    var td = document.getElementById(id);
+    var colspan = td.getAttribute("colspan");
+    return parseInt(colspan);
+}
+
+function experienceSum() {
+    var sum = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        sum += experienceLength(arguments[i]);
+    }
+    return sum;
 }
 
 var discipline = [
     {
-        value: 22 + 4 + 3 + 3 + 8 + 5 + 18, //#1 #3 #4 #5 #6 #11 #14
-        color:"#F9D423",
-	    highlight: "#FEF2B9",
+        value: experienceSum("e1", "e3", "e4", "e5", "e6", "e11", "e14"),
+        color: "#F9D423",
+        highlight: "#FEF2B9",
         label: "Utveckling"
     },
     {
-        value: 6 + 9 + 3 + 3 + 17, //#7 #9 #10 #12 #13
+        value: experienceSum("e7", "e9", "e10", "e12", "e13"),
         color: "#619EC2",
         highlight: "#D0E2EC",
         label: "Test"
     },
     {
-        value: 6 + 8, //#2 #8
+        value: experienceSum("e2", "e8"),
         color: "orange",
         highlight: "#FFD1B3",
         label: "Krav"
@@ -57,31 +71,31 @@ var discipline = [
 
 var branch = [
     {
-        value: 4 + 6 + 8 + 3 + 5 + 3, //#3 #7 #8 #10 #11 #12
-        color:"DarkTurquoise",
-	    highlight: "#52FCFF",
+        value: experienceSum("e3", "e7", "e8", "e10", "e11", "e12"),
+        color: "DarkTurquoise",
+        highlight: "#52FCFF",
         label: "Hälsa & Sjukvård"
     },
     {
-        value: 6 + 3 + 8 + 9, //#2 #4 #6 #9
+        value: experienceSum("e2", "e4", "e6", "e9"),
         color: "DimGray",
         highlight: "#B5B5B5",
         label: "Bank & Finans"
     },
     {
-        value: 22, //#1
+        value: experienceSum("e1"),
         color: "LightPink",
         highlight: "#FFEBEE",
         label: "Reklam"
     },
     {
-        value: 3 + 17, //#5 #13
+        value: experienceSum("e5", "e13"),
         color: "DeepSkyBlue",
         highlight: "#99E6FF",
         label: "Data It & Telekom."
     },
     {
-        value: 16, //#14
+        value: experienceSum("e14"),
         color: "#FF9834",
         highlight: "#FFBF80",
         label: "Försäkring"
@@ -91,8 +105,8 @@ var branch = [
 var dev_platform = [
     {
         value: 22 + 3 + 3 + 6 + 9 + 3 + 17, //#1 #2 #5 #7 #9 #12 #13
-        color:"#0099CC",
-	    highlight: "#66D9FF",
+        color: "#0099CC",
+        highlight: "#66D9FF",
         label: "Java"
     },
     {
@@ -142,9 +156,7 @@ var subject_distribution = [
     }
 ];
 
-window.onload = function(){
-	generateChart("discipline", "Disciplin", discipline);
-	generateChart("branch", "Bransch", branch);
-	generateChart("dev_platform", "Plattform", dev_platform);
-	generateChart("subject_distribution", "Ämnesfördelning av 198 hp", subject_distribution);
-}
+generateChart("discipline", "Disciplin", discipline);
+generateChart("branch", "Bransch", branch);
+generateChart("dev_platform", "Plattform", dev_platform);
+generateChart("subject_distribution", "Ämnesfördelning av 198 hp", subject_distribution);

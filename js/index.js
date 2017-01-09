@@ -160,3 +160,11 @@ generateChart("discipline", "Disciplin", discipline);
 generateChart("branch", "Bransch", branch);
 generateChart("dev_platform", "Plattform", dev_platform);
 generateChart("subject_distribution", "Ämnesfördelning av 198 hp", subject_distribution);
+
+var exp = document.getElementById("13");
+var start = new Date(exp.getAttribute("start"));
+var end = new Date(exp.getAttribute("end"));
+var months = Math.round((end - start) / (30*24*60*60*1000)); 
+
+var placeholder = document.querySelector(".startend");
+placeholder.innerHTML = "Antal " + months;

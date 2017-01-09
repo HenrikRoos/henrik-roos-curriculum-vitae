@@ -83,6 +83,10 @@ a:hover {
     text-decoration:none;
 }
 
+.hide {
+    display: none;
+}
+
 /*-----------------------------------------------------------------------------
     LAYOUT
 -----------------------------------------------------------------------------*/
@@ -122,12 +126,12 @@ article {
     margin-top:2em;
 }
 
-.column:nth-child(odd) {
+.column:nth-of-type(odd) {
     margin-right:2%;
     clear:left;
 }
 
-.column:nth-child(even) {
+.column:nth-of-type(even) {
     margin-left:2%;
 }
 
@@ -277,39 +281,6 @@ header img {
 .column .logo {
     text-decoration:none;
     float:right;
-}
-
-/* Skills */
-.skills-group h4 {
-    color:#888;
-    font-weight:normal;
-    display:inline-block;
-    padding-bottom:0.5em;
-}
-
-.skills-group div {
-    margin-top:1.6em;
-}
-
-.skills-group div:first-of-type {
-    margin-top:1em;
-}
-
-.skills-group p {
-    min-height:5em;
-    margin-top:0;
-    border-top:thin dotted #888;
-}
-
-.skills-group-other ul {
-    list-style-type:circle;
-    padding-left:2em;
-}
-
-.skills-with-ratings span {
-    float:right;
-    font-size:larger;
-    color:#666;
 }
 
 /* style basic html elements */

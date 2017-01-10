@@ -34,35 +34,131 @@ function generateChart(id, title, data) {
     placeholder.parentElement.appendChild(legend);
 }
 
-function experienceLength(id) {
-    var td = document.getElementById(id);
-    var colspan = td.getAttribute("colspan");
-    return parseInt(colspan);
+function experienceLength(div) {
+    var end = div.hasAttribute("end") ? new Date(div.getAttribute("end")) : new Date();
+    var start = div.hasAttribute("start") ? new Date(div.getAttribute("start")) : new Date();
+    return end > start ? Math.round((end - start) / ((365.25 / 12) * 24 * 60 * 60 * 1000)) : 0;
 }
 
-function experienceSum() {
+function experienceSum(label) {
     var sum = 0;
-    for (var i = 0; i < arguments.length; i++) {
-        sum += experienceLength(arguments[i]);
+    var divs = document.querySelectorAll("#mission ." + label);
+    for (var i = 0; i < divs.length; i++) {
+        sum += experienceLength(divs[i]);
     }
     return sum;
 }
 
+function drawExperienceInterval() {
+    var divs = document.querySelectorAll("#mission .column");
+    for (var i = 0; i < divs.length; i++) {
+        var endtext = divs[i].hasAttribute("end") ? divs[i].getAttribute("end") : "pågående";
+        var text = divs[i].getAttribute("start") + " &mdash; " + endtext + " (" + experienceLength(divs[i]) + " månader)";
+        var divtext = document.createElement("div");
+        divtext.innerHTML = text;
+        var placeholder = divs[i].querySelectorAll(".subtitle")[0];
+        placeholder.appendChild(divtext);
+    }
+}
+
+function getTimelineTitleTd(missionDiv) {
+    var h3 = missionDiv.querySelector("h3");
+    var td = document.createElement("td");
+
+    if (missionDiv.hasAttribute("id")) {
+        var a = document.createElement("a");
+        a.setAttribute("href", "#" + missionDiv.getAttribute("id"));
+        s.innerHTML = h3.getAttribute("title");
+        td.appendChild(a);
+    }
+    
+    td.setAttribute("class", "experience " + missionDiv.getAttribute("timeline"));
+    td.setAttribute("colspan", experienceLength(missionDiv));
+    td.setAttribute("title", h3.innerHTML);
+    return td;
+}
+
+function getTimelineMonthTr(firstMissionDiv) {
+    var tr = document.createElement("tr");
+    var monthNames = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
+    var startDate = new Date(firstMissionDiv.getAttribute("start"));
+    var endDate = new Date();
+    
+    for (var d = startDate; d < endDate; d.setMonth(d.getMonth() + 1)) {
+        var td = document.createElement("td");
+        td.innerHTML = monthNames[d.getMonth()];
+        tr.appendChild(td);
+    }
+    return tr;    
+}
+
+function getTimelineYearTr(firstMissionDiv) {
+    var tr = document.createElement("tr");
+    var startDate = new Date(firstMissionDiv.getAttribute("start"));
+    var endDate = new Date();
+
+    var td = document.createElement("td");
+    td.setAttribute("colspan", 12 - startDate.getMonth() + 1);
+    td.innerHTML = startDate.getFullYear();
+    tr.appendChild(td);
+    
+    for (var y = startDate.getFullYear() + 1; y < endDate.getFullYear(); y++) {
+        td = document.createElement("td");
+        td.setAttribute("colspan", 12);
+        td.innerHTML = y;
+        tr.appendChild(td);
+    }
+
+    td = document.createElement("td");
+    td.setAttribute("colspan", endDate.getMonth());
+    td.innerHTML = endDate.getFullYear();
+    tr.appendChild(td);
+
+    return tr;    
+}
+
+function getTimelineTbody() {
+    var tbody = document.createElement("tbody");
+
+    var tr = document.createElement("tr");
+    var missionAll = document.getElementById("mission").childNodes;
+    for (var i = 0; i < missionAll.length; i++) {
+        var td = getTimelineTitleTd(missionAll[i]);
+        tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+
+    tr = getTimelineMonthTr(missionAll[0]);
+    tbody.appendChild(tr);
+
+    tr = getTimelineYearTr(missionAll[0]);
+    tbody.appendChild(tr);
+
+    return tbody;
+}
+
+function drawTimeline() {
+    var table = document.createElement("table");
+    table.appendChild(getTimelineTbody());
+    var div = document.getElementById("timeline");
+    div.innerHTML = table;
+}
+
 var discipline = [
     {
-        value: experienceSum("e1", "e3", "e4", "e5", "e6", "e11", "e14"),
+        value: experienceSum("utv"),
         color: "#F9D423",
         highlight: "#FEF2B9",
         label: "Utveckling"
     },
     {
-        value: experienceSum("e7", "e9", "e10", "e12", "e13"),
+        value: experienceSum("test"),
         color: "#619EC2",
         highlight: "#D0E2EC",
         label: "Test"
     },
     {
-        value: experienceSum("e2", "e8"),
+        value: experienceSum("req"),
         color: "orange",
         highlight: "#FFD1B3",
         label: "Krav"
@@ -71,31 +167,31 @@ var discipline = [
 
 var branch = [
     {
-        value: experienceSum("e3", "e7", "e8", "e10", "e11", "e12"),
+        value: experienceSum("health"),
         color: "DarkTurquoise",
         highlight: "#52FCFF",
         label: "Hälsa & Sjukvård"
     },
     {
-        value: experienceSum("e2", "e4", "e6", "e9"),
+        value: experienceSum("finans"),
         color: "DimGray",
         highlight: "#B5B5B5",
         label: "Bank & Finans"
     },
     {
-        value: experienceSum("e1"),
+        value: experienceSum("reklam"),
         color: "LightPink",
         highlight: "#FFEBEE",
         label: "Reklam"
     },
     {
-        value: experienceSum("e5", "e13"),
+        value: experienceSum("telekom"),
         color: "DeepSkyBlue",
         highlight: "#99E6FF",
         label: "Data It & Telekom."
     },
     {
-        value: experienceSum("e14"),
+        value: experienceSum("insurance"),
         color: "#FF9834",
         highlight: "#FFBF80",
         label: "Försäkring"
@@ -104,19 +200,19 @@ var branch = [
 
 var dev_platform = [
     {
-        value: 22 + 3 + 3 + 6 + 9 + 3 + 17, //#1 #2 #5 #7 #9 #12 #13
+        value: experienceSum("java"),
         color: "#0099CC",
         highlight: "#66D9FF",
         label: "Java"
     },
     {
-        value: 4 + 3 + 8 + 5 + 18, //#3 #4 #6 #11 #14
+        value: experienceSum("net"),
         color: "#FF9D00",
         highlight: "#FFCE80",
         label: ".NET"
     },
     {
-        value: 8 + 3, //#8 + #10
+        value: experienceSum("oberoende"),
         color: "#AA8955",
         highlight: "#E5DDCD",
         label: "Oberoende"
@@ -160,11 +256,5 @@ generateChart("discipline", "Disciplin", discipline);
 generateChart("branch", "Bransch", branch);
 generateChart("dev_platform", "Plattform", dev_platform);
 generateChart("subject_distribution", "Ämnesfördelning av 198 hp", subject_distribution);
-
-var exp = document.getElementById("13");
-var start = new Date(exp.getAttribute("start"));
-var end = new Date(exp.getAttribute("end"));
-var months = Math.round((end - start) / (30*24*60*60*1000)); 
-
-var placeholder = document.querySelector(".startend");
-placeholder.innerHTML = "Antal " + months;
+drawExperienceInterval();
+drawTimeline();

@@ -369,7 +369,7 @@ header img {
 
 /* chart */
 /* timeline */
-.timeline {
+#timeline {
     font-family:'Share Tech Mono', monospace;
     font-size:smaller;
     color:#AAA;
@@ -377,52 +377,51 @@ header img {
     overflow:auto;
 }
 
-.timeline table {
+#timeline table {
     width:100%;
     text-align:center;
 }
 
-.timeline td {
+#timeline td {
     border-right:thin solid #DDD;
 }
 
-.timeline td:last-child {
+#timeline td:last-child {
     border:none;
 }
 
-.timeline td.req {
+#timeline td.req {
     border-bottom:thick solid orange;
 }
 
-.timeline td.dev {
+#timeline td.dev {
     border-bottom:thick solid #F9D423;
 }
 
-.timeline td.test {
+#timeline td.test {
     border-bottom:thick solid #619EC2;
 }
 
-.timeline td.before,
-.timeline td.inhouse,
-.timeline td.offduty {
+#timeline td.before,
+#timeline td.inhouse,
+#timeline td.offduty {
     border-bottom:thick solid transparent;
 }
 
-.timeline td.experience:hover,
-.timeline td.inhouse:hover {
+#timeline td.experience:hover,
+#timeline td.inhouse:hover {
     background-color:#FCEC9C;
     color:black;
 }
 
-.timeline td.offduty:hover {
+#timeline td.offduty:hover {
     color:black;
 }
 
-.timeline td.before {
+#timeline td.before {
     opacity:0.5;
 }
 
-.timeline a {
+#timeline a {
     color:inherit;
 }
-

@@ -68,8 +68,10 @@ function getTimelineTitleTd(missionDiv) {
     if (missionDiv.hasAttribute("id")) {
         var a = document.createElement("a");
         a.setAttribute("href", "#" + missionDiv.getAttribute("id"));
-        s.innerHTML = h3.getAttribute("title");
+        a.innerHTML = h3.getAttribute("title");
         td.appendChild(a);
+    } else {
+        td.innerHTML = h3.getAttribute("title");
     }
     
     td.setAttribute("class", "experience " + missionDiv.getAttribute("timeline"));
@@ -121,8 +123,8 @@ function getTimelineTbody() {
     var tbody = document.createElement("tbody");
 
     var tr = document.createElement("tr");
-    var missionAll = document.getElementById("mission").childNodes;
-    for (var i = 0; i < missionAll.length; i++) {
+    var missionAll = document.querySelectorAll("#mission [start]");
+    for (var i = missionAll.length - 1; i >= 0; i--) {
         var td = getTimelineTitleTd(missionAll[i]);
         tr.appendChild(td);
     }
@@ -139,9 +141,10 @@ function getTimelineTbody() {
 
 function drawTimeline() {
     var table = document.createElement("table");
-    table.appendChild(getTimelineTbody());
+    var tbody = getTimelineTbody();
+    table.appendChild(tbody);
     var div = document.getElementById("timeline");
-    div.innerHTML = table;
+    div.appendChild(table);
 }
 
 var discipline = [

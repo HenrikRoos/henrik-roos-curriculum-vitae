@@ -100,7 +100,7 @@ function getTimelineYearTr(firstMissionDiv) {
     var endDate = new Date();
 
     var td = document.createElement("td");
-    td.setAttribute("colspan", 12 - startDate.getMonth() + 1);
+    td.setAttribute("colspan", 12 - startDate.getMonth());
     td.innerHTML = startDate.getFullYear();
     tr.appendChild(td);
     
@@ -112,7 +112,7 @@ function getTimelineYearTr(firstMissionDiv) {
     }
 
     td = document.createElement("td");
-    td.setAttribute("colspan", endDate.getMonth());
+    td.setAttribute("colspan", endDate.getMonth() + 1);
     td.innerHTML = endDate.getFullYear();
     tr.appendChild(td);
 
@@ -130,10 +130,10 @@ function getTimelineTbody() {
     }
     tbody.appendChild(tr);
 
-    tr = getTimelineMonthTr(missionAll[0]);
+    tr = getTimelineMonthTr(missionAll[missionAll.length - 1]);
     tbody.appendChild(tr);
 
-    tr = getTimelineYearTr(missionAll[0]);
+    tr = getTimelineYearTr(missionAll[missionAll.length - 1]);
     tbody.appendChild(tr);
 
     return tbody;

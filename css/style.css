@@ -394,7 +394,7 @@ header img {
     border-bottom:thick solid orange;
 }
 
-#timeline td.dev {
+#timeline td.utv {
     border-bottom:thick solid #F9D423;
 }
 
@@ -402,8 +402,6 @@ header img {
     border-bottom:thick solid #619EC2;
 }
 
-#timeline td.before,
-#timeline td.inhouse,
 #timeline td.offduty {
     border-bottom:thick solid transparent;
 }

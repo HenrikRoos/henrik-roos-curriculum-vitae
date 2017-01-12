@@ -34,10 +34,14 @@ function generateChart(id, title, data) {
     placeholder.parentElement.appendChild(legend);
 }
 
+function countMonth(start, end) {
+    return Math.round((end - start) / ((365.25 / 12) * 24 * 60 * 60 * 1000));
+}
+
 function experienceLength(div) {
     var end = div.hasAttribute("end") ? new Date(div.getAttribute("end")) : new Date();
     var start = div.hasAttribute("start") ? new Date(div.getAttribute("start")) : new Date();
-    return end > start ? Math.round((end - start) / ((365.25 / 12) * 24 * 60 * 60 * 1000)) : 0;
+    return end > start ? countMonth(start, end) : 0;
 }
 
 function experienceSum(label) {
@@ -82,16 +86,17 @@ function getTimelineTitleTd(missionDiv) {
 
 function getTimelineMonthTr(firstMissionDiv) {
     var tr = document.createElement("tr");
-    var monthNames = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
     var startDate = new Date(firstMissionDiv.getAttribute("start"));
     var endDate = new Date();
+    var months = countMonth(startDate, endDate);
+    var article = document.querySelector("#experience article");
     
-    for (var d = startDate; d < endDate; d.setMonth(d.getMonth() + 1)) {
+    for (var i = 0; i < months; i++) {
         var td = document.createElement("td");
-        td.innerHTML = monthNames[d.getMonth()];
+        td.width = article.offsetWidth / months;
         tr.appendChild(td);
     }
-    return tr;    
+    return tr;
 }
 
 function getTimelineYearTr(firstMissionDiv) {

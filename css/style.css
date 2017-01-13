@@ -420,6 +420,10 @@ header img {
     opacity:0.5;
 }
 
+#timeline td.months {
+    width: 40px;
+}
+
 #timeline a {
     color:inherit;
 }

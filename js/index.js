@@ -89,11 +89,10 @@ function getTimelineMonthTr(firstMissionDiv) {
     var startDate = new Date(firstMissionDiv.getAttribute("start"));
     var endDate = new Date();
     var months = countMonth(startDate, endDate);
-    var article = document.querySelector("#experience article");
     
     for (var i = 0; i < months; i++) {
         var td = document.createElement("td");
-        td.width = article.offsetWidth / months;
+        td.setAttribute("class", "months");
         tr.appendChild(td);
     }
     return tr;

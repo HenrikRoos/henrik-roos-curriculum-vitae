@@ -374,54 +374,20 @@ header img {
     font-size:smaller;
     color:#AAA;
     clear:both;
-    overflow:auto;
 }
 
-#timeline table {
-    width:100%;
+#timeline .item {
+    float: left;
     text-align:center;
+    border-right:1px solid #DDD;
 }
 
-#timeline td {
-    border-right:thin solid #DDD;
+#timeline .year div {
+    border-top:1px solid #DDD;
 }
 
-#timeline td:last-child {
-    border:none;
-}
-
-#timeline td.req {
-    border-bottom:thick solid orange;
-}
-
-#timeline td.utv {
-    border-bottom:thick solid #F9D423;
-}
-
-#timeline td.test {
-    border-bottom:thick solid #619EC2;
-}
-
-#timeline td.offduty {
-    border-bottom:thick solid transparent;
-}
-
-#timeline td.experience:hover,
-#timeline td.inhouse:hover {
-    background-color:#FCEC9C;
-    color:black;
-}
-
-#timeline td.offduty:hover {
-    color:black;
-}
-
-#timeline td.before {
-    opacity:0.5;
-}
-
-#timeline td.months {
-    width: 40px;
+#timeline .item:last-child {
+    border-right:none;
 }
 
 #timeline a {

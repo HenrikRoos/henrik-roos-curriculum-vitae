@@ -65,90 +65,74 @@ function drawExperienceInterval() {
     }
 }
 
-function getTimelineTitleTd(missionDiv) {
+function getTimelineTitleItem(missionDiv, months, clientWidth) {
     var h3 = missionDiv.querySelector("h3");
-    var td = document.createElement("td");
+    var div = document.createElement("div");
 
     if (missionDiv.hasAttribute("id")) {
         var a = document.createElement("a");
         a.setAttribute("href", "#" + missionDiv.getAttribute("id"));
         a.innerHTML = h3.getAttribute("title");
-        td.appendChild(a);
+        div.appendChild(a);
     } else {
-        td.innerHTML = h3.getAttribute("title");
+        div.innerHTML = h3.getAttribute("title");
     }
-    
-    td.setAttribute("class", "experience " + missionDiv.getAttribute("timeline"));
-    td.setAttribute("colspan", experienceLength(missionDiv));
-    td.setAttribute("title", h3.innerHTML);
-    return td;
+
+    div.style.width = 100 * (experienceLength(missionDiv) / months - 1.1 * (1 / clientWidth)) + "%";
+    div.setAttribute("title", h3.innerHTML);
+    div.setAttribute("class", "item");
+    return div;
 }
 
-function getTimelineMonthTr(firstMissionDiv) {
-    var tr = document.createElement("tr");
-    var startDate = new Date(firstMissionDiv.getAttribute("start"));
-    var endDate = new Date();
-    var months = countMonth(startDate, endDate);
-    
-    for (var i = 0; i < months; i++) {
-        var td = document.createElement("td");
-        td.setAttribute("class", "months");
-        tr.appendChild(td);
+function getTimelineItemsRow(missionAll, months, clientWidth) {
+    var itemsRow = document.createElement("div");
+
+    for (var i = missionAll.length - 1; i >= 0; i--) {
+        var div = getTimelineTitleItem(missionAll[i], months, clientWidth);
+        itemsRow.appendChild(div);
     }
-    return tr;
+    return itemsRow;
 }
 
-function getTimelineYearTr(firstMissionDiv) {
-    var tr = document.createElement("tr");
+function getTimelineYearRow(firstMissionDiv, months, clientWidth) {
+    var row = document.createElement("div");
+    row.setAttribute("class", "year");
     var startDate = new Date(firstMissionDiv.getAttribute("start"));
     var endDate = new Date();
 
-    var td = document.createElement("td");
-    td.setAttribute("colspan", 12 - startDate.getMonth());
-    td.innerHTML = startDate.getFullYear();
-    tr.appendChild(td);
+    var div = document.createElement("div");
+    div.setAttribute("class", "item");
+    div.style.width = 100 * ((12 - startDate.getMonth()) / months - 1.1 * (1 / clientWidth)) + "%";
+    div.innerHTML = startDate.getFullYear();
+    row.appendChild(div);
     
     for (var y = startDate.getFullYear() + 1; y < endDate.getFullYear(); y++) {
-        td = document.createElement("td");
-        td.setAttribute("colspan", 12);
-        td.innerHTML = y;
-        tr.appendChild(td);
+        div = document.createElement("div");
+        div.setAttribute("class", "item");
+        div.style.width = 100 * (12 / months - 1.2 * (1 / clientWidth)) + "%";
+        div.innerHTML = y;
+        row.appendChild(div);
     }
 
-    td = document.createElement("td");
-    td.setAttribute("colspan", endDate.getMonth() + 1);
-    td.innerHTML = endDate.getFullYear();
-    tr.appendChild(td);
+    div = document.createElement("div");
+    div.setAttribute("class", "item");
+    div.style.width = 100 * ((endDate.getMonth() + 6) / months - 1.1 * (1 / clientWidth)) + "%";
+    div.innerHTML = endDate.getFullYear();
+    row.appendChild(div);
 
-    return tr;    
-}
-
-function getTimelineTbody() {
-    var tbody = document.createElement("tbody");
-
-    var tr = document.createElement("tr");
-    var missionAll = document.querySelectorAll("#mission [start]");
-    for (var i = missionAll.length - 1; i >= 0; i--) {
-        var td = getTimelineTitleTd(missionAll[i]);
-        tr.appendChild(td);
-    }
-    tbody.appendChild(tr);
-
-    tr = getTimelineMonthTr(missionAll[missionAll.length - 1]);
-    tbody.appendChild(tr);
-
-    tr = getTimelineYearTr(missionAll[missionAll.length - 1]);
-    tbody.appendChild(tr);
-
-    return tbody;
+    return row;    
 }
 
 function drawTimeline() {
-    var table = document.createElement("table");
-    var tbody = getTimelineTbody();
-    table.appendChild(tbody);
-    var div = document.getElementById("timeline");
-    div.appendChild(table);
+    var missionAll = document.querySelectorAll("#mission [start]");
+    var startDate = new Date(missionAll[missionAll.length - 1].getAttribute("start"));
+    var endDate = new Date();
+    var months = countMonth(startDate, endDate) + 6;
+    var article = document.querySelector("#experience article");
+    var timeline = document.getElementById("timeline");
+
+    timeline.appendChild(getTimelineItemsRow(missionAll, months, article.clientWidth));
+    timeline.appendChild(getTimelineYearRow(missionAll[missionAll.length - 1], months, article.clientWidth));
 }
 
 var discipline = [

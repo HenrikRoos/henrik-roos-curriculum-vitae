@@ -2,36 +2,23 @@
  * @author Henrik Roos
  */
 
+Chart.defaults.global.legend.display = false;
 Chart.defaults.global.responsive = true;
-Chart.defaults.global.animation = false;
-Chart.defaults.global.tooltipFontFamily = "'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif";
-Chart.defaults.global.tooltipFontSize = 13;
 
 function generateChart(id, title, data) {
     var placeholder = document.getElementById(id);
-    placeholder.innerHTML = "";
 
     var h3 = document.createElement("h3");
-    placeholder.appendChild(h3);
     h3.innerHTML = title;
+    placeholder.appendChild(h3);
 
     var div = document.createElement("div");
     placeholder.appendChild(div);
-    placeholder = div;
 
-    var pie = document.createElement("canvas");
-    pie.setAttribute("height", placeholder.clientWidth);
-    pie.setAttribute("width", placeholder.clientWidth);
-    placeholder.appendChild(pie);
+    var ctx = document.createElement("canvas");
+    div.appendChild(ctx);
 
-    var pie_chart = new Chart(pie.getContext("2d")).Pie(data,
-        {
-            legendTemplate: "<% for (var i=0; i<segments.length; i++){%><li><span style=\"color:<%=segments[i].fillColor%>\">✪</span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%>"
-        });
-
-    var legend = document.createElement("ul");
-    legend.innerHTML = pie_chart.generateLegend();
-    placeholder.parentElement.appendChild(legend);
+    new Chart(ctx.getContext("2d"), { type: 'pie', data: data });
 }
 
 function countMonth(start, end) {
@@ -105,7 +92,7 @@ function getTimelineYearRow(firstMissionDiv, months, clientWidth) {
     div.style.width = 100 * ((12 - startDate.getMonth()) / months - 1.1 * (1 / clientWidth)) + "%";
     div.innerHTML = startDate.getFullYear();
     row.appendChild(div);
-    
+
     for (var y = startDate.getFullYear() + 1; y < endDate.getFullYear(); y++) {
         div = document.createElement("div");
         div.setAttribute("class", "item");
@@ -120,7 +107,7 @@ function getTimelineYearRow(firstMissionDiv, months, clientWidth) {
     div.innerHTML = endDate.getFullYear();
     row.appendChild(div);
 
-    return row;    
+    return row;
 }
 
 function drawTimeline() {
@@ -135,113 +122,96 @@ function drawTimeline() {
     timeline.appendChild(getTimelineYearRow(missionAll[missionAll.length - 1], months, article.clientWidth));
 }
 
-var discipline = [
+var discipline =
     {
-        value: experienceSum("utv"),
-        color: "#F9D423",
-        highlight: "#FEF2B9",
-        label: "Utveckling"
-    },
-    {
-        value: experienceSum("test"),
-        color: "#619EC2",
-        highlight: "#D0E2EC",
-        label: "Test"
-    },
-    {
-        value: experienceSum("req"),
-        color: "orange",
-        highlight: "#FFD1B3",
-        label: "Krav"
-    }
-];
+        datasets: [{
+            data: [
+                experienceSum("utv"),
+                experienceSum("test"),
+                experienceSum("krav")
+            ],
+            backgroundColor: [
+                "rgb(249,212,35)",
+                "rgb(97,158,194)",
+                "rgb(255,209,179)"
+            ],
+        }],
+        labels: [
+            "Utveckling",
+            "Test",
+            "Krav"
+        ]
+    };
 
-var branch = [
+var branch =
     {
-        value: experienceSum("health"),
-        color: "DarkTurquoise",
-        highlight: "#52FCFF",
-        label: "Hälsa & Sjukvård"
-    },
-    {
-        value: experienceSum("finans"),
-        color: "DimGray",
-        highlight: "#B5B5B5",
-        label: "Bank & Finans"
-    },
-    {
-        value: experienceSum("reklam"),
-        color: "LightPink",
-        highlight: "#FFEBEE",
-        label: "Reklam"
-    },
-    {
-        value: experienceSum("telekom"),
-        color: "DeepSkyBlue",
-        highlight: "#99E6FF",
-        label: "Data It & Telekom."
-    },
-    {
-        value: experienceSum("insurance"),
-        color: "#FF9834",
-        highlight: "#FFBF80",
-        label: "Försäkring"
-    }
-];
+        datasets: [{
+            data: [
+                experienceSum("health"),
+                experienceSum("finans"),
+                experienceSum("reklam"),
+                experienceSum("telekom"),
+                experienceSum("insurance")
+            ],
+            backgroundColor: [
+                "rgb(0,206,209)",
+                "rgb(105,105,105)",
+                "rgb(255,182,193)",
+                "rgb(97,158,194)",
+                "rgb(255,157,0)"
+            ],
+        }],
+        labels: [
+            "Hälsa & Sjukvård",
+            "Bank & Finans",
+            "Reklam",
+            "Data It & Telekom.",
+            "Försäkring"
+        ]
+    };
 
-var dev_platform = [
+var dev_platform =
     {
-        value: experienceSum("java"),
-        color: "#0099CC",
-        highlight: "#66D9FF",
-        label: "Java"
-    },
-    {
-        value: experienceSum("net"),
-        color: "#FF9D00",
-        highlight: "#FFCE80",
-        label: ".NET"
-    },
-    {
-        value: experienceSum("oberoende"),
-        color: "#AA8955",
-        highlight: "#E5DDCD",
-        label: "Oberoende"
-    }
-];
+        datasets: [{
+            data: [
+                experienceSum("java"),
+                experienceSum("net"),
+                experienceSum("oberoende")
+            ],
+            backgroundColor: [
+                "rgb(97,158,194)",
+                "rgb(255,157,0)",
+                "rgb(170,137,85)"
+            ],
+        }],
+        labels: [
+            "Java",
+            ".NET",
+            "Oberoende"
+        ]
+    };
 
-var subject_distribution = [
+var subject_distribution =
     {
-        value: 63,
-        color: "#FFBE4F",
-        highlight: "#FFDA99",
-        label: "Data"
-    },
-    {
-        value: 60,
-        color: "#6BD2DB",
-        highlight: "#D2F1F4",
-        label: "Matematik"
-    },
-    {
-        value: 30,
-        color: "#0EA7B5",
-        highlight: "#66E9F4",
-        label: "Kemi"
-    },
-    {
-        value: 30,
-        color: "#0C457D",
-        highlight: "#4F9EEE",
-        label: "Biologi"
-    },
-    {
-        value: 15,
-        color: "#E8702A",
-        highlight: "#F6CEB6",
-        label: "Fysik"
-    }
-];
+        datasets: [{
+            data: [63, 60, 30, 30, 15],
+            backgroundColor: [
+                "rgb(255,157,0)",
+                "rgb(107,210,219)",
+                "rgb(14,167,181)",
+                "rgb(97,158,194)",
+                "rgb(232,112,42)"
+            ],
+        }],
+        labels: [
+            "Data",
+            "Matematik",
+            "Kemi",
+            "Biologi",
+            "Fysik"
+        ]
+    };
+
 
 generateChart("discipline", "Disciplin", discipline);
 generateChart("branch", "Bransch", branch);
@@ -249,3 +219,10 @@ generateChart("dev_platform", "Plattform", dev_platform);
 generateChart("subject_distribution", "Ämnesfördelning av 198 hp", subject_distribution);
 drawExperienceInterval();
 drawTimeline();
+/*
+var canvas = document.querySelector("#discipline canvas");
+canvas.onmousemove = function (evt) {
+    var el = canvas.getElementsAtEvent(evt);
+    //do something with the el object to display other information
+    //elsewhere on the page
+}*/

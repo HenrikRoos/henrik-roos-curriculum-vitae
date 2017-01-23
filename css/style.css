@@ -352,26 +352,30 @@ header img {
     vertical-align:middle;
 }
 
-/* chart */
 /* timeline */
 #timeline {
     font-family:'Share Tech Mono', monospace;
     font-size:smaller;
     color:#AAA;
-    clear:both;
+    padding-top: 1.5em;
+    clear: left;
 }
 
-#timeline .item {
+#timeline div {
     float: left;
     text-align:center;
     border-right:1px solid #DDD;
 }
 
 #timeline .year div {
-    border-top:1px solid #DDD;
+    border-top: 1px solid #DDD;
 }
 
-#timeline .item:last-child {
+#timeline section {
+    clear: left;
+}
+
+#timeline div:last-child {
     border-right:none;
 }
 

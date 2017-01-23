@@ -5,6 +5,45 @@
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.responsive = true;
 
+var experienceLabelsMap = {
+    texts: [
+        "Utveckling",
+        "Test",
+        "Krav",
+        "Hälsa & Sjukvård",
+        "Bank & Finans",
+        "Reklam",
+        "Data It & Telekom.",
+        "Försäkring",
+        "Java",
+        ".NET",
+        "Oberoende"
+    ],
+    classnames: [
+        "utv",
+        "test",
+        "krav",
+        "health",
+        "finans",
+        "reklam",
+        "telekom",
+        "insurance",
+        "java",
+        "net",
+        "oberoende"
+    ]
+};
+
+function getTextExperienceLabel(classname) {
+    var index = experienceLabelsMap.classnames.indexOf(classname);
+    return experienceLabelsMap.texts[index];
+}
+
+function getClassExperienceLabel(text) {
+    var index = experienceLabelsMap.texts.indexOf(text);
+    return experienceLabelsMap.classnames[index];
+}
+
 function generateChart(id, title, data) {
     var placeholder = document.getElementById(id);
 
@@ -18,7 +57,22 @@ function generateChart(id, title, data) {
     var ctx = document.createElement("canvas");
     div.appendChild(ctx);
 
-    new Chart(ctx.getContext("2d"), { type: 'pie', data: data });
+    new Chart(ctx.getContext("2d"),
+        {
+            type: 'pie',
+            data: data,
+            options: {
+                hover: {
+                    onHover: function (pieceArr) {
+                        /*var piece = pieceArr[0]._view;
+                        var classname = getClassExperienceLabel(piece.label);
+                        
+                        var divs = document.querySelectorAll("#mission .column");*/
+                    }
+                }
+            }
+        }
+    );
 }
 
 function countMonth(start, end) {
@@ -33,7 +87,7 @@ function experienceLength(div) {
 
 function experienceSum(label) {
     var sum = 0;
-    var divs = document.querySelectorAll("#mission ." + label);
+    var divs = document.querySelectorAll("[tags~=" + label + "]");
     for (var i = 0; i < divs.length; i++) {
         sum += experienceLength(divs[i]);
     }
@@ -67,12 +121,12 @@ function getTimelineTitleItem(missionDiv, months, clientWidth) {
 
     div.style.width = 100 * (experienceLength(missionDiv) / months - 1.1 * (1 / clientWidth)) + "%";
     div.setAttribute("title", h3.innerHTML);
-    div.setAttribute("class", "item");
+    div.setAttribute("tags", missionDiv.getAttribute("tags"));
     return div;
 }
 
 function getTimelineItemsRow(missionAll, months, clientWidth) {
-    var itemsRow = document.createElement("div");
+    var itemsRow = document.createElement("section");
 
     for (var i = missionAll.length - 1; i >= 0; i--) {
         var div = getTimelineTitleItem(missionAll[i], months, clientWidth);
@@ -82,27 +136,24 @@ function getTimelineItemsRow(missionAll, months, clientWidth) {
 }
 
 function getTimelineYearRow(firstMissionDiv, months, clientWidth) {
-    var row = document.createElement("div");
+    var row = document.createElement("section");
     row.setAttribute("class", "year");
     var startDate = new Date(firstMissionDiv.getAttribute("start"));
     var endDate = new Date();
 
     var div = document.createElement("div");
-    div.setAttribute("class", "item");
     div.style.width = 100 * ((12 - startDate.getMonth()) / months - 1.1 * (1 / clientWidth)) + "%";
     div.innerHTML = startDate.getFullYear();
     row.appendChild(div);
 
     for (var y = startDate.getFullYear() + 1; y < endDate.getFullYear(); y++) {
         div = document.createElement("div");
-        div.setAttribute("class", "item");
         div.style.width = 100 * (12 / months - 1.2 * (1 / clientWidth)) + "%";
         div.innerHTML = y;
         row.appendChild(div);
     }
 
     div = document.createElement("div");
-    div.setAttribute("class", "item");
     div.style.width = 100 * ((endDate.getMonth() + 6) / months - 1.1 * (1 / clientWidth)) + "%";
     div.innerHTML = endDate.getFullYear();
     row.appendChild(div);
@@ -137,9 +188,9 @@ var discipline =
             ],
         }],
         labels: [
-            "Utveckling",
-            "Test",
-            "Krav"
+            getTextExperienceLabel("utv"),
+            getTextExperienceLabel("test"),
+            getTextExperienceLabel("krav")
         ]
     };
 
@@ -159,14 +210,14 @@ var branch =
                 "rgb(255,182,193)",
                 "rgb(97,158,194)",
                 "rgb(255,157,0)"
-            ],
+            ]
         }],
         labels: [
-            "Hälsa & Sjukvård",
-            "Bank & Finans",
-            "Reklam",
-            "Data It & Telekom.",
-            "Försäkring"
+            getTextExperienceLabel("health"),
+            getTextExperienceLabel("finans"),
+            getTextExperienceLabel("reklam"),
+            getTextExperienceLabel("telekom"),
+            getTextExperienceLabel("insurance")
         ]
     };
 
@@ -185,9 +236,9 @@ var dev_platform =
             ],
         }],
         labels: [
-            "Java",
-            ".NET",
-            "Oberoende"
+            getTextExperienceLabel("java"),
+            getTextExperienceLabel("net"),
+            getTextExperienceLabel("oberoende")
         ]
     };
 
@@ -219,10 +270,3 @@ generateChart("dev_platform", "Plattform", dev_platform);
 generateChart("subject_distribution", "Ämnesfördelning av 198 hp", subject_distribution);
 drawExperienceInterval();
 drawTimeline();
-/*
-var canvas = document.querySelector("#discipline canvas");
-canvas.onmousemove = function (evt) {
-    var el = canvas.getElementsAtEvent(evt);
-    //do something with the el object to display other information
-    //elsewhere on the page
-}*/

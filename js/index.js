@@ -2,7 +2,6 @@
  * @author Henrik Roos
  */
 
-Chart.defaults.global.legend.display = false;
 Chart.defaults.global.responsive = true;
 
 var experienceLabelsMap = {
@@ -44,9 +43,7 @@ function getClassExperienceLabel(text) {
     return experienceLabelsMap.classnames[index];
 }
 
-function generateChart(id, title, data) {
-    var placeholder = document.getElementById(id);
-
+function addTitleContext(placeholder, title) {
     var h3 = document.createElement("h3");
     h3.innerHTML = title;
     placeholder.appendChild(h3);
@@ -56,12 +53,36 @@ function generateChart(id, title, data) {
 
     var ctx = document.createElement("canvas");
     div.appendChild(ctx);
+    return ctx;
+}
 
+function generateSimpelChart(id, title, data) {
+    var placeholder = document.getElementById(id);
+    var ctx = addTitleContext(placeholder, title);
     new Chart(ctx.getContext("2d"),
         {
             type: 'pie',
             data: data,
             options: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    );
+}
+
+function generateExperienceChart(id, title, data) {
+    var placeholder = document.getElementById(id);
+    var ctx = addTitleContext(placeholder, title);
+    new Chart(ctx.getContext("2d"),
+        {
+            type: 'pie',
+            data: data,
+            options: {
+                legend: {
+                    display: false
+                },
                 hover: {
                     onHover: function (pieceArr) {
                         if (pieceArr.length == 1) {
@@ -274,9 +295,9 @@ var subject_distribution =
     };
 
 
-generateChart("discipline", "Disciplin", discipline);
-generateChart("branch", "Bransch", branch);
-generateChart("dev_platform", "Plattform", dev_platform);
-generateChart("subject_distribution", "Ämnesfördelning av 198 hp", subject_distribution);
+generateExperienceChart("discipline", "Disciplin", discipline);
+generateExperienceChart("branch", "Bransch", branch);
+generateExperienceChart("dev_platform", "Plattform", dev_platform);
+generateSimpelChart("subject_distribution", "Ämnesfördelning av 198 hp", subject_distribution);
 drawExperienceInterval();
 drawTimeline();

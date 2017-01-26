@@ -64,10 +64,20 @@ function generateChart(id, title, data) {
             options: {
                 hover: {
                     onHover: function (pieceArr) {
-                        /*var piece = pieceArr[0]._view;
-                        var classname = getClassExperienceLabel(piece.label);
-                        
-                        var divs = document.querySelectorAll("#mission .column");*/
+                        if (pieceArr.length == 1) {
+                            var piece = pieceArr[0]._view;
+                            var classname = getClassExperienceLabel(piece.label);
+                            var divs = document.querySelectorAll("#timeline [tags~=" + classname + "]");
+                            divs.forEach(function (div) {
+                                div.style.backgroundColor = piece.backgroundColor;
+                            });
+                        }
+                        else {
+                            var divs = document.querySelectorAll("#timeline [tags]");
+                            divs.forEach(function (div) {
+                                div.style.backgroundColor = "";
+                            });
+                        }
                     }
                 }
             }
@@ -88,22 +98,22 @@ function experienceLength(div) {
 function experienceSum(label) {
     var sum = 0;
     var divs = document.querySelectorAll("[tags~=" + label + "]");
-    for (var i = 0; i < divs.length; i++) {
-        sum += experienceLength(divs[i]);
-    }
+    divs.forEach(function (div) {
+        sum += experienceLength(div);
+    });
     return sum;
 }
 
 function drawExperienceInterval() {
     var divs = document.querySelectorAll("#mission .column");
-    for (var i = 0; i < divs.length; i++) {
-        var endtext = divs[i].hasAttribute("end") ? divs[i].getAttribute("end") : "pågående";
-        var text = divs[i].getAttribute("start") + " &mdash; " + endtext + " (" + experienceLength(divs[i]) + " månader)";
+    divs.forEach(function (div) {
+        var endtext = div.hasAttribute("end") ? div.getAttribute("end") : "pågående";
+        var text = div.getAttribute("start") + " &mdash; " + endtext + " (" + experienceLength(div) + " månader)";
         var divtext = document.createElement("div");
         divtext.innerHTML = text;
-        var placeholder = divs[i].querySelectorAll(".subtitle")[0];
+        var placeholder = div.querySelectorAll(".subtitle")[0];
         placeholder.appendChild(divtext);
-    }
+    });
 }
 
 function getTimelineTitleItem(missionDiv, months, clientWidth) {
